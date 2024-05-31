@@ -28,7 +28,7 @@ public class Cita {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idCita;
+    private Long id;
     
     // Para ingresar facilmente fecha y hora usar setFechaHora(LocalDateTime.of(año, mes, dia, hora, minuto))
     @NonNull
@@ -40,6 +40,8 @@ public class Cita {
     @NonNull
     private String cedulaPostulante;
     
+    private int calificacionBuscador;
+    private int calificacionPostulante;
     private int resultadoCita;
 
     public Cita (){
