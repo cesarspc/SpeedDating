@@ -1,0 +1,103 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #efefef;
+}
+#ficha {
+    padding: 20px;
+    margin: 0 auto;
+    background-color: #efefef;
+}
+#Subindice, #tarjeta1, #tarjeta2, #tarjeta3, #Subindice2, #Subindice3, .list-group-item {
+    background-color: #fff4e1;
+}
+body {
+    background-color: #efefef;
+}
+@font-face {
+    font-family: Dating;
+    src: url(../Dating.ttf);
+}
+.navbar-brand, #titulo {
+    font-size: 40px;
+    font-weight: 100;
+    color: black;
+    font-family: Dating;
+}
+#titulo {
+    font-family: Dating;
+}
+#foto {
+    width: 200px;
+    text-align: center;
+    padding-top: 5px;
+}
+.brand_logo_container {
+    position: absolute;
+    height: 170px;
+    width: 170px;
+    top: -75px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 10px;
+    text-align: center;
+}
+#brand_logo1 {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+.brand_logo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.form_container {
+    margin-top: 100px;
+}
+.login_btn {
+    width: 100%;
+    background: #2f2f2f !important;
+    color: white !important;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 2rem;
+}
+.input-group-text {
+    background: #2f2f2f !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #2f2f2f !important;
+}
+.xd:hover {
+    background-color: black;
+}
+.Submen:hover {
+    background-color: white;
+}
+footer {
+    width: 100%;
+    height: 40px;
+}
+#fondo {
+    padding: 0px;
+    border-bottom: gray;
+}
+#fondo, #fondo1, #fondo2, #fondo3:hover {
+    border-color: #fff4e1;
+}
