@@ -46,16 +46,16 @@
                     <div class="d-flex justify-content-center form_container pt-5">
                         <form class="row g-3" method="POST" action="//AQUI VA EL ACTION DE DONDE SE DIRIJE LA INFO//">
                             <div class="col-md-4 pt-15">
-                                <label for="Nombre" class="form-label">Nombres:</label>
+                                <label for="NombreBuscador" class="form-label">Nombres:</label>
                                 <input type="text" name="NombreBuscador" class="form-control" id="NombreBuscador" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="inputPassword4" class="form-label">Apellidos:</label>
-                                <input type="text" name="ApellidoBuscador" class="form-control" id="inputApellido" required>
+                                <label for="ApellidoBuscador" class="form-label">Apellidos:</label>
+                                <input type="text" name="ApellidoBuscador" class="form-control" id="ApellidoBuscador" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="inputPassword4" class="form-label">Género:</label>
-                                <select id="inputState" class="form-select" name="EstadoCivilBuscador" required>
+                                <label for="GeneroBuscador" class="form-label">Género:</label>
+                                <select id="GeneroBuscador" class="form-select" name="GeneroBuscador" required>
                                     <option selected disabled>Seleccione:</option>
                                     <option value="first">Masculino</option>
                                     <option value="second">Femenino</option>
@@ -63,16 +63,16 @@
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <label for="inputAddress" class="form-label">Edad:</label>
-                                <input type="number" name="EdadBuscador" class="form-control" id="inputAddress" placeholder="Ejemplo: 25" required>
+                                <label for="EdadBuscador" class="form-label">Edad:</label>
+                                <input type="number" name="EdadBuscador" class="form-control" id="EdadBuscador" placeholder="Ejemplo: 25" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="inputAddress2" class="form-label">Estatura:</label>
-                                <input type="text" name="EstaturaBuscador" class="form-control" id="inputAddress2" placeholder="Ejemplo: 180" required>
+                                <label for="EstaturaBuscador" class="form-label">Estatura:</label>
+                                <input type="number" name="EstaturaBuscador" class="form-control" id="EstaturaBuscador" placeholder="Ejemplo: 180" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="inputCity" class="form-label">Contextura Corporal:</label>
-                                <select id="inputState" class="form-select" name="ContexturaBuscador" required>
+                                <label for="ContexturaBuscador" class="form-label">Contextura Corporal:</label>
+                                <select id="ContexturaBuscador" class="form-select" name="ContexturaBuscador" required>
                                     <option selected disabled>Seleccione su contextura</option>
                                     <option value="first">Delgada</option>
                                     <option value="second">Media</option>
@@ -80,12 +80,12 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputState" class="form-label">Profesión/Oficio:</label>
-                                <input type="text" name="ProfesionBuscador" class="form-control" required>
+                                <label for="ProfesionBuscador" class="form-label">Profesión/Oficio:</label>
+                                <input type="text" name="ProfesionBuscador" id="ProfesionBuscador" class="form-control" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="EstadoCivil" class="form-label">Estado Civil:</label>
-                                <select id="inputState" class="form-select" name="EstadoCivilBuscador" required>
+                                <label for="EstadoCivilB" class="form-label">Estado Civil:</label>
+                                <select id="EstadoCivilB" class="form-select" name="EstadoCivilB" required>
                                     <option selected disabled>Seleccione:</option>
                                     <option value="first">Soltero</option>
                                     <option value="second">Separado</option>
@@ -94,19 +94,23 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputEmail14" class="form-label">Correo:</label>
-                                <input type="email" name="CorreoBuscador" class="form-control" id="inputEmal14" required>
+                                <label for="CorreoBuscador" class="form-label">Correo:</label>
+                                <input type="email" name="CorreoBuscador" class="form-control" id="CorreoBuscador" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputState" class="form-label">Teléfono:</label>
-                                <input type="text" name="NumeroBuscador" class="form-control" required>
+                                <label for="NumeroBuscador" class="form-label">Teléfono:</label>
+                                <input type="text" name="NumeroBuscador" id="NumeroBuscador"class="form-control" required>
                             </div>
+
+
                             <div id="lab" class="col-md-12">
                                 <label>Gustos personales:</label>
                             </div>
+
+
                             <div class="col-md-6">
-                                <label for="inputCity" class="form-label">Contextura:</label>
-                                <select id="inputState" class="form-select" name="ContexPrefeBuscador" required>
+                                <label for="ContexPrefeBuscador" class="form-label">Contextura:</label>
+                                <select id="ContexPrefeBuscador" class="form-select" name="ContexPrefeBuscador" required>
                                     <option selected disabled>Seleccione</option>
                                     <option value="first">Delgada</option>
                                     <option value="second">Media</option>
@@ -114,24 +118,43 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="inputAddress2" class="form-label">Estatura:</label>
-                                <input type="text" name="EstaturaPreferidaBuscador" class="form-control" id="inputAddress2" placeholder="Ejemplo: 180" required>
+                                <label for="EstaturaPreferidaBuscador" class="form-label">Estatura:</label>
+                                <input type="number" name="EstaturaPreferidaBuscador" class="form-control" id="EstaturaPreferidaBuscador" placeholder="Ejemplo: 180" required>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputAddress2" class="form-label">Edad:</label>
-                                <input type="text" name="EdadPreferidaBuscador" class="form-control" id="inputAddress2" placeholder="Ejemplo: 170" required>
+                            <div class="col-md-4">
+                                <label for="EdadPreferidaBuscador" class="form-label">Edad:</label>
+                                <input type="number" name="EdadPreferidaBuscador" class="form-control" id="EdadPreferidaBuscador" placeholder="Ejemplo: 170" required>
                             </div>
-                            <div class="col-md-6">
-                                <label for="inputPassword4" class="form-label">Género:</label>
-                                <select id="inputState" class="form-select" name="GeneroPreferido" required>
+                            <div class="col-md-4">
+                                <label for="GeneroPreferido" class="form-label">Género:</label>
+                                <select id="GeneroPreferido" class="form-select" name="GeneroPreferido" required>
                                     <option selected disabled>Seleccione:</option>
                                     <option value="first">Masculino</option>
                                     <option value="second">Femenino</option>
                                     <option value="third" disabled="">Otro</option>
                                 </select>
                             </div>
+                            <div class="col-md-4">
+                                <label for="GustoInteres" class="form-label">Interés:</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="InteresAmigos" id="InteresAmigos" value="option1">
+                                    <label class="form-check-label" for="InteresAmigos">Amigos</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="InteresPareja" id="InteresPareja" value="option2">
+                                    <label class="form-check-label" for="InteresPareja">Pareja</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="InteresSexo" id="InteresSexo" value="option3" >
+                                    <label class="form-check-label" for="InteresSexo">Sexual</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="InteresSexmistad" id="InteresSexmistad" value="option3" >
+                                    <label class="form-check-label" for="InteresSexmistad">Sexmistad</label>
+                                </div>
+                            </div>
                             <div id="Boton" class="col-12">
-                                <button type="submit" class="btn btn-primary" name="EnviarDatos">Sign in</button>
+                                <button type="submit" id="botonForm" class="btn btn-primary" name="EnviarDatos">Enviar</button>
                             </div>
                         </form>
                     </div>
@@ -140,7 +163,7 @@
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
                     © 2024 Universidad Distrital
-                    <a class="text-white" href="https://www.tecnicopiloto.edu.co/">tecnicopiloto.edu.co</a>
+
                 </div>
             </footer>
         </div>
