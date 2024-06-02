@@ -84,7 +84,7 @@
                 <li><a class="dropdown-item" id="fondo2" href="CESupervisor.php">Gestión Especifica</a></li>
               </ul>
             </div>
-            <li class="list-group-item"><a href="formsuper.php">Crear Supervisor</a></li>
+              <li class="list-group-item"><a href="FormPostulante.jsp">Agregar Postulante</a></li>
           </ul>
         </div>
       </div>
