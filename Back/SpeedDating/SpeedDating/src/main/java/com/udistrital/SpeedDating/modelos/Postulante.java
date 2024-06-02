@@ -60,7 +60,8 @@ public class Postulante {
     
     @NonNull
     private String diponibilidad;
-     
+    
+    private boolean pagoHecho;
     
     public Postulante() {
         super();
