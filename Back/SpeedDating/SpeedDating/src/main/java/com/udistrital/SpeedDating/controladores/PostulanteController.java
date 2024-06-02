@@ -4,7 +4,6 @@
  */
 package com.udistrital.SpeedDating.controladores;
 
-
 import com.udistrital.SpeedDating.modelos.Postulante;
 import com.udistrital.SpeedDating.repositorios.PostulanteRepository;
 import java.util.List;
@@ -33,18 +32,44 @@ public class PostulanteController {
         this.database = bd;
     }
 
-    @GetMapping("/api/crearPostualantes")
-    public void crearCitas() {
-        /*
-        Cita cita1 = new Cita(LocalDateTime.of(2022, 5, 1, 0, 0), "126", "1312");
-        Cita cita2 = new Cita(LocalDateTime.of(2022, 6, 1, 2, 3), "3214", "4214");
+@GetMapping("/api/crearPostulantes")
+public void crearPostulantes() {
+    /*
+    Ejemplo introducción de datos
+    */
+    Postulante postulante1 = new Postulante();
+    postulante1.setNombre("Nombre1");
+    postulante1.setApellido("Apellido1");
+    postulante1.setEdad("25");
+    postulante1.setEstatura("1.70");
+    postulante1.setProfesion("Profesion1");
+    postulante1.setContextura("Contextura1");
+    postulante1.setEstadoCivil("Soltero");
+    postulante1.setIdentidadGenero("IdentidadGenero1");
+    postulante1.setCorreo("correo1@example.com");
+    postulante1.setTelefono("3121234567");
+    postulante1.setInteresPrincipal("Interes1");
+    postulante1.setDiponibilidad("Disponible");
+    postulante1.setPagoHecho(false);
 
-        database.save(cita1);
-        database.save(cita2);
-        
-        Ejemplo introducción de datos
-        */
-    }   
+    Postulante postulante2 = new Postulante();
+    postulante2.setNombre("Nombre2");
+    postulante2.setApellido("Apellido2");
+    postulante2.setEdad("30");
+    postulante2.setEstatura("1.80");
+    postulante2.setProfesion("Profesion2");
+    postulante2.setContextura("Contextura2");
+    postulante2.setEstadoCivil("Soltero");
+    postulante2.setIdentidadGenero("IdentidadGenero1");
+    postulante2.setCorreo("correo2@example.com");
+    postulante2.setTelefono("3121234568");
+    postulante2.setInteresPrincipal("Interes2");
+    postulante2.setDiponibilidad("No disponible");
+    postulante2.setPagoHecho(true);
+    
+    database.save(postulante1);
+    database.save(postulante2);
+}  
     
     
     @GetMapping("/api/postulantes")
@@ -65,7 +90,7 @@ public class PostulanteController {
     }
     
     
-    @PostMapping("/api/postulantes")
+    @PostMapping("/api/postulante")
     public ResponseEntity<Postulante> guardarPostulante(@RequestBody Postulante postulante){
         if (postulante.getId() != null) {
             return ResponseEntity.badRequest().build();
