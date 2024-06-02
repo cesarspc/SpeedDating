@@ -84,7 +84,7 @@
                 <li><a class="dropdown-item" id="fondo2" href="CESupervisor.php">Gestión Especifica</a></li>
               </ul>
             </div>
-            <li class="list-group-item"><a href="formsuper.php">Crear Supervisor</a></li>
+              <li class="list-group-item"><a href="FormPostulante.jsp">Agregar Postulante</a></li>
           </ul>
         </div>
       </div>
@@ -115,7 +115,6 @@
   <footer class="bg-dark text-center text-white mt-auto">
     <div class="text-center p-3" style="background-color: #F29A80">
       © 2024 Universidad Distrital
-      <a class="text-white" href="https://www.tecnicopiloto.edu.co/">tecnicopiloto.edu.co</a>
     </div>
   </footer>
 </body>

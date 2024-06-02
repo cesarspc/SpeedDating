@@ -135,15 +135,23 @@
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <label for="GustoInteres" class="form-label">Interés:</label>
-                                <select id="GustoInteres" class="form-select" name="GustoInteres" required>
-                                    <option selected disabled>Seleccione:</option>
-                                    <option value="first">Amigos</option>
-                                    <option value="second">Pareja</option>
-                                    <option value="third" >Intimidad</option>
-                                    <option value="four">Folliamigos</option>
-                                </select>
-                                
+                                <label for="GustoInteres" class="form-label">Interés:</label><br>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="InteresAmigos" id="InteresAmigos" value="option1">
+                                    <label class="form-check-label" for="InteresAmigos">Amigos</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="InteresPareja" id="InteresPareja" value="option2">
+                                    <label class="form-check-label" for="InteresPareja">Pareja</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="InteresSexo" id="InteresSexo" value="option3" >
+                                    <label class="form-check-label" for="InteresSexo">Sexual</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="checkbox" name="InteresSexmistad" id="InteresSexmistad" value="option3" >
+                                    <label class="form-check-label" for="InteresSexmistad">Sexmistad</label>
+                                </div>
                             </div>
                             <div id="Boton" class="col-12">
                                 <button type="submit" id="botonForm" class="btn btn-primary" name="EnviarDatos">Enviar</button>

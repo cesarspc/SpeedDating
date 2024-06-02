@@ -19,10 +19,19 @@ body, html {
     color: black;
     font-family: Dating;
 }
+#botonForm{
+    color: black;
+    background-color: #efefef;
+    border: none;
+}
+
+#botonForm:hover{
+    background: #F29A80;
+}
 .user_card {
     color: white;
     height: auto;
-    width: 50%;
+    width: 52%;
     margin-top: 7%;
     margin-bottom: auto;
     background: #bd4c42;
