@@ -1,0 +1,141 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #efefef !important;
+}
+@font-face{
+    font-family: Dating;
+    src: url(../Dating.ttf);
+}
+#ficha {
+    padding: 20px;
+    margin: 0 auto;
+    flex: 1;
+}
+.navbar-brand, #titulo {
+    font-size: 40px;
+    font-weight: 100;
+    color: black;
+    font-family: Dating;
+}
+.user_card {
+    color: white;
+    height: auto;
+    width: 50%;
+    margin-top: 7%;
+    margin-bottom: auto;
+    background: #bd4c42;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+#Boton {
+    justify-content: center;
+    display: flex;
+}
+#lab {
+    padding: 5px;
+    border-bottom: black 1px solid;
+    border-top: black 1px dotted;
+}
+.brand_logo_container {
+    position: absolute;
+    height: 160px;
+    width: 160px;
+    top: -80px;
+    border-radius: 100%;
+    background: #efefef;
+    padding: 5px;
+    text-align: center;
+}
+#PosicionLogo {}
+#brand_logo1 {
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+}
+.brand_logo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.form_container {
+    margin-top: 50px;
+}
+.login_btn {
+    width: 100%;
+    background: #2f2f2f !important;
+    color: white !important;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.login_container {
+    padding: 0 1rem;
+}
+.input-group-text {
+    background: #2f2f2f !important;
+    color: white !important;
+    border: 0 !important;
+    border-radius: 0.25rem 0 0 0.25rem !important;
+}
+.input_user,
+.input_pass:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #2f2f2f !important;
+}
+.lista {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+.xd:hover {
+    background-color: black;
+}
+.lista {
+    list-style: none;
+    text-decoration: none;
+    color: white;
+}
+.Submen:hover {
+    background-color: white;
+}
+.lista {
+    position: absolute;
+    background-color: #18A834;
+    padding: 5px;
+    padding-left: 15px;
+    width: 150px;
+    margin: 0px;
+}
+.lista li a {
+    display: none;
+}
+.lista:hover li a {
+    display: block;
+}
+footer {
+    clear: both;
+}
+#sle, select {
+    height: 38px;
+}
+select {
+    width: 210px;
+    border-radius: 3px;
+}
+#ceestu {
+    padding-left: 50px;
+}
