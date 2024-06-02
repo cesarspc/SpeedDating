@@ -115,7 +115,6 @@
   <footer class="bg-dark text-center text-white mt-auto">
     <div class="text-center p-3" style="background-color: #F29A80">
       © 2024 Universidad Distrital
-      <a class="text-white" href="https://www.tecnicopiloto.edu.co/">tecnicopiloto.edu.co</a>
     </div>
   </footer>
 </body>
