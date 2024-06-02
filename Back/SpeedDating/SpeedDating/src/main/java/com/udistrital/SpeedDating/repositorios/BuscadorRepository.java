@@ -3,14 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package com.udistrital.SpeedDating.repositorios;
-
-import com.udistrital.SpeedDating.modelos.Cita;
+import com.udistrital.SpeedDating.modelos.Buscador;
 import org.springframework.data.jpa.repository.JpaRepository;
-
 /**
  *
- * @author cesar
+ * @author juan-dev
  */
-public interface CitaRepository extends JpaRepository<Cita, Long> {
+public interface BuscadorRepository extends JpaRepository<Buscador,Long>{
     
 }
