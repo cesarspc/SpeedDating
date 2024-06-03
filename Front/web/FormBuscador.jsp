@@ -44,7 +44,10 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center form_container pt-5">
-                        <form class="row g-3" method="POST" action="//AQUI VA EL ACTION DE DONDE SE DIRIJE LA INFO//">
+                        
+                        
+                        
+                        <form class="row g-3" id="formBuscador">
                             <div class="col-md-4 pt-15">
                                 <label for="NombreBuscador" class="form-label">Nombres:</label>
                                 <input type="text" name="NombreBuscador" class="form-control" id="NombreBuscador" required>
@@ -152,6 +155,9 @@
                     </div>
                 </div>
             </div>
+            
+            <script src="form-action-buscador.js"></script>
+            
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
                     © 2024 Universidad Distrital

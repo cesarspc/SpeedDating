@@ -72,11 +72,13 @@ public class PostulanteController {
         database.save(postulante2);
     }
 
+    @CrossOrigin("http://localhost:8080")
     @GetMapping("/api/postulantes")
     public List<Postulante> obtenerPosutalantes() {
         return database.findAll();
     }
 
+    @CrossOrigin("http://localhost:8080")
     @GetMapping("/api/postulantes/{id}")
     public ResponseEntity<Postulante> obtenerPostulanteById(@PathVariable Long id) {
         Optional<Postulante> optional = database.findById(id);
@@ -89,6 +91,7 @@ public class PostulanteController {
 
     }
 
+    @CrossOrigin("http://localhost:8080")
     @PostMapping("/api/postulantes")
     public ResponseEntity<Postulante> guardarPostulante(@RequestBody Postulante postulante) {
         if (postulante.getId() != null) {
@@ -99,6 +102,7 @@ public class PostulanteController {
         return ResponseEntity.ok(postulante);
     }
 
+    @CrossOrigin("http://localhost:8080")
     @PutMapping("/api/postulantes")
     public ResponseEntity<Postulante> actualizarPostulante(@RequestBody Postulante postulante) {
         if (postulante.getId() == null || !database.existsById(postulante.getId())) {
@@ -109,6 +113,7 @@ public class PostulanteController {
         return ResponseEntity.ok(postulante);
     }
 
+    @CrossOrigin("http://localhost:8080")
     @DeleteMapping("/api/postulantes")
     public ResponseEntity<Postulante> eliminarPostulante(@RequestBody Postulante postulante) {
         if (postulante.getId() == null || !database.existsById(postulante.getId())) {
