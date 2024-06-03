@@ -52,7 +52,9 @@
                                 <th scope="col">Calificación Citas</th>
                             </tr>
                         </thead>
-                        <tbody class="cuerpoTabla">
+                        <tbody class="cuerpoTabla" id="cuerpoTabla">
+                            
+                            <!-- SOLO ES UN EJEMPLO PQ ACA SE AÑADEN LOS DATOS CON LA API O JS -->
                             <tr>
                                 <td><input class="form-control" type="text" name="ID" value="01"></td>
                                 <td><input class="form-control" type="datetime-local" name="Fecha" value="xd"></td>
@@ -66,22 +68,10 @@
                                 </select></td>
 
                             </tr>
-                            <tr>
-                                <td>cell</td>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <td>cell</td>
-                                <td >Larry the Bird</td>
-                                <td>@twitter</td>
-                                <td>@fat</td>
-
-                            </tr>
+                            
                         </tbody>
-
                     </table>
+                    <button type="submit" class="btn btn-primary">Guardar Calificaciones</button>
                 </form>
             </div>
 
