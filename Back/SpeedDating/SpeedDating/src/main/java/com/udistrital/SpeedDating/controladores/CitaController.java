@@ -40,7 +40,7 @@ public class CitaController {
         Cita cita2 = new Cita(LocalDateTime.of(2022, 6, 1, 2, 3), "3214", "4214");
 
         database.save(cita1);
-        database.save(cita2);
+        database.save(cita2); 
         
     }
 
