@@ -1,0 +1,50 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-color: #efefef !important;
+}
+@font-face{
+    font-family: Dating;
+    src: url(../Dating.ttf);
+}
+h1{
+    font-size: 40px;
+    font-weight: 100;
+    color: black;
+    font-family: Dating;
+}
+.navbar-brand, #titulo {
+    font-size: 40px;
+    font-weight: 100;
+    color: black;
+    font-family: Dating;
+}
+#bonito{
+    margin-top: 2%;
+    width: 70%;
+}
+.brand_logo {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.table-striped-columns{
+    background-color: #fff4e1;
+}
+.cabecera{
+    background-color: #bd4c42;
+    color: white;
+    text-align: center;
+}
+.cuerpoTabla{
+    background-color: #ffbba8;
+    
+}
+.form-control{
+    background-color: #efefef;
+}
+
+
+
