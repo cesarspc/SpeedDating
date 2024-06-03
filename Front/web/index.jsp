@@ -97,7 +97,7 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><a href="GestionCita.jsp">Gestionar Cita</a> </li>
-                            <li class="list-group-item" id="AgendarCita"><a href="">Agendar Cita</a></li>
+                            <li class="list-group-item" id="AgendarCita"><button class="btn " id="fondo" type="button" data-bs-toggle="dropdown" aria-expanded="false">Generar Cita</button></li>
                         </ul>
                     </div>
                 </div>
