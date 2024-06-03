@@ -138,7 +138,6 @@
                     </div>
                 </div>
 
-                <script src="form-action-buscador.js"></script>
             </div>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
