@@ -59,8 +59,8 @@
                                     Consulta Buscadores
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" id="fondo1" href="consultaEstudiante.php">Consulta General</a></li>
-                                    <li><a class="dropdown-item" id="fondo2" href="CEEstudiante.php">Gestión Específica</a></li>
+                                    <li><a class="dropdown-item" id="fondo1" href="ConsulaBuscador.jsp">Consulta General</a></li>
+                                    <li><a class="dropdown-item" id="fondo2" href="CEBuscador.jsp">Gestión Específica</a></li>
                                 </ul>
                             </div>
                             <li class="list-group-item"><a href="FormBuscador.jsp">Agregar Buscador</a></li>
@@ -80,8 +80,8 @@
                                     Consulta Postulantes
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" id="fondo1" href="consultaSupervisor.php">Consulta General</a></li>
-                                    <li><a class="dropdown-item" id="fondo2" href="CESupervisor.php">Gestión Especifica</a></li>
+                                    <li><a class="dropdown-item" id="fondo1" href="ConsultaPostulante.jsp">Consulta General</a></li>
+                                    <li><a class="dropdown-item" id="fondo2" href="CEPostulante.jsp">Gestión Especifica</a></li>
                                 </ul>
                             </div>
                             <li class="list-group-item"><a href="FormPostulante.jsp">Agregar Postulante</a></li>
