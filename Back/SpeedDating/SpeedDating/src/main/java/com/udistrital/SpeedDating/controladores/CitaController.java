@@ -61,7 +61,7 @@ public class CitaController {
 
     }
     
-    //@CrossOrigin("http://127.0.0.1/PUERTOFRONTEND")
+    @CrossOrigin("http://127.0.0.1:8080")
     @PostMapping("/api/citas")
     public ResponseEntity<Cita> guardarCita(@RequestBody Cita cita){
         if (cita.getId() != null) {
@@ -72,7 +72,7 @@ public class CitaController {
         return ResponseEntity.ok(cita);
     }
     
-    //@CrossOrigin("http://127.0.0.1/PUERTOFRONTEND")
+    @CrossOrigin("http://127.0.0.1:8080")
     @PutMapping("/api/citas")
     public ResponseEntity<Cita> actualizarCita(@RequestBody Cita cita){
         if (cita.getId() == null || !database.existsById(cita.getId())) {
@@ -83,7 +83,7 @@ public class CitaController {
         return ResponseEntity.ok(cita);
     }
     
-    //@CrossOrigin("http://127.0.0.1/PUERTOFRONTEND")
+    @CrossOrigin("http://127.0.0.1:8080")
     @DeleteMapping("/api/citas")
     public ResponseEntity<Cita> eliminarCita(@RequestBody Cita cita){
         if (cita.getId() == null || !database.existsById(cita.getId())) {

@@ -78,11 +78,13 @@ public class BuscadorController {
         database.save(buscador2);
     }
 
+    @CrossOrigin("http://localhost:8080")
     @GetMapping("/api/buscadores")
     public List<Buscador> obtenerBuscadores() {
         return database.findAll();
     }
 
+    @CrossOrigin("http://localhost:8080")
     @GetMapping("/api/buscadores/{id}")
     public ResponseEntity<Buscador> obtenerBuscadoresById(@PathVariable Long id) {
         Optional<Buscador> optional = database.findById(id);
@@ -95,6 +97,7 @@ public class BuscadorController {
 
     }
 
+    @CrossOrigin("http://localhost:8080")//
     @PostMapping("/api/buscadores")
     public ResponseEntity<Buscador> guardarBuscador(@RequestBody Buscador buscador) {
         if (buscador.getId() != null) {
@@ -105,6 +108,7 @@ public class BuscadorController {
         return ResponseEntity.ok(buscador);
     }
 
+    @CrossOrigin("http://localhost:8080")
     @PutMapping("/api/buscadores")
     public ResponseEntity<Buscador> actualizarBuscador(@RequestBody Buscador buscador) {
         if (buscador.getId() == null || !database.existsById(buscador.getId())) {
@@ -115,6 +119,7 @@ public class BuscadorController {
         return ResponseEntity.ok(buscador);
     }
 
+    @CrossOrigin("http://localhost:8080")
     @DeleteMapping("/api/buscadores")
     public ResponseEntity<Buscador> eliminarBuscador(@RequestBody Buscador buscador) {
         if (buscador.getId() == null || !database.existsById(buscador.getId())) {
