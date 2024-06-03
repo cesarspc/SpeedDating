@@ -57,9 +57,9 @@
                                 <label for="GeneroPostulante" class="form-label">Género:</label>
                                 <select id="GeneroBPostulante" class="form-select" name="GeneroPostulante" required>
                                     <option selected disabled value="">Seleccione:</option>
-                                    <option value="first">Masculino</option>
-                                    <option value="second">Femenino</option>
-                                    <option value="third" disabled="">Otro</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="disabled" disabled="">Otro</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
@@ -74,9 +74,9 @@
                                 <label for="ContexturaPostulante" class="form-label">Contextura Corporal:</label>
                                 <select id="ContexturaPostulante" class="form-select" name="ContexturaPostulante" required>
                                     <option selected disabled value="">Seleccione su contextura</option>
-                                    <option value="first">Delgada</option>
-                                    <option value="second">Media</option>
-                                    <option value="third">Ancha</option>
+                                    <option value="Delgada">Delgada</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Ancha">Ancha</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -87,10 +87,10 @@
                                 <label for="EstadoCivilPostulante" class="form-label">Estado Civil:</label>
                                 <select id="EstadoCivilPostulante" class="form-select" name="EstadoCivilPostulante" required>
                                     <option selected disabled value="">Seleccione:</option>
-                                    <option value="first">Soltero</option>
-                                    <option value="second">Separado</option>
-                                    <option value="third">Viudo</option>
-                                    <option value="four">Es Complicado</option>
+                                    <option value="Soltero">Soltero</option>
+                                    <option value="Separado">Separado</option>
+                                    <option value="Viudo">Viudo</option>
+                                    <option value="Complicado">Es Complicado</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -108,10 +108,10 @@
                                 <label for="InteresPrincipal" class="form-label">Interés Principal:</label>
                                 <select id="InteresPrincipal" class="form-select" id name="InteresPrincipal" required>
                                     <option selected disabled value="">Seleccione:</option>
-                                    <option value="first">Amigos</option>
-                                    <option value="second">Pareja</option>
-                                    <option value="third" >Intimidad</option>
-                                    <option value="four">Folliamigos</option>
+                                    <option Amigos="first">Amigos</option>
+                                    <option value="Pareja">Pareja</option>
+                                    <option value="Intimidad" >Intimidad</option>
+                                    <option value="Folliamigos">Folliamigos</option>
                                 </select>
                                 
                             </div>

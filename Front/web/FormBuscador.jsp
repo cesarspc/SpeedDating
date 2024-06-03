@@ -57,7 +57,7 @@
                                 <input type="text" name="ApellidoBuscador" class="form-control" id="ApellidoBuscador" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="GeneroBuscador" class="form-label">Género:</label>
+                                <label for="GeneroBuscador" class="form-label">Gï¿½nero:</label>
                                 <select id="GeneroBuscador" class="form-select" name="GeneroBuscador" required>
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Masculino">Masculino</option>
@@ -83,7 +83,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="ProfesionBuscador" class="form-label">Profesión/Oficio:</label>
+                                <label for="ProfesionBuscador" class="form-label">Profesiï¿½n/Oficio:</label>
                                 <input type="text" name="ProfesionBuscador" id="ProfesionBuscador" class="form-control" required>
                             </div>
                             <div class="col-md-6">
@@ -93,7 +93,7 @@
                                     <option value="Soltero">Soltero</option>
                                     <option value="Separado">Separado</option>
                                     <option value="Viudo">Viudo</option>
-                                    <option value="Es Complicado">Es Complicado</option>
+                                    <option value="Complicado">Es Complicado</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -101,7 +101,7 @@
                                 <input type="email" name="CorreoBuscador" class="form-control" id="CorreoBuscador" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="NumeroBuscador" class="form-label">Teléfono:</label>
+                                <label for="NumeroBuscador" class="form-label">Telï¿½fono:</label>
                                 <input type="text" name="NumeroBuscador" id="NumeroBuscador"class="form-control" required>
                             </div>
 
@@ -129,16 +129,16 @@
                                 <input type="number" name="EdadPreferidaBuscador" class="form-control" id="EdadPreferidaBuscador" placeholder="Ejemplo: 170" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="GeneroPreferido" class="form-label">Género:</label>
+                                <label for="GeneroPreferido" class="form-label">Gï¿½nero:</label>
                                 <select id="GeneroPreferido" class="form-select" name="GeneroPreferido" required>
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
-                                    <option value="Otro" disabled="">Otro</option>
+                                    <option value="disabled" disabled="">Otro</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <label for="GustoInteres" class="form-label">Interés:</label>
+                                <label for="GustoInteres" class="form-label">Interï¿½s:</label>
                                 <select id="GustoInteres" class="form-select" name="GustoInteres" required>
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Amigos">Amigos</option>
@@ -160,7 +160,7 @@
             
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
-                    © 2024 Universidad Distrital
+                    ï¿½ 2024 Universidad Distrital
 
                 </div>
             </footer>
