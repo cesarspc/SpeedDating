@@ -45,46 +45,51 @@
 
             <div class="container-fluid" id="bonito">
 
-                <div><h1 class="texto" ><center>Consulta Buscador</center></h1></div>
+                <div><h1 class="texto" ><center>Consulta Postulante</center></h1></div>
 
-                    <table class="table table-bordered">
-                        <thead class="cabecera">
-                            <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido</th>
-                                <th scope="col">Edad</th>
-                                <th scope="col">Estatura</th>
-                                <th scope="col">Profesion</th>
-                                <th scope="col">Contextura</th>
-                                <th scope="col">Estado Civil</th>
-                                <th scope="col">Genero</th>
-                                <th scope="col">Correo</th>
-                                <th scope="col">Telefono</th>
-                                
+                <table class="table table-bordered">
+                    <thead class="cabecera">
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Apellido</th>
+                            <th scope="col">Edad</th>
+                            <th scope="col">Estatura</th>
+                            <th scope="col">Profesion</th>
+                            <th scope="col">Contextura</th>
+                            <th scope="col">Estado Civil</th>
+                            <th scope="col">Genero</th>
+                            <th scope="col">Correo</th>
+                            <th scope="col">Telefono</th>
+                            <th scope="col">Interés Principal</th>
+                            <th scope="col">Disponibilidad</th>
 
-                            </tr>
-                        </thead>
-                        <tbody class="cuerpoTabla" id="cuerpoTabla">
 
-                            <!-- SOLO ES UN EJEMPLO PQ ACA SE AÑADEN LOS DATOS CON LA API O JS -->
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
 
-                            </tr>
+                        </tr>
+                    </thead>
+                    <tbody class="cuerpoTabla" id="cuerpoTabla">
 
-                        </tbody>
-                    </table>
+                        <!-- SOLO ES UN EJEMPLO PQ ACA SE AÑADEN LOS DATOS CON LA API O JS -->
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
             </div>
 
             <footer class="bg-dark text-center text-white mt-auto">
