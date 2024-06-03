@@ -40,53 +40,53 @@
                 <div class="user_card">
                     <div class="d-flex justify-content-center" id="PosicionLogo">
                         <div class="brand_logo_container">
-                            <img src="Recursos/Images/Buscador2.png" class="brand_logo" id="brand_logo1" alt="Logo">
+                            <img src="Recursos/Images/Postulante.png" class="brand_logo" id="brand_logo1" alt="Logo">
                         </div>
                     </div>
                     <div class="d-flex justify-content-center form_container pt-5">
-                        <form class="row g-3" method="POST" action="//AQUI VA EL ACTION DE DONDE SE DIRIJE LA INFO//">
+                        <form class="row g-3 " method="POST" action="//AQUI VA EL ACTION DE DONDE SE DIRIJE LA INFO//">
                             <div class="col-md-4 pt-15">
-                                <label for="NombreBuscador" class="form-label">Nombres:</label>
-                                <input type="text" name="NombreBuscador" class="form-control" id="NombreBuscador" required>
+                                <label for="NombrePostulante" class="form-label">Nombres:</label>
+                                <input type="text" name="NombrePostulante" class="form-control" id="NombrePostulante" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="ApellidoBuscador" class="form-label">Apellidos:</label>
-                                <input type="text" name="ApellidoBuscador" class="form-control" id="ApellidoBuscador" required>
+                                <label for="ApellidoPostulante" class="form-label">Apellidos:</label>
+                                <input type="text" name="ApellidoPostulante" class="form-control" id="ApellidoPostulante" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="GeneroBuscador" class="form-label">Género:</label>
-                                <select id="GeneroBuscador" class="form-select" name="GeneroBuscador" required>
-                                    <option selected disabled>Seleccione:</option>
+                                <label for="GeneroPostulante" class="form-label">Género:</label>
+                                <select id="GeneroBPostulante" class="form-select" name="GeneroPostulante" required>
+                                    <option selected disabled value="">Seleccione:</option>
                                     <option value="first">Masculino</option>
                                     <option value="second">Femenino</option>
                                     <option value="third" disabled="">Otro</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <label for="EdadBuscador" class="form-label">Edad:</label>
-                                <input type="number" name="EdadBuscador" class="form-control" id="EdadBuscador" placeholder="Ejemplo: 25" required>
+                                <label for="EdadPostulante" class="form-label">Edad:</label>
+                                <input type="number" name="EdadPostulante" class="form-control" id="EdadPostulante" placeholder="Ejemplo: 25" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="EstaturaBuscador" class="form-label">Estatura:</label>
-                                <input type="number" name="EstaturaBuscador" class="form-control" id="EstaturaBuscador" placeholder="Ejemplo: 180" required>
+                                <label for="EstaturaPostulante" class="form-label">Estatura:</label>
+                                <input type="number" name="EstaturaPostulante" class="form-control" id="EstaturaPostulante" placeholder="Ejemplo: 180" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="ContexturaBuscador" class="form-label">Contextura Corporal:</label>
-                                <select id="ContexturaBuscador" class="form-select" name="ContexturaBuscador" required>
-                                    <option selected disabled>Seleccione su contextura</option>
+                                <label for="ContexturaPostulante" class="form-label">Contextura Corporal:</label>
+                                <select id="ContexturaPostulante" class="form-select" name="ContexturaPostulante" required>
+                                    <option selected disabled value="">Seleccione su contextura</option>
                                     <option value="first">Delgada</option>
                                     <option value="second">Media</option>
                                     <option value="third">Ancha</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="ProfesionBuscador" class="form-label">Profesión/Oficio:</label>
-                                <input type="text" name="ProfesionBuscador" id="ProfesionBuscador" class="form-control" required>
+                                <label for="ProfesionPostulante" class="form-label">Profesión/Oficio:</label>
+                                <input type="text" name="ProfesionPostulante" id="ProfesionPostulante" class="form-control" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="EstadoCivilB" class="form-label">Estado Civil:</label>
-                                <select id="EstadoCivilB" class="form-select" name="EstadoCivilB" required>
-                                    <option selected disabled>Seleccione:</option>
+                                <label for="EstadoCivilPostulante" class="form-label">Estado Civil:</label>
+                                <select id="EstadoCivilPostulante" class="form-select" name="EstadoCivilPostulante" required>
+                                    <option selected disabled value="">Seleccione:</option>
                                     <option value="first">Soltero</option>
                                     <option value="second">Separado</option>
                                     <option value="third">Viudo</option>
@@ -94,65 +94,38 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="CorreoBuscador" class="form-label">Correo:</label>
-                                <input type="email" name="CorreoBuscador" class="form-control" id="CorreoBuscador" required>
+                                <label for="CorreoPostulante" class="form-label">Correo:</label>
+                                <input type="email" name="CorreoPostulante" class="form-control" id="CorreoPostulante" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="NumeroBuscador" class="form-label">Teléfono:</label>
-                                <input type="text" name="NumeroBuscador" id="NumeroBuscador"class="form-control" required>
+                                <label for="NumeroPostulante" class="form-label">Teléfono:</label>
+                                <input type="text" name="NumeroPostulante" id="NumeroPostulante"class="form-control" required>
                             </div>
 
 
-                            <div id="lab" class="col-md-12">
-                                <label>Gustos personales:</label>
-                            </div>
-
-
-                            <div class="col-md-6">
-                                <label for="ContexPrefeBuscador" class="form-label">Contextura:</label>
-                                <select id="ContexPrefeBuscador" class="form-select" name="ContexPrefeBuscador" required>
-                                    <option selected disabled>Seleccione</option>
-                                    <option value="first">Delgada</option>
-                                    <option value="second">Media</option>
-                                    <option value="third">Ancha</option>
+                          
+                            <div class="col-md-4">
+                                <label for="InteresPrincipal" class="form-label">Interés Principal:</label>
+                                <select id="InteresPrincipal" class="form-select" id name="InteresPrincipal" required>
+                                    <option selected disabled value="">Seleccione:</option>
+                                    <option value="first">Amigos</option>
+                                    <option value="second">Pareja</option>
+                                    <option value="third" >Intimidad</option>
+                                    <option value="four">Folliamigos</option>
                                 </select>
+                                
                             </div>
-                            <div class="col-md-6">
-                                <label for="EstaturaPreferidaBuscador" class="form-label">Estatura:</label>
-                                <input type="number" name="EstaturaPreferidaBuscador" class="form-control" id="EstaturaPreferidaBuscador" placeholder="Ejemplo: 180" required>
-                            </div>
+                            
                             <div class="col-md-4">
-                                <label for="EdadPreferidaBuscador" class="form-label">Edad:</label>
-                                <input type="number" name="EdadPreferidaBuscador" class="form-control" id="EdadPreferidaBuscador" placeholder="Ejemplo: 170" required>
+                                <label for="InteresPrincipal" class="form-label">Disponibilidad 1:</label>
+                                <input class="form-control" type="datetime-local" id="fecha1" name="fecha1" required>
                             </div>
+                            
                             <div class="col-md-4">
-                                <label for="GeneroPreferido" class="form-label">Género:</label>
-                                <select id="GeneroPreferido" class="form-select" name="GeneroPreferido" required>
-                                    <option selected disabled>Seleccione:</option>
-                                    <option value="first">Masculino</option>
-                                    <option value="second">Femenino</option>
-                                    <option value="third" disabled="">Otro</option>
-                                </select>
+                                <label for="InteresPrincipal" class="form-label">Disponibilidad 2:</label>
+                                <input class="form-control" type="datetime-local" id="fecha1" name="fecha1" required>
                             </div>
-                            <div class="col-md-4">
-                                <label for="GustoInteres" class="form-label">Interés:</label><br>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="InteresAmigos" id="InteresAmigos" value="option1">
-                                    <label class="form-check-label" for="InteresAmigos">Amigos</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="InteresPareja" id="InteresPareja" value="option2">
-                                    <label class="form-check-label" for="InteresPareja">Pareja</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="InteresSexo" id="InteresSexo" value="option3" >
-                                    <label class="form-check-label" for="InteresSexo">Sexual</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="checkbox" name="InteresSexmistad" id="InteresSexmistad" value="option3" >
-                                    <label class="form-check-label" for="InteresSexmistad">Sexmistad</label>
-                                </div>
-                            </div>
+                            
                             <div id="Boton" class="col-12">
                                 <button type="submit" id="botonForm" class="btn btn-primary" name="EnviarDatos">Enviar</button>
                             </div>
