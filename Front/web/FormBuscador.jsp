@@ -60,9 +60,9 @@
                                 <label for="GeneroBuscador" class="form-label">Género:</label>
                                 <select id="GeneroBuscador" class="form-select" name="GeneroBuscador" required>
                                     <option selected disabled value="">Seleccione:</option>
-                                    <option value="first">Masculino</option>
-                                    <option value="second">Femenino</option>
-                                    <option value="third" disabled="">Otro</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Otro" disabled="">Otro</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
@@ -77,9 +77,9 @@
                                 <label for="ContexturaBuscador" class="form-label">Contextura Corporal:</label>
                                 <select id="ContexturaBuscador" class="form-select" name="ContexturaBuscador" required>
                                     <option selected disabled value="">Seleccione su contextura</option>
-                                    <option value="first">Delgada</option>
-                                    <option value="second">Media</option>
-                                    <option value="third">Ancha</option>
+                                    <option value="Delgada">Delgada</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Ancha">Ancha</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -90,10 +90,10 @@
                                 <label for="EstadoCivilB" class="form-label">Estado Civil:</label>
                                 <select id="EstadoCivilB" class="form-select" name="EstadoCivilB" required>
                                     <option selected disabled value="">Seleccione:</option>
-                                    <option value="first">Soltero</option>
-                                    <option value="second">Separado</option>
-                                    <option value="third">Viudo</option>
-                                    <option value="four">Es Complicado</option>
+                                    <option value="Soltero">Soltero</option>
+                                    <option value="Separado">Separado</option>
+                                    <option value="Viudo">Viudo</option>
+                                    <option value="Es Complicado">Es Complicado</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -115,9 +115,9 @@
                                 <label for="ContexPrefeBuscador" class="form-label">Contextura:</label>
                                 <select id="ContexPrefeBuscador" class="form-select" name="ContexPrefeBuscador" required>
                                     <option selected disabled value="">Seleccione</option>
-                                    <option value="first">Delgada</option>
-                                    <option value="second">Media</option>
-                                    <option value="third">Ancha</option>
+                                    <option value="Delgada">Delgada</option>
+                                    <option value="Media">Media</option>
+                                    <option value="Ancha">Ancha</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -132,19 +132,19 @@
                                 <label for="GeneroPreferido" class="form-label">Género:</label>
                                 <select id="GeneroPreferido" class="form-select" name="GeneroPreferido" required>
                                     <option selected disabled value="">Seleccione:</option>
-                                    <option value="first">Masculino</option>
-                                    <option value="second">Femenino</option>
-                                    <option value="third" disabled="">Otro</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Femenino">Femenino</option>
+                                    <option value="Otro" disabled="">Otro</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
                                 <label for="GustoInteres" class="form-label">Interés:</label>
                                 <select id="GustoInteres" class="form-select" name="GustoInteres" required>
                                     <option selected disabled value="">Seleccione:</option>
-                                    <option value="first">Amigos</option>
-                                    <option value="second">Pareja</option>
-                                    <option value="third" >Intimidad</option>
-                                    <option value="four">Folliamigos</option>
+                                    <option value="Amigos">Amigos</option>
+                                    <option value="Pareja">Pareja</option>
+                                    <option value="Intimidad" >Intimidad</option>
+                                    <option value="Folliamigos">Folliamigos</option>
                                 </select>
                                 
                             </div>
