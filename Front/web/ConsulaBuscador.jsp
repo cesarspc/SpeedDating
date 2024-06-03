@@ -1,3 +1,9 @@
+<%-- 
+    Document   : ConsulaBuscador
+    Created on : 3/06/2024, 1:18:21?p.?m.
+    Author     : Familia Mora
+--%>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -10,7 +16,7 @@
 
         <!--CSS-->
         <link rel="stylesheet" href="Recursos/css/GestionCita.css">
-        <title>Ingresar Buscador</title>
+        <title>Consultar Buscador</title>
         <style>
             a {
                 text-decoration: none;
@@ -39,44 +45,31 @@
 
             <div class="container-fluid" id="bonito">
 
-                <div><h1 class="texto" ><center>Gestión de Citas</center></h1></div>
+                <div><h1 class="texto" ><center>Consulta Buscador</center></h1></div>
 
                 <form method="post" class="">
                     <table class="table table-bordered">
                         <thead class="cabecera">
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Fecha y Hora</th>
-                                <th scope="col">Nombre Buscador</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Apellido</th>
                                 <th scope="col">Nombre Postulante</th>
-                                <th scope="col">Calificación Cita Buscador</th>
-                                <th scope="col">Calificación Cita Postulante</th>
-
+                                <th scope="col">Calificación Citas</th>
                             </tr>
                         </thead>
                         <tbody class="cuerpoTabla" id="cuerpoTabla">
-
+                            
                             <!-- SOLO ES UN EJEMPLO PQ ACA SE AÑADEN LOS DATOS CON LA API O JS -->
                             <tr>
-                                <td><input class="form-control" type="text" name="ID" value="01"></td>
-                                <td><input class="form-control" type="datetime-local" name="Fecha" value="xd"></td>
-                                <td><input class="form-control" type="text" name="NombreB" value="Juan"></td>
-                                <td><input class="form-control" type="text" name="NombreP" value="Marta"></td>
-                                <td><select id="CalificacionCita" class="form-select" name="CalificacionCita" required>
-                                        <option selected disabled value="">Seleccione:</option>
-                                        <option value="nada">No interés</option>
-                                        <option value="Amigos">Amigos</option>
-                                        <option value="Pareja" >Pareja</option>
-                                    </select></td>
-                                <td><select id="CalificacionCita" class="form-select" name="CalificacionCita" required>
-                                        <option selected disabled value="">Seleccione:</option>
-                                        <option value="nada">No interés</option>
-                                        <option value="Amigos">Amigos</option>
-                                        <option value="Pareja" >Pareja</option>
-                                    </select></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
 
                             </tr>
-
+                            
                         </tbody>
                     </table>
                     <button type="submit" class="btn btn-primary">Guardar Calificaciones</button>
@@ -86,7 +79,6 @@
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
                     © 2024 Universidad Distrital
-
                 </div>
             </footer>
         </div>
