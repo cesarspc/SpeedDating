@@ -1,0 +1,10 @@
+com\udistrital\SpeedDating\modelos\Buscador.class
+com\udistrital\SpeedDating\modelos\Cita.class
+com\udistrital\SpeedDating\repositorios\PostulanteRepository.class
+com\udistrital\SpeedDating\repositorios\CitaRepository.class
+com\udistrital\SpeedDating\modelos\Postulante.class
+com\udistrital\SpeedDating\repositorios\BuscadorRepository.class
+com\udistrital\SpeedDating\controladores\BuscadorController.class
+com\udistrital\SpeedDating\SpeedDatingApplication.class
+com\udistrital\SpeedDating\controladores\PostulanteController.class
+com\udistrital\SpeedDating\controladores\CitaController.class
