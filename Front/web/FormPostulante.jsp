@@ -44,7 +44,8 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center form_container pt-5">
-                        <form class="row g-3 " method="POST" action="//AQUI VA EL ACTION DE DONDE SE DIRIJE LA INFO//">
+                        
+                        <form class="row g-3 " id="formPostulante">
                             <div class="col-md-4 pt-15">
                                 <label for="NombrePostulante" class="form-label">Nombres:</label>
                                 <input type="text" name="NombrePostulante" class="form-control" id="NombrePostulante" required>
@@ -118,11 +119,11 @@
 
                             <div class="col-md-6">
                                 <label for="Disponibilidad" class="form-label">Disponibilidad para citas:</label>
-                                <select id="Disponibilidad" class="form-select" id name="Disponibilidad" required>
+                                <select id="Disponibilidad" class="form-select" name="Disponibilidad" required>
                                     <option selected disabled value="">Seleccione:</option>
-                                    <option Amigos="first">Fines de Semana</option>
-                                    <option value="Pareja">Entre Semana</option>
-                                    <option value="Pareja">Flexible</option>
+                                    <option value="Fines de Semana">Fines de Semana</option>
+                                    <option value="Entre Semana">Entre Semana</option>
+                                    <option value="Flexible">Flexible</option>
 
                                 </select>
                             </div>
@@ -143,5 +144,7 @@
                 </div>
             </footer>
         </div>
+
+        <script src="action-postulante.js"></script>
     </body>
 </html>

@@ -59,7 +59,7 @@ public class Postulante {
     private String interesPrincipal;
     
     @NonNull
-    private String diponibilidad;
+    private String disponibilidad;
     
     private boolean pagoHecho;
     
