@@ -50,7 +50,7 @@ public class PostulanteController {
         postulante1.setCorreo("correo1@example.com");
         postulante1.setTelefono("3121234567");
         postulante1.setInteresPrincipal("Interes1");
-        postulante1.setDiponibilidad("Disponible");
+        postulante1.setDisponibilidad("Disponible");
         postulante1.setPagoHecho(false);
 
         Postulante postulante2 = new Postulante();
@@ -65,7 +65,7 @@ public class PostulanteController {
         postulante2.setCorreo("correo2@example.com");
         postulante2.setTelefono("3121234568");
         postulante2.setInteresPrincipal("Interes2");
-        postulante2.setDiponibilidad("No disponible");
+        postulante2.setDisponibilidad("No disponible");
         postulante2.setPagoHecho(true);
 
         database.save(postulante1);
@@ -108,7 +108,6 @@ public class PostulanteController {
         if (postulante.getId() == null || !database.existsById(postulante.getId())) {
             return ResponseEntity.badRequest().build();
         }
-
         database.save(postulante);
         return ResponseEntity.ok(postulante);
     }
