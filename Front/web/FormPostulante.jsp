@@ -103,8 +103,8 @@
                             </div>
 
 
-                          
-                            <div class="col-md-4">
+
+                            <div class="col-md-6">
                                 <label for="InteresPrincipal" class="form-label">Interés Principal:</label>
                                 <select id="InteresPrincipal" class="form-select" id name="InteresPrincipal" required>
                                     <option selected disabled value="">Seleccione:</option>
@@ -113,19 +113,22 @@
                                     <option value="Intimidad" >Intimidad</option>
                                     <option value="Folliamigos">Folliamigos</option>
                                 </select>
-                                
+
                             </div>
-                            
-                            <div class="col-md-4">
-                                <label for="InteresPrincipal" class="form-label">Disponibilidad 1:</label>
-                                <input class="form-control" type="datetime-local" id="fecha1" name="fecha1" required>
+
+                            <div class="col-md-6">
+                                <label for="Disponibilidad" class="form-label">Disponibilidad para citas:</label>
+                                <select id="Disponibilidad" class="form-select" id name="Disponibilidad" required>
+                                    <option selected disabled value="">Seleccione:</option>
+                                    <option Amigos="first">Fines de Semana</option>
+                                    <option value="Pareja">Entre Semana</option>
+                                    <option value="Pareja">Flexible</option>
+
+                                </select>
                             </div>
-                            
-                            <div class="col-md-4">
-                                <label for="InteresPrincipal" class="form-label">Disponibilidad 2:</label>
-                                <input class="form-control" type="datetime-local" id="fecha1" name="fecha1" required>
-                            </div>
-                            
+
+
+
                             <div id="Boton" class="col-12">
                                 <button type="submit" id="botonForm" class="btn btn-primary" name="EnviarDatos">Enviar</button>
                             </div>
