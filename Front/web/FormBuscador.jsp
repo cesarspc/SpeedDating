@@ -134,7 +134,9 @@
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
-                                    <option value="disabled" disabled="">Otro</option>
+
+                                    <option value="Otro" disabled="">Otro</option>
+
                                 </select>
                             </div>
                             <div class="col-md-4">
