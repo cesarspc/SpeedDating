@@ -47,7 +47,7 @@
 
                 <div><h1 class="texto" ><center>Consulta Buscador</center></h1></div>
 
-                    <table class="table table-bordered">
+                    <table class="table table-bordered" id="tablaB">
                         <thead class="cabecera">
                             <tr>
                                 <th scope="col">ID</th>
@@ -67,26 +67,10 @@
                         </thead>
                         <tbody class="cuerpoTabla" id="cuerpoTabla">
 
-                            <!-- SOLO ES UN EJEMPLO PQ ACA SE AÑADEN LOS DATOS CON LA API O JS -->
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                            </tr>
-
                         </tbody>
                     </table>
             </div>
-
+            <script src="buscador/action-general-buscador.js"></script>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
                     © 2024 Universidad Distrital

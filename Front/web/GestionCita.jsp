@@ -63,7 +63,7 @@
                     <button type="submit" class="btn btn-primary">Guardar Calificaciones</button>
                 </form>
             </div>
-            <script src="action-gestion-cita.js"></script>
+            <script src="cita/action-gestion-cita.js"></script>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
                     © 2024 Universidad Distrital

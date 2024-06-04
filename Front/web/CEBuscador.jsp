@@ -119,7 +119,7 @@
                                 <div id="Boton" class="col-6">
                                     <input type="button" value="Eliminar" id="eliminar" class="btn btn-light" " disabled="">
                                 </div> 
-                                <script src="action-especifica-buscador.js"></script>
+                                <script src="buscador/action-especifica-buscador.js"></script>
 
                             </form>
                         </div>
