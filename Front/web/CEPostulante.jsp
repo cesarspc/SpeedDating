@@ -17,6 +17,9 @@
                 text-decoration: none;
                 color: black;
             }
+            #Ocultar2{
+                display: none;
+            }
         </style>
     </head>
     <body>
@@ -41,7 +44,7 @@
             <div class="container-fluid" id="bonito">
                 <div><center><h1>Consulta Específica Postulante</h1></center></div>
                 <div class="d-flex justify-content-center form_container">
-                    <form class="row row-cols-lg-auto g-3 align-items-center" method="POST" action="">
+                    <form class="row row-cols-lg-auto g-3 align-items-center" method="POST" action="" onsubmit="return consultar(event)">
                         <div class="col-12">
                             <div class="input-group">
                                 <div class="input-group-text"><span class="material-symbols-outlined">
@@ -61,8 +64,8 @@
 
                 <!-- A PARTI DE ACA SE DEBERIA DESPLEGAR EL FORM SOLO SI LA CONSULTA ES CORRECTA -->   
 
-                <div id="ficha" class="d-flex justify-content-center flex-grow-1">
-                    <div class="user_card">
+                <div id="ficha"  class="d-flex justify-content-center flex-grow-1">
+                    <div id="Ocultar2" class="user_card">
                         <div class="d-flex justify-content-center" id="PosicionLogo">
                             <div class="brand_logo_container">
                                 <img src="Recursos/Images/Postulante.png" class="brand_logo" id="brand_logo1" alt="Logo">
@@ -146,6 +149,26 @@
 
                 </div>
             </footer>
+            <script>
+            function consultar(event) {
+                event.preventDefault();
+                // Simulación de una consulta
+                var codigo = document.querySelector('input[name="txtCodigo"]').value;
+                if (codigo === "12345") { // Aquí va la lógica de la consulta real
+                    document.getElementById("Ocultar2").style.display = "block";
+                    // Aquí puedes rellenar el formulario con los datos obtenidos
+                    document.getElementById("NombreBuscador").value = "Juan";
+                    document.getElementById("ApellidoBuscador").value = "Pérez";
+                    document.getElementById("GeneroBuscador").value = "Masculino";
+                    document.getElementById("ProfesionBuscador").value = "Ingeniero";
+                    document.getElementById("CorreoBuscador").value = "juan.perez@example.com";
+                    document.getElementById("NumeroBuscador").value = "123456789";
+                    document.getElementById("EstadoPagoBuscador").value = "Pagado";
+                } else {
+                    alert("No se encontraron datos para el ID ingresado.");
+                }
+            }
+        </script>
         </div>
     </body>
 </html>
