@@ -59,7 +59,7 @@
                 </form>
             </div>
 
-            <script src="action-generar-cita.js"></script>
+            <script src="cita/action-generar-cita.js"></script>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
                     ? 2024 Universidad Distrital

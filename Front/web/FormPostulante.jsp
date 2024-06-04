@@ -145,6 +145,6 @@
             </footer>
         </div>
 
-        <script src="action-postulante.js"></script>
+        <script src="postulante/action-postulante.js"></script>
     </body>
 </html>
