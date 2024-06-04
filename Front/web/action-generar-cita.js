@@ -64,9 +64,9 @@ async function obtenerParejas() {
 // Manejo de evento de submit
 document.getElementById("formCita").addEventListener("submit", async function (event) {
     event.preventDefault();
-    alert("Registrando");
 
     enviarCitas(document.getElementById("cuerpoTabla")).then(() => {
+        alert("Registrando");
         window.location.href = "index.jsp";
     });
 });
