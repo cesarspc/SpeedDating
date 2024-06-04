@@ -12,7 +12,9 @@ body, html {
     padding: 20px;
     margin: 0 auto;
     flex: 1;
+    
 }
+
 .navbar-brand, #titulo {
     font-size: 40px;
     font-weight: 100;
