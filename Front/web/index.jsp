@@ -59,7 +59,7 @@
                                     Consulta Buscadores
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" id="fondo1" href="ConsulaBuscador.jsp">Consulta General</a></li>
+                                    <li><a class="dropdown-item" id="fondo1" href="ConsultaBuscador.jsp">Consulta General</a></li>
                                     <li><a class="dropdown-item" id="fondo2" href="CEBuscador.jsp">Gestión Específica</a></li>
                                 </ul>
                             </div>

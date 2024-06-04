@@ -37,11 +37,11 @@ async function enviarCitas(cuerpoTabla) {
             },
             body: JSON.stringify(campos),
         })
-                .then((response) => {
-                    respuesta = response.json;
-                    console.log(respuesta);
-                })
-                .catch(() => alert("Error al registrar cita"));
+            .then((response) => {
+                respuesta = response.json;
+                console.log(respuesta);
+            })
+            .catch(() => alert("Error al registrar cita"));
     }
 }
 
@@ -219,7 +219,6 @@ async function mostrarCitas() {
             mensajeError();
             return;
         }
-
     } catch (error) {
         mensajeError();
         return;
@@ -227,15 +226,15 @@ async function mostrarCitas() {
 
     dataCitas.forEach((cita, indice) => {
         agregarFila(
-                cita.id,
-                cita.fechaHora,
-                cita.nombreCompletoBuscador,
-                cita.nombreCompletoPostulante,
-                cita.calificacionBuscador,
-                cita.calificacionPostulante,
-                cita.resultadoCita,
-                indice
-                );
+            cita.id,
+            cita.fechaHora,
+            cita.nombreCompletoBuscador,
+            cita.nombreCompletoPostulante,
+            cita.calificacionBuscador,
+            cita.calificacionPostulante,
+            cita.resultadoCita,
+            indice
+        );
     });
 }
 
@@ -250,7 +249,7 @@ function mensajeError() {
 
     // Crear un nuevo elemento de párrafo para el mensaje
     const message = document.createElement("p");
-    message.textContent = "No hay citas para mostrar";
+    message.textContent = "No hay citas para mostrar. Agende una cita.";
     message.setAttribute("class", "cabecera");
 
     // Agregar el mensaje al contenedor de la tabla

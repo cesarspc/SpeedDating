@@ -36,7 +36,7 @@ public class PostulanteController {
     @GetMapping("/api/crearPostulantes")
     public void crearPostulantes() {
         /*
-    Ejemplo introducción de datos
+        Ejemplo introducción de datos
          */
         Postulante postulante1 = new Postulante();
         postulante1.setNombre("Andrea");
@@ -51,7 +51,7 @@ public class PostulanteController {
         postulante1.setTelefono("3121234567");
         postulante1.setInteresPrincipal("Interes1");
         postulante1.setDisponibilidad("Disponible");
-        postulante1.setPagoHecho(false);
+        postulante1.setPagoHecho(true);
 
         Postulante postulante2 = new Postulante();
         postulante2.setNombre("CEsarina");
