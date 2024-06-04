@@ -87,12 +87,7 @@
 
                                 <div class="col-md-4">
                                     <label for="GeneroBuscador" class="form-label">Género:</label>
-                                    <select id="GeneroBuscador" class="form-select" name="GeneroBuscador" disabled>
-                                        <option selected disabled value="">Seleccione:</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Femenino">Femenino</option>
-                                        <option value="Otro" disabled="">Otro</option>
-                                    </select>
+                                    <input type="text" name="GeneroBuscador" class="form-control" id="GeneroBuscador" disabled value="">
                                 </div>
 
 
