@@ -39,38 +39,33 @@
 
             <div class="container-fluid" id="bonito">
 
-                <div><h1 class="texto" ><center>Gestión de Citas</center></h1></div>
+                <div><h1 class="texto" ><center>Agendar citas</center></h1></div>
 
-                <form method="post" class="" id="formCita">
-                    <table class="table table-bordered">
+                <form class="" id="formCita">
+                    <table class="table table-bordered" id="tablaCita">
                         <thead class="cabecera">
                             <tr>
-                                <th scope="col">ID</th>
                                 <th scope="col">Fecha y Hora</th>
                                 <th scope="col">Nombre Buscador</th>
                                 <th scope="col">Nombre Postulante</th>
-                                <th scope="col">Calificación Cita Buscador</th>
-                                <th scope="col">Calificación Cita Postulante</th>
-                                <th scope="col">Resultado</th>
+
                             </tr>
                         </thead>
                         <tbody class="cuerpoTabla" id="cuerpoTabla">
-
-
 
                         </tbody>
                     </table>
                     <button type="submit" class="btn btn-primary">Guardar Calificaciones</button>
                 </form>
             </div>
-            <script src="action-gestion-cita.js"></script>
+
+            <script src="action-generar-cita.js"></script>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
-                    © 2024 Universidad Distrital
+                    ? 2024 Universidad Distrital
 
                 </div>
             </footer>
         </div>
-
     </body>
 </html>
