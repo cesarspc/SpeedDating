@@ -7,9 +7,9 @@ mostrarCitas();
 
 document.getElementById("formCita").addEventListener("submit", async function (event) {
     event.preventDefault();
-    alert("Registrando");
 
     enviarCitas(document.getElementById("cuerpoTabla")).then(() => {
+        alert("Registrando");
         window.location.href = "index.jsp";
     });
 });
@@ -37,11 +37,11 @@ async function enviarCitas(cuerpoTabla) {
             },
             body: JSON.stringify(campos),
         })
-            .then((response) => {
-                respuesta = response.json;
-                console.log(respuesta);
-            })
-            .catch(() => alert("Error al registrar cita"));
+                .then((response) => {
+                    respuesta = response.json;
+                    console.log(respuesta);
+                })
+                .catch(() => alert("Error al registrar cita"));
     }
 }
 
@@ -204,26 +204,55 @@ function agregarFila(id, fechaHora, nombreCompletoBuscador, nombreCompletoPostul
 }
 
 async function mostrarCitas() {
-    const peticion = await fetch("http://localhost:8081/api/citas", {
-        method: "GET",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        },
-    });
+    try {
+        const peticion = await fetch("http://localhost:8081/api/citas", {
+            method: "GET",
+            headers: {
+                Accept: "application/json",
+                "Content-Type": "application/json",
+            },
+        });
 
-    const dataCitas = await peticion.json();
+        const dataCitas = await peticion.json();
+
+        if (dataCitas.length === 0) {
+            mensajeError();
+            return;
+        }
+
+    } catch (error) {
+        mensajeError();
+        return;
+    }
 
     dataCitas.forEach((cita, indice) => {
         agregarFila(
-            cita.id,
-            cita.fechaHora,
-            cita.nombreCompletoBuscador,
-            cita.nombreCompletoPostulante,
-            cita.calificacionBuscador,
-            cita.calificacionPostulante,
-            cita.resultadoCita,
-            indice
-        );
+                cita.id,
+                cita.fechaHora,
+                cita.nombreCompletoBuscador,
+                cita.nombreCompletoPostulante,
+                cita.calificacionBuscador,
+                cita.calificacionPostulante,
+                cita.resultadoCita,
+                indice
+                );
     });
+}
+
+function mensajeError() {
+    const div = document.getElementById("bonito");
+
+    const form = document.getElementById("formCita");
+
+    if (form) {
+        form.remove();
+    }
+
+    // Crear un nuevo elemento de párrafo para el mensaje
+    const message = document.createElement("p");
+    message.textContent = "No hay citas para mostrar";
+    message.setAttribute("class", "cabecera");
+
+    // Agregar el mensaje al contenedor de la tabla
+    div.appendChild(message);
 }
