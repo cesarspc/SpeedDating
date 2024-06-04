@@ -97,14 +97,14 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><a href="GestionCita.jsp">Gestionar Cita</a> </li>
-                            <li class="list-group-item" id="AgendarCita"><button class="btn" id="fondo" type="button"  aria-expanded="false">Generar Cita</button></li>
+                            <li class="list-group-item"><a href="FormCita.jsp">Agendar Citas</button></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
         
-        <script src="action-generar-cita.js"></script>
+        <script src=""></script>
 
         <footer class="bg-dark text-center text-white mt-auto">
             <div class="text-center p-3" style="background-color: #F29A80">

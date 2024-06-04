@@ -40,8 +40,8 @@ public class CitaController {
         Cita cita2 = new Cita(LocalDateTime.of(2022, 6, 1, 2, 3), "3214", "4214");
 
         database.save(cita1);
-        database.save(cita2); 
-        
+        database.save(cita2);
+
     }
 
     @CrossOrigin("http://localhost:8080")
@@ -62,38 +62,60 @@ public class CitaController {
         }
 
     }
-    
+
     @CrossOrigin("http://localhost:8080")
     @PostMapping("/api/citas")
-    public ResponseEntity<Cita> guardarCita(@RequestBody Cita cita){
+    public ResponseEntity<Cita> guardarCita(@RequestBody Cita cita) {
         if (cita.getId() != null) {
             return ResponseEntity.badRequest().build();
         }
-        
+
         database.save(cita);
         return ResponseEntity.ok(cita);
     }
-    
+
     @CrossOrigin("http://localhost:8080")
     @PutMapping("/api/citas")
-    public ResponseEntity<Cita> actualizarCita(@RequestBody Cita cita){
+    public ResponseEntity<Cita> resultadosCita(@RequestBody Cita cita) {
         if (cita.getId() == null || !database.existsById(cita.getId())) {
             return ResponseEntity.badRequest().build();
         }
+
+        if (cita.getCalificacionBuscador() != Cita.MAS_QUE_AMISTAD
+                && cita.getCalificacionBuscador() != Cita.AMISTAD
+                && cita.getCalificacionBuscador() != Cita.NO_CONEXION) {
+            
+            return ResponseEntity.badRequest().build();
+            
+        }
         
+        if (cita.getCalificacionPostulante() != Cita.MAS_QUE_AMISTAD
+                && cita.getCalificacionPostulante() != Cita.AMISTAD
+                && cita.getCalificacionPostulante() != Cita.NO_CONEXION) {
+            
+            return ResponseEntity.badRequest().build();
+            
+        }
+        
+        if(cita.getCalificacionBuscador() == cita.getCalificacionPostulante()){
+            cita.setResultadoCita(cita.getCalificacionBuscador());
+        } else {
+            cita.setResultadoCita(Cita.NO_CONEXION);
+        }
+
         database.save(cita);
         return ResponseEntity.ok(cita);
     }
-    
+
     @CrossOrigin("http://localhost:8080")
     @DeleteMapping("/api/citas")
-    public ResponseEntity<Cita> eliminarCita(@RequestBody Cita cita){
+    public ResponseEntity<Cita> eliminarCita(@RequestBody Cita cita) {
         if (cita.getId() == null || !database.existsById(cita.getId())) {
             return ResponseEntity.badRequest().build();
         }
-        
+
         database.delete(cita);
         return ResponseEntity.noContent().build();
     }
-    
+
 }
