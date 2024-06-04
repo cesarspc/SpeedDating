@@ -52,7 +52,15 @@ async function obtenerParejas() {
             let buscador = `${dataBuscador[i].nombre} ${dataBuscador[i].apellido}`;
             let postulante = `${dataPostulante[j].nombre} ${dataPostulante[j].apellido}`;
 
-            if (gustosEncontrados > 2 && !esCitaDuplicada(mapeo, buscador, postulante)) {
+            console.log(dataBuscador[i].pagoHecho);
+            console.log(dataPostulante[j].pagoHecho);
+            console.log(gustosEncontrados);
+            if (
+                gustosEncontrados > 2 &&
+                !esCitaDuplicada(mapeo, buscador, postulante) &&
+                dataBuscador[i].pagoHecho &&
+                dataPostulante[j].pagoHecho
+            ) {
                 parejas.push([buscador, postulante]);
             }
         });
@@ -228,7 +236,7 @@ function mensajeError() {
 
     // Crear un nuevo elemento de párrafo para el mensaje
     const message = document.createElement("p");
-    message.textContent = "No hay citas para agendar";
+    message.textContent = "No hay citas para agendar. Agregue buscadores y postulantes con respectivos pagos.";
     message.setAttribute("class", "cabecera");
 
     // Agregar el mensaje al contenedor de la tabla
