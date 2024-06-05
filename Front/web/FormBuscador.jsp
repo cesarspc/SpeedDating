@@ -62,7 +62,7 @@
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
-                                    <option value="Otro" disabled="">Otro</option>
+                                    <option value="No binario">No binario</option>
                                 </select>
                             </div>
                             <div class="col-md-4">

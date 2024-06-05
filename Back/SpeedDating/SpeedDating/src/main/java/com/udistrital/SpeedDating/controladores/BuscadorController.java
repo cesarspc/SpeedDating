@@ -54,7 +54,7 @@ public class BuscadorController {
         buscador1.setGustoEstatura("1.80");
         buscador1.setGustoIdentidad("IdentidadGenero2");
         buscador1.setGustoEdad("30");
-        buscador1.setPagoHecho(false);
+        buscador1.setPagoHecho(true);
 
         Buscador buscador2 = new Buscador();
         buscador2.setNombre("Andres");
