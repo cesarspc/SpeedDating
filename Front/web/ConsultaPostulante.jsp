@@ -47,7 +47,7 @@
 
                 <div><h1 class="texto" ><center>Consulta Postulante</center></h1></div>
 
-                <table class="table table-bordered">
+                <table class="table table-bordered" id="tablaP">
                     <thead class="cabecera">
                         <tr>
                             <th scope="col">ID</th>
@@ -63,6 +63,7 @@
                             <th scope="col">Telefono</th>
                             <th scope="col">Interés Principal</th>
                             <th scope="col">Disponibilidad</th>
+                            <th scope="col">Pago</th>
 
 
 
@@ -71,27 +72,12 @@
                     <tbody class="cuerpoTabla" id="cuerpoTabla">
 
                         <!-- SOLO ES UN EJEMPLO PQ ACA SE AÑADEN LOS DATOS CON LA API O JS -->
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-
-                        </tr>
+                       
 
                     </tbody>
                 </table>
             </div>
-
+            <script src="postulante/action-general-postulante.js"></script>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
                     © 2024 Universidad Distrital

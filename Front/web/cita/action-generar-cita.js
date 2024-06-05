@@ -19,6 +19,45 @@ obtenerParejas()
         mensajeError();
     });
 
+// Manejo de evento de submit
+document.getElementById("formCita").addEventListener("", async function (event) {
+    event.preventDefault();
+
+    enviarCitas(document.getElementById("cuerpoTabla")).then(() => {
+        alert("Registrando");
+        window.location.href = "index.jsp";
+    });
+});
+
+function validarDisponibilidad(opcion, dateTime) {
+    const form = document.getElementById("formCita");
+    const submit = document.getElementById("disponibilidad");
+    switch (opcion) {
+        case "Fines de Semana":
+            let day = new Date(dateTime.value).getUTCDay();
+
+            dateTime.setCustomValidity("");
+
+            // No es domingo ni sabado
+            if (!(day === 0 || day === 6)) {
+                dateTime.setCustomValidity("La disponibilidad del postulante es fines de semana");
+            } else {
+                dateTime.setCustomValidity("");
+            }
+            if (!form.checkValidity()) {
+                submit.click();
+            }
+
+            break;
+        case "Entre Semana":
+            break;
+        case "Flexible":
+            break;
+        default:
+            break;
+    }
+}
+
 async function obtenerParejas() {
     const peticion = await fetch("http://localhost:8081/api/buscadores", {
         method: "GET",
@@ -68,16 +107,6 @@ async function obtenerParejas() {
 
     return parejas;
 }
-
-// Manejo de evento de submit
-document.getElementById("formCita").addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    enviarCitas(document.getElementById("cuerpoTabla")).then(() => {
-        alert("Registrando");
-        window.location.href = "index.jsp";
-    });
-});
 
 async function mapeoCitas() {
     try {

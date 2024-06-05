@@ -3,11 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 
-mostrarBuscadores();
+mostrarPostulantes();
 
-async function mostrarBuscadores() {
+async function mostrarPostulantes() {
     try {
-        const peticion = await fetch("http://localhost:8081/api/buscadores", {
+        const peticion = await fetch("http://localhost:8081/api/postulantes", {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -15,14 +15,14 @@ async function mostrarBuscadores() {
             },
         });
 
-        const dataBuscadores = await peticion.json();
+        const dataPostulantes = await peticion.json();
 
-        if (dataBuscadores.length === 0) {
+        if (dataPostulantes.length === 0) {
             mensajeError();
             return;
         }
 
-        dataBuscadores.forEach((cita) => {
+        dataPostulantes.forEach((cita) => {
             agregarFila(cita);
         });
     } catch (error) {
@@ -39,18 +39,18 @@ function agregarFila(data) {
 
     // Crear celdas para la nueva fila
     let celdas = [];
-    for (i = 0; i < 17; i++) {
+    for (i = 0; i < 14; i++) {
         celdas.push(document.createElement("td"));
     }
 
     // Agregar a fila
-    for (j = 0; j < 16; j++) {
+    for (j = 0; j < 13; j++) {
         celdas[j].textContent = data[claves[j]];
         fila.appendChild(celdas[j]);
     }
 
-    celdas[16].textContent = data[claves[16]] ? "Si" : "No";
-    fila.appendChild(celdas[16]);
+    celdas[13].textContent = data[claves[13]] ? "Si" : "No";
+    fila.appendChild(celdas[13]);
 
     cuerpoTabla.appendChild(fila);
 }
@@ -58,7 +58,7 @@ function agregarFila(data) {
 function mensajeError() {
     const div = document.getElementById("bonito");
 
-    const tabla = document.getElementById("tablaB");
+    const tabla = document.getElementById("tablaP");
 
     if (tabla) {
         tabla.remove();
@@ -66,7 +66,7 @@ function mensajeError() {
 
     // Crear un nuevo elemento de párrafo para el mensaje
     const message = document.createElement("p");
-    message.textContent = "No hay buscadores para mostrar. Registre uno.";
+    message.textContent = "No hay postulantes para mostrar. Registre uno.";
     message.setAttribute("class", "cabecera");
 
     // Agregar el mensaje al contenedor de la tabla

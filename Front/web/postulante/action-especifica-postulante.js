@@ -2,20 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
-let dataBuscadores = {};
-document.getElementById("formBuscador").addEventListener("submit", async function (event) {
+let dataPostulantes = {};
+document.getElementById("formPostulante").addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    dataBuscadores.pagoHecho = document.getElementById("EstadoPagoBuscador").value;
+    dataPostulantes.pagoHecho = document.getElementById("EstadoPagoPostulante").value;
 
     try {
-        const peticion = await fetch("http://localhost:8081/api/buscadores", {
+        const peticion = await fetch("http://localhost:8081/api/postulantes", {
             method: "PUT",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(dataBuscadores),
+            body: JSON.stringify(dataPostulantes),
         }).then(() => {
             alert("Registro actualizado");
             limpiarForm();
@@ -30,7 +30,7 @@ document.getElementById("formBuscar").addEventListener("submit", async function 
     event.preventDefault();
 
     try {
-        fetch(`http://localhost:8081/api/buscadores/${document.getElementById("inputId").value}`, {
+        fetch(`http://localhost:8081/api/postulantes/${document.getElementById("inputId").value}`, {
             method: "GET",
             headers: {
                 Accept: "application/json",
@@ -45,18 +45,18 @@ document.getElementById("formBuscar").addEventListener("submit", async function 
                 return response.json();
             })
             .then((data) => {
-                dataBuscadores = data;
+                dataPostulantes = data;
 
                 document.getElementById("actualizar").disabled = false;
                 document.getElementById("eliminar").disabled = false;
 
-                document.getElementById("NombreBuscador").value = dataBuscadores.nombre;
-                document.getElementById("ApellidoBuscador").value = dataBuscadores.apellido;
-                document.getElementById("GeneroBuscador").value = dataBuscadores.identidadGenero;
-                document.getElementById("ProfesionBuscador").value = dataBuscadores.profesion;
-                document.getElementById("CorreoBuscador").value = dataBuscadores.correo;
-                document.getElementById("NumeroBuscador").value = dataBuscadores.telefono;
-                document.getElementById("EstadoPagoBuscador").value = dataBuscadores.pagoHecho;
+                document.getElementById("NombrePostulante").value = dataPostulantes.nombre;
+                document.getElementById("ApellidoPostulante").value = dataPostulantes.apellido;
+                document.getElementById("GeneroPostulante").value = dataPostulantes.identidadGenero;
+                document.getElementById("ProfesionPostulante").value = dataPostulantes.profesion;
+                document.getElementById("CorreoPostulante").value = dataPostulantes.correo;
+                document.getElementById("NumeroPostulante").value = dataPostulantes.telefono;
+                document.getElementById("EstadoPagoPostulante").value = dataPostulantes.pagoHecho;
             })
             .catch((error) => {
                 console.error("Error:", error);
@@ -70,13 +70,13 @@ document.getElementById("formBuscar").addEventListener("submit", async function 
 
 document.getElementById("eliminar").addEventListener("click", async function () {
     try {
-        const peticion = await fetch("http://localhost:8081/api/buscadores", {
+        const peticion = await fetch("http://localhost:8081/api/postulantes", {
             method: "DELETE",
             headers: {
                 Accept: "application/json",
                 "Content-Type": "application/json",
             },
-            body: JSON.stringify(dataBuscadores),
+            body: JSON.stringify(dataPostulantes),
         }).then(() => {
             alert("Registro eliminado");
             limpiarForm();
@@ -90,5 +90,5 @@ document.getElementById("eliminar").addEventListener("click", async function () 
 function limpiarForm() {
     document.getElementById("actualizar").disabled = true;
     document.getElementById("eliminar").disabled = true;
-    document.getElementById("formBuscador").reset();
+    document.getElementById("formPostulante").reset();
 }
