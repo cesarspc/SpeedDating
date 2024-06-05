@@ -55,6 +55,7 @@
 
                         </tbody>
                     </table>
+                    <input id="disponibilidad" type="submit" style="display:none;" />
                     <button type="submit" class="btn btn-primary">Guardar Calificaciones</button>
                 </form>
             </div>

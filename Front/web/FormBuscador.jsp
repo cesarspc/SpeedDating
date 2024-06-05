@@ -67,11 +67,11 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="EdadBuscador" class="form-label">Edad:</label>
-                                <input type="number" name="EdadBuscador" class="form-control" id="EdadBuscador" placeholder="Ejemplo: 25" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" step="1" name="EdadBuscador" class="form-control" id="EdadBuscador" placeholder="Ejemplo: 25" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="EstaturaBuscador" class="form-label">Estatura:</label>
-                                <input type="number" name="EstaturaBuscador" class="form-control" id="EstaturaBuscador" placeholder="Ejemplo: 180" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" step="1" name="EstaturaBuscador" class="form-control" id="EstaturaBuscador" placeholder="Ejemplo: 180" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="ContexturaBuscador" class="form-label">Contextura Corporal:</label>
@@ -102,7 +102,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="NumeroBuscador" class="form-label">Telefono:</label>
-                                <input type="text" name="NumeroBuscador" id="NumeroBuscador"class="form-control" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="NumeroBuscador" id="NumeroBuscador"class="form-control" required>
                             </div>
 
 
@@ -122,11 +122,11 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="EstaturaPreferidaBuscador" class="form-label">Estatura:</label>
-                                <input type="number" name="EstaturaPreferidaBuscador" class="form-control" id="EstaturaPreferidaBuscador" placeholder="Ejemplo: 180" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="EstaturaPreferidaBuscador" class="form-control" id="EstaturaPreferidaBuscador" placeholder="Ejemplo: 180" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="EdadPreferidaBuscador" class="form-label">Edad:</label>
-                                <input type="number" name="EdadPreferidaBuscador" class="form-control" id="EdadPreferidaBuscador" placeholder="Ejemplo: 170" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="EdadPreferidaBuscador" class="form-control" id="EdadPreferidaBuscador" placeholder="Ejemplo: 170" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="GeneroPreferido" class="form-label">Genero:</label>
@@ -135,7 +135,7 @@
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
 
-                                    <option value="Otro" disabled="">Otro</option>
+                                    <option value="No binario">No binario</option>
 
                                 </select>
                             </div>
@@ -146,7 +146,6 @@
                                     <option value="Amigos">Amigos</option>
                                     <option value="Pareja">Pareja</option>
                                     <option value="Intimidad" >Intimidad</option>
-                                    <option value="Folliamigos">Folliamigos</option>
                                 </select>
                                 
                             </div>

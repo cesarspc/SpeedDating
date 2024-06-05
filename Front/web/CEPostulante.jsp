@@ -41,13 +41,13 @@
             <div class="container-fluid" id="bonito">
                 <div><center><h1>Consulta Específica Postulante</h1></center></div>
                 <div class="d-flex justify-content-center form_container">
-                    <form class="row row-cols-lg-auto g-3 align-items-center" method="POST" action="">
+                    <form class="row row-cols-lg-auto g-3 align-items-center" id="formBuscar">
                         <div class="col-12">
                             <div class="input-group">
                                 <div class="input-group-text"><span class="material-symbols-outlined">
                                         person
                                     </span></div>
-                                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="ID Postulante" name="txtCodigo"  >
+                                <input type="text" class="form-control" id="inputId" placeholder="ID Postulante" name="txtCodigo"  >
                             </div>
                         </div>
                         <div class="col-12">
@@ -77,62 +77,49 @@
                             <form class="row g-3" id="formPostulante">
                                 <div class="col-md-4 pt-15">
                                     <label for="NombrePostulante" class="form-label">Nombres:</label>
-                                    <input type="text" name="NombrePostulante" class="form-control" id="NombrePostulante" required value="">
+                                    <input type="text" name="NombrePostulante" class="form-control" id="NombrePostulante" disabled value="">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="ApellidoPostulante" class="form-label">Apellidos:</label>
-                                    <input type="text" name="ApellidoPostulante" class="form-control" id="ApellidoPostulante" required value="">
+                                    <input type="text" name="ApellidoPostulante" class="form-control" id="ApellidoPostulante" disabled value="">
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label for="GeneroPostulante" class="form-label">Género:</label>
-                                    <select id="GeneroPostulante" class="form-select" name="GeneroPostulante" required>
-                                        <option selected disabled value="">Seleccione:</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Femenino">Femenino</option>
-                                        <option value="Otro" disabled="">Otro</option>
-                                    </select>
+                                    <label for="GeneroPostulante" class="form-label">Genero: </label>
+                                    <input type="text" name="GeneroPostulante" class="form-control" id="GeneroPostulante" disabled value="">
                                 </div>
 
 
                                 <div class="col-md-6">
                                     <label for="ProfesionPostulante" class="form-label">Profesión/Oficio:</label>
-                                    <input type="text" name="ProfesionPostulante" id="ProfesionPostulante" class="form-control" required value="">
+                                    <input type="text" name="ProfesionPostulante" id="ProfesionPostulante" class="form-control" disabled value="">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="CorreoPostulante" class="form-label">Correo:</label>
-                                    <input type="email" name="CorreoPostulante" class="form-control" id="CorreoPostulante" required value="">
+                                    <input type="email" name="CorreoPostulante" class="form-control" id="CorreoPostulante" disabled value="">
                                 </div>
                                 <div class="col-md-6">
                                     <label for="NumeroPostulante" class="form-label">Teléfono:</label>
-                                    <input type="text" name="NumeroPostulante" id="NumeroPostulante"class="form-control" required value="">
+                                    <input type="text" name="NumeroPostulante" id="NumeroPostulante"class="form-control" disabled value="">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="EstadoPagoPostulante" class="form-label">Estado Pago:</label>
                                     <select id="EstadoPagoPostulante" class="form-select" name="EstadoPagoPostulante" required value="">
                                         <option selected disabled value="">Seleccione:</option>
-                                        <option value="Masculino">Pagado</option>
-                                        <option value="Femenino">Sin pagar</option>
+                                        <option value=true>Pagado</option>
+                                        <option value=false>Sin pagar</option>
                                     </select>
                                 </div>
 
                                 <div id="Boton" class="col-6">
-                                    <input type="button" value="Actualizar" id="actualizar" class="btn btn-light" >
+                                    <input type="submit" value="Actualizar" id="actualizar" class="btn btn-light" disabled="">
                                 </div> 
                                 <div id="Boton" class="col-6">
-                                    <input type="button" value="Eliminar" id="eliminar" class="btn btn-light" onclick="alerta()">
+                                    <input type="button" value="Eliminar" id="eliminar" class="btn btn-light" disabled="">
                                 </div> 
-                                <script type="text/javascript">
-                                    function alerta() {
-                                        var opcion = confirm("Esta seguro de que desea eliminar al usuario?");
-                                        if (opcion == true) {
-                                            document.FormActualizarEstudiante.action = '';
-                                            document.FormActualizarEstudiante.submit();
-                                        }
-                                    }
-                                </script>
+                                <script src="postulante/action-especifica-postulante.js"></script>
                             </form>
                         </div>
                     </div>

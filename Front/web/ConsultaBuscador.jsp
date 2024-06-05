@@ -61,6 +61,12 @@
                                 <th scope="col">Genero</th>
                                 <th scope="col">Correo</th>
                                 <th scope="col">Telefono</th>
+                                <th scope="col">Gusto Contextura</th>
+                                <th scope="col">Gusto Interes</th>
+                                <th scope="col">Gusto Estatura</th>
+                                <th scope="col">Gusto Identidad</th>
+                                <th scope="col">Gusto Edad</th>
+                                <th scope="col">Pago</th>
                                 
 
                             </tr>

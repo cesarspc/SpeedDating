@@ -60,16 +60,16 @@
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
-                                    <option value="disabled" disabled="">Otro</option>
+                                    <option value="No binario">No binario</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
                                 <label for="EdadPostulante" class="form-label">Edad:</label>
-                                <input type="number" name="EdadPostulante" class="form-control" id="EdadPostulante" placeholder="Ejemplo: 25" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" class="form-control" id="EdadPostulante" placeholder="Ejemplo: 25" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="EstaturaPostulante" class="form-label">Estatura:</label>
-                                <input type="number" name="EstaturaPostulante" class="form-control" id="EstaturaPostulante" placeholder="Ejemplo: 180" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="EstaturaPostulante" class="form-control" id="EstaturaPostulante" placeholder="Ejemplo: 180" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="ContexturaPostulante" class="form-label">Contextura Corporal:</label>
@@ -91,7 +91,7 @@
                                     <option value="Soltero">Soltero</option>
                                     <option value="Separado">Separado</option>
                                     <option value="Viudo">Viudo</option>
-                                    <option value="Complicado">Es Complicado</option>
+                                    <option value="Es Complicado">Es Complicado</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -100,7 +100,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="NumeroPostulante" class="form-label">Teléfono:</label>
-                                <input type="text" name="NumeroPostulante" id="NumeroPostulante"class="form-control" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="NumeroPostulante" id="NumeroPostulante"class="form-control" required>
                             </div>
 
 
@@ -112,7 +112,6 @@
                                     <option Amigos="first">Amigos</option>
                                     <option value="Pareja">Pareja</option>
                                     <option value="Intimidad" >Intimidad</option>
-                                    <option value="Folliamigos">Folliamigos</option>
                                 </select>
 
                             </div>
