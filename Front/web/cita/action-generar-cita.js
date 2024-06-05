@@ -12,7 +12,7 @@ obtenerParejas()
         }
 
         parejas.forEach((pareja, indice) => {
-            agregarFila(pareja[0], pareja[1], indice);
+            agregarFila(pareja[0], pareja[1], pareja[2], indice);
         });
     })
     .catch(() => {
@@ -20,7 +20,7 @@ obtenerParejas()
     });
 
 // Manejo de evento de submit
-document.getElementById("formCita").addEventListener("", async function (event) {
+document.getElementById("formCita").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     enviarCitas(document.getElementById("cuerpoTabla")).then(() => {
@@ -29,32 +29,42 @@ document.getElementById("formCita").addEventListener("", async function (event) 
     });
 });
 
+let dataPostulante = [];
+let dataBuscador = [];
+
 function validarDisponibilidad(opcion, dateTime) {
     const form = document.getElementById("formCita");
     const submit = document.getElementById("disponibilidad");
+
+    let validacion = true;
+    let mensaje = "";
+    let day = new Date(dateTime.value).getUTCDay();
+
     switch (opcion) {
         case "Fines de Semana":
-            let day = new Date(dateTime.value).getUTCDay();
-
-            dateTime.setCustomValidity("");
-
-            // No es domingo ni sabado
-            if (!(day === 0 || day === 6)) {
-                dateTime.setCustomValidity("La disponibilidad del postulante es fines de semana");
-            } else {
-                dateTime.setCustomValidity("");
-            }
-            if (!form.checkValidity()) {
-                submit.click();
-            }
-
+            validacion = !(day === 0 || day === 1);
+            mensaje = "La disponibilidad del postulante es fines de semana";
             break;
         case "Entre Semana":
-            break;
-        case "Flexible":
+            validacion = day === 0 || day === 1;
+            mensaje = "La disponibilidad del postulante es entre semana";
             break;
         default:
+            validacion = false;
+            mensaje = false;
             break;
+    }
+
+    dateTime.setCustomValidity("");
+
+    // Dependiendo la opcion valida
+    if (validacion) {
+        dateTime.setCustomValidity(mensaje);
+    } else {
+        dateTime.setCustomValidity("");
+    }
+    if (!form.checkValidity()) {
+        submit.click();
     }
 }
 
@@ -67,7 +77,7 @@ async function obtenerParejas() {
         },
     });
 
-    const dataBuscador = await peticion.json();
+    dataBuscador = await peticion.json();
 
     const peticion2 = await fetch("http://localhost:8081/api/postulantes", {
         method: "GET",
@@ -77,11 +87,11 @@ async function obtenerParejas() {
         },
     });
 
-    const dataPostulante = await peticion2.json();
+    dataPostulante = await peticion2.json();
 
-    const matrizGustos = await calcularGustos(dataBuscador, dataPostulante);
+    const matrizGustos = await calcularGustos();
 
-    let parejas = [];
+    let dataParejas = [];
 
     let mapeo = await mapeoCitas();
 
@@ -91,21 +101,18 @@ async function obtenerParejas() {
             let buscador = `${dataBuscador[i].nombre} ${dataBuscador[i].apellido}`;
             let postulante = `${dataPostulante[j].nombre} ${dataPostulante[j].apellido}`;
 
-            console.log(dataBuscador[i].pagoHecho);
-            console.log(dataPostulante[j].pagoHecho);
-            console.log(gustosEncontrados);
             if (
                 gustosEncontrados > 2 &&
                 !esCitaDuplicada(mapeo, buscador, postulante) &&
                 dataBuscador[i].pagoHecho &&
                 dataPostulante[j].pagoHecho
             ) {
-                parejas.push([buscador, postulante]);
+                dataParejas.push([buscador, postulante, dataPostulante[j].disponibilidad]);
             }
         });
     });
 
-    return parejas;
+    return dataParejas;
 }
 
 async function mapeoCitas() {
@@ -149,7 +156,7 @@ function compararValores(String1, String2, diferenciaEsperada) {
     return diferencia <= diferenciaEsperada;
 }
 
-function calcularGustos(dataBuscador, dataPostulante) {
+function calcularGustos() {
     const numBuscadores = dataBuscador.length;
     const numPostulantes = dataPostulante.length;
 
@@ -209,7 +216,7 @@ async function enviarCitas(cuerpoTabla) {
 }
 
 // Agrega fila al body de la tabla con nombres de pareja
-function agregarFila(nombreBuscador, nombrePostulante, indice) {
+function agregarFila(nombreBuscador, nombrePostulante, disponibilidad, indice) {
     let cuerpoTabla = document.getElementById("cuerpoTabla");
     // Crear una nueva fila
     let fila = document.createElement("tr");
@@ -252,6 +259,14 @@ function agregarFila(nombreBuscador, nombrePostulante, indice) {
     fila.appendChild(celda3);
 
     cuerpoTabla.appendChild(fila);
+
+    document.getElementById(`Fecha${indice}`).addEventListener("change", async function () {
+        validarDisponibilidad(disponibilidad, document.getElementById(`Fecha${indice}`));
+    });
+
+    document.getElementById(`Fecha${indice}`).addEventListener("blur", async function () {
+        validarDisponibilidad(disponibilidad, document.getElementById(`Fecha${indice}`));
+    });
 }
 
 function mensajeError() {

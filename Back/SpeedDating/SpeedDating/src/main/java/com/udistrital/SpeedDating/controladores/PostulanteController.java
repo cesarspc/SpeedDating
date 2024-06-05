@@ -50,7 +50,7 @@ public class PostulanteController {
         postulante1.setCorreo("correo1@example.com");
         postulante1.setTelefono("3121234567");
         postulante1.setInteresPrincipal("Interes1");
-        postulante1.setDisponibilidad("Disponible");
+        postulante1.setDisponibilidad("Fines de Semana");
         postulante1.setPagoHecho(true);
 
         Postulante postulante2 = new Postulante();
@@ -65,7 +65,7 @@ public class PostulanteController {
         postulante2.setCorreo("correo2@example.com");
         postulante2.setTelefono("3121234568");
         postulante2.setInteresPrincipal("Interes2");
-        postulante2.setDisponibilidad("No disponible");
+        postulante2.setDisponibilidad("Fines de Semana");
         postulante2.setPagoHecho(true);
         
         Postulante postulante3 = new Postulante();
@@ -80,7 +80,7 @@ public class PostulanteController {
         postulante3.setCorreo("correo2@example.com");
         postulante3.setTelefono("3121234568");
         postulante3.setInteresPrincipal("Interes2");
-        postulante3.setDisponibilidad("No disponible");
+        postulante3.setDisponibilidad("Entre Semana");
         postulante3.setPagoHecho(true);
         
         Postulante postulante4 = new Postulante();
@@ -95,7 +95,7 @@ public class PostulanteController {
         postulante4.setCorreo("correo2@example.com");
         postulante4.setTelefono("3121234568");
         postulante4.setInteresPrincipal("Interes2");
-        postulante4.setDisponibilidad("No disponible");
+        postulante4.setDisponibilidad("Entre Semana");
         postulante4.setPagoHecho(true);
 
         database.save(postulante1);
