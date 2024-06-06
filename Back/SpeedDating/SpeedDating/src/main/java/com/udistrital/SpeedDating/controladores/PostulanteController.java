@@ -28,11 +28,19 @@ public class PostulanteController {
 
     PostulanteRepository database;
 
+    /**
+ * Controlador REST para manejar las operaciones CRUD relacionadas con los postulantes.
+ *
+ * @author juan-dev
+ */
     public PostulanteController(PostulanteRepository bd) {
 
         this.database = bd;
     }
 
+    /**
+     * Crea y guarda varios postulantes de ejemplo en la base de datos.
+     */
     @GetMapping("/api/crearPostulantes")
     public void crearPostulantes() {
         /*
@@ -104,12 +112,23 @@ public class PostulanteController {
         database.save(postulante4);
     }
 
+    /**
+     * Obtiene una lista de todos los postulantes almacenados en la base de datos.
+     *
+     * @return una lista de objetos Postulante
+     */
     @CrossOrigin("http://localhost:8080")
     @GetMapping("/api/postulantes")
     public List<Postulante> obtenerPosutalantes() {
         return database.findAll();
     }
 
+    /**
+     * Obtiene un postulante específico por su ID.
+     *
+     * @param id el ID del postulante a obtener
+     * @return un objeto ResponseEntity con el postulante si se encuentra, o un código de error si no se encuentra
+     */
     @CrossOrigin("http://localhost:8080")
     @GetMapping("/api/postulantes/{id}")
     public ResponseEntity<Postulante> obtenerPostulanteById(@PathVariable Long id) {
@@ -123,6 +142,12 @@ public class PostulanteController {
 
     }
 
+    /**
+     * Guarda un nuevo postulante en la base de datos.
+     *
+     * @param postulante el objeto Postulante a guardar
+     * @return un objeto ResponseEntity con el postulante guardado, o un código de error si ocurre algún problema
+     */
     @CrossOrigin("http://localhost:8080")
     @PostMapping("/api/postulantes")
     public ResponseEntity<Postulante> guardarPostulante(@RequestBody Postulante postulante) {
@@ -134,6 +159,12 @@ public class PostulanteController {
         return ResponseEntity.ok(postulante);
     }
 
+    /**
+     * Actualiza un postulante existente en la base de datos.
+     *
+     * @param postulante el objeto Postulante con los datos actualizados
+     * @return un objeto ResponseEntity con el postulante actualizado, o un código de error si ocurre algún problema
+     */
     @CrossOrigin("http://localhost:8080")
     @PutMapping("/api/postulantes")
     public ResponseEntity<Postulante> actualizarPostulante(@RequestBody Postulante postulante) {
@@ -144,6 +175,12 @@ public class PostulanteController {
         return ResponseEntity.ok(postulante);
     }
 
+    /**
+     * Elimina un postulante existente de la base de datos.
+     *
+     * @param postulante el objeto Postulante a eliminar
+     * @return un objeto ResponseEntity sin contenido si la operación fue exitosa, o un código de error si ocurre algún problema
+     */
     @CrossOrigin("http://localhost:8080")
     @DeleteMapping("/api/postulantes")
     public ResponseEntity<Postulante> eliminarPostulante(@RequestBody Postulante postulante) {
