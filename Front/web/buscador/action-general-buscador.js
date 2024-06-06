@@ -5,6 +5,7 @@
 
 mostrarBuscadores();
 
+// Muestra segun las citas en el repositorio, por filas cada cita
 async function mostrarBuscadores() {
     try {
         const peticion = await fetch("http://localhost:8081/api/buscadores", {

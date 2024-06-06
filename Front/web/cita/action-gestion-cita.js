@@ -7,6 +7,7 @@ mostrarCitas();
 let idsBuscador = [];
 let idsPostulante = [];
 
+// Maneja evento de actualizar cita
 document.getElementById("formCita").addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -16,6 +17,7 @@ document.getElementById("formCita").addEventListener("submit", async function (e
     });
 });
 
+// Envia por POST citas
 async function enviarCitas(cuerpoTabla) {
     let filas = cuerpoTabla.getElementsByTagName("tr");
 

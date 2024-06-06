@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 
+// Maneja evento de agregar postulante
 document.getElementById("formPostulante").addEventListener("submit", async function (event) {
     event.preventDefault();
     let campos = {};
@@ -30,7 +31,7 @@ document.getElementById("formPostulante").addEventListener("submit", async funct
         return;
     }
     
-    
+    // Manda datos
     const peticion = await fetch("http://localhost:8081/api/postulantes", {
         method: "POST",
         headers: {

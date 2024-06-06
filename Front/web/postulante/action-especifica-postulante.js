@@ -3,6 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 let dataPostulantes = {};
+
+//Obtiene cuando se envia formulario de actualizar
 document.getElementById("formPostulante").addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -26,6 +28,7 @@ document.getElementById("formPostulante").addEventListener("submit", async funct
     }
 });
 
+// Obtiene cuando se busca un id
 document.getElementById("formBuscar").addEventListener("submit", async function (event) {
     event.preventDefault();
 
@@ -68,8 +71,11 @@ document.getElementById("formBuscar").addEventListener("submit", async function 
     }
 });
 
+// Obtiene evento de presionar boton eliminar
 document.getElementById("eliminar").addEventListener("click", async function () {
     try {
+        
+        //Uso de metodo de DELETE
         const peticion = await fetch("http://localhost:8081/api/postulantes", {
             method: "DELETE",
             headers: {

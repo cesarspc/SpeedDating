@@ -5,6 +5,7 @@
 
 mostrarPostulantes();
 
+// Muestra en la tabla los postulantes obtenidos
 async function mostrarPostulantes() {
     try {
         const peticion = await fetch("http://localhost:8081/api/postulantes", {
@@ -21,7 +22,8 @@ async function mostrarPostulantes() {
             mensajeError();
             return;
         }
-
+        
+        // Para cada postulante encontrado agrega fila
         dataPostulantes.forEach((cita) => {
             agregarFila(cita);
         });

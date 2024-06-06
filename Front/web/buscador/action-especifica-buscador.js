@@ -3,11 +3,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 let dataBuscadores = {};
+
+// Captura cuando se presiona boton actualizar
 document.getElementById("formBuscador").addEventListener("submit", async function (event) {
     event.preventDefault();
 
     dataBuscadores.pagoHecho = document.getElementById("EstadoPagoBuscador").value;
-
+    
+    // Actualizacion de datos
     try {
         const peticion = await fetch("http://localhost:8081/api/buscadores", {
             method: "PUT",
@@ -26,9 +29,11 @@ document.getElementById("formBuscador").addEventListener("submit", async functio
     }
 });
 
+// Captura cuando se busca un id
 document.getElementById("formBuscar").addEventListener("submit", async function (event) {
     event.preventDefault();
-
+    
+    // Obtiene los datos del buscador que se buscó
     try {
         fetch(`http://localhost:8081/api/buscadores/${document.getElementById("inputId").value}`, {
             method: "GET",
@@ -68,6 +73,7 @@ document.getElementById("formBuscar").addEventListener("submit", async function 
     }
 });
 
+// Maneja evento de presionar boton eliminar
 document.getElementById("eliminar").addEventListener("click", async function () {
     try {
         const peticion = await fetch("http://localhost:8081/api/buscadores", {

@@ -5,12 +5,16 @@
 datacitas = [];
 resultados = [];
 
+// Maneja evento de presionar "finalizar"
 document.getElementById("botonForm").addEventListener("click", async function (event) {
     event.preventDefault();
+    alert("Enviando correos");
     enviarCorreos();
 });
 
+// Envia correos para cada cita
 async function enviarCorreos() {
+    
     // Buscadores
     dataCitas = await obtenerCitas();
 
@@ -51,6 +55,7 @@ async function enviarCorreos() {
         .catch((err) => {});
 }
 
+// Postea el email con metodo POST
 function postCorreo(destinatario, asunto, mensaje) {
     let campos = {};
 
@@ -73,6 +78,7 @@ function postCorreo(destinatario, asunto, mensaje) {
         .catch(() => alert("Error al enviar correo"));
 }
 
+// Compruba que todas las citas esten calificadas
 function comprobarCitas() {
     const nCitas = dataCitas.length;
     let calificadas = 0;
@@ -89,6 +95,7 @@ function comprobarCitas() {
     return true;
 }
 
+// Obtiene para cada cita el buscador, postulante y el resultado
 async function obtenerResultados() {
     const promesas = dataCitas.map(async (cita) => {
         try {
@@ -106,6 +113,7 @@ async function obtenerResultados() {
     resultados = await Promise.all(promesas);
 }
 
+// Obtiene la data de todas las citas
 async function obtenerCitas() {
     try {
         const peticion = await fetch(`http://localhost:8081/api/citas`, {
@@ -130,6 +138,7 @@ async function obtenerCitas() {
     }
 }
 
+// Obtiene persona de buscador o postulante segun el id
 async function obtenerPersona(repositorio, id) {
     repositorios = ["buscadores", "postulantes"];
     try {
