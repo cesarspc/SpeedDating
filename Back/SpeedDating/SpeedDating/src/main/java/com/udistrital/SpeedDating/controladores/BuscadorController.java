@@ -47,7 +47,7 @@ public class BuscadorController {
         buscador1.setContextura("Contextura1");
         buscador1.setEstadoCivil("Soltero");
         buscador1.setIdentidadGenero("IdentidadGenero1");
-        buscador1.setCorreo("correo1@example.com");
+        buscador1.setCorreo("cesaraupc@gmail.com");
         buscador1.setTelefono("3121234567");
         buscador1.setGustoContextura("Contextura2");
         buscador1.setGustoInteres("Interes1");

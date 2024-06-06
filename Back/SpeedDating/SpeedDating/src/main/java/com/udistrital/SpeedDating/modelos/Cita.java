@@ -43,6 +43,8 @@ public class Cita {
     private int calificacionBuscador;
     private int calificacionPostulante;
     private int resultadoCita;
+    private Long idBuscador;
+    private Long idPostulante;
 
     public Cita (){
         super();

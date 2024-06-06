@@ -17,9 +17,6 @@
                 text-decoration: none;
                 color: black;
             }
-            #Ocultar2{
-                display: none;
-            }
         </style>
     </head>
     <body>
@@ -42,7 +39,7 @@
             </nav>
 
             <div class="container-fluid" id="bonito">
-                <div><center><h1>Consulta Especï¿½fica Postulante</h1></center></div>
+                <div><center><h1>Consulta Específica Postulante</h1></center></div>
                 <div class="d-flex justify-content-center form_container">
                     <form class="row row-cols-lg-auto g-3 align-items-center" id="formBuscar">
                         <div class="col-12">
@@ -64,8 +61,8 @@
 
                 <!-- A PARTI DE ACA SE DEBERIA DESPLEGAR EL FORM SOLO SI LA CONSULTA ES CORRECTA -->   
 
-                <div id="ficha"  class="d-flex justify-content-center flex-grow-1">
-                    <div id="Ocultar2" class="user_card">
+                <div id="ficha" class="d-flex justify-content-center flex-grow-1">
+                    <div class="user_card">
                         <div class="d-flex justify-content-center" id="PosicionLogo">
                             <div class="brand_logo_container">
                                 <img src="Recursos/Images/Postulante.png" class="brand_logo" id="brand_logo1" alt="Logo">
@@ -94,7 +91,7 @@
 
 
                                 <div class="col-md-6">
-                                    <label for="ProfesionPostulante" class="form-label">Profesiï¿½n/Oficio:</label>
+                                    <label for="ProfesionPostulante" class="form-label">Profesión/Oficio:</label>
                                     <input type="text" name="ProfesionPostulante" id="ProfesionPostulante" class="form-control" disabled value="">
                                 </div>
 
@@ -103,7 +100,7 @@
                                     <input type="email" name="CorreoPostulante" class="form-control" id="CorreoPostulante" disabled value="">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="NumeroPostulante" class="form-label">Telï¿½fono:</label>
+                                    <label for="NumeroPostulante" class="form-label">Teléfono:</label>
                                     <input type="text" name="NumeroPostulante" id="NumeroPostulante"class="form-control" disabled value="">
                                 </div>
 
@@ -131,30 +128,10 @@
             </div>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
-                    ï¿½ 2024 Universidad Distrital
+                    © 2024 Universidad Distrital
 
                 </div>
             </footer>
-            <script>
-            function consultar(event) {
-                event.preventDefault();
-                // Simulaciï¿½n de una consulta
-                var codigo = document.querySelector('input[name="txtCodigo"]').value;
-                if (codigo === "12345") { // Aquï¿½ va la lï¿½gica de la consulta real
-                    document.getElementById("Ocultar2").style.display = "block";
-                    // Aquï¿½ puedes rellenar el formulario con los datos obtenidos
-                    document.getElementById("NombreBuscador").value = "Juan";
-                    document.getElementById("ApellidoBuscador").value = "Pï¿½rez";
-                    document.getElementById("GeneroBuscador").value = "Masculino";
-                    document.getElementById("ProfesionBuscador").value = "Ingeniero";
-                    document.getElementById("CorreoBuscador").value = "juan.perez@example.com";
-                    document.getElementById("NumeroBuscador").value = "123456789";
-                    document.getElementById("EstadoPagoBuscador").value = "Pagado";
-                } else {
-                    alert("No se encontraron datos para el ID ingresado.");
-                }
-            }
-        </script>
         </div>
     </body>
 </html>
