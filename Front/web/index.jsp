@@ -40,7 +40,7 @@
                         <li><a class="nav-link active" aria-current="page" href="index.jsp">INICIO</a></li>
                         
                     </div>
-                </div>
+                
             </div>
         </nav>
 
