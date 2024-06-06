@@ -8,6 +8,21 @@ body, html {
     font-family: Dating;
     src: url(../Dating.ttf);
 }
+
+#botonForm{
+    color: white;
+    background-color: #bd4c42;
+    border: none;
+}
+#Boton {
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+#botonForm:hover{
+    background: #F29A80;
+}
+
 h1{
     font-size: 40px;
     font-weight: 100;
@@ -40,12 +55,8 @@ h1{
 }
 .cuerpoTabla{
     background-color: #ffbba8;
-    
+
 }
 .form-control{
     background-color: #efefef;
 }
-
-
-
-

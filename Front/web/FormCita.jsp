@@ -1,9 +1,3 @@
-<%-- 
-    Document   : ConsulaBuscador
-    Created on : 3/06/2024, 1:18:21?p.?m.
-    Author     : Familia Mora
---%>
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,7 +10,7 @@
 
         <!--CSS-->
         <link rel="stylesheet" href="Recursos/css/GestionCita.css">
-        <title>Consultar Buscador</title>
+        <title>Ingresar Buscador</title>
         <style>
             a {
                 text-decoration: none;
@@ -36,60 +30,41 @@
                     </a>
                     <div>
                         <div class="navbar-nav">
-                            <li><a class="nav-link active" aria-current="page" href="index.php">INICIO</a></li>
-                            <li><a class="nav-link" href="nosotros.php" style="color: white">NOSOTROS</a></li>
-                        </div>
+                        <li><a class="nav-link active" aria-current="page" href="index.jsp">INICIO</a></li>
+                        
+                    </div>
                     </div>
                 </div>
             </nav>
 
             <div class="container-fluid" id="bonito">
 
-                <div><h1 class="texto" ><center>Consulta Buscador</center></h1></div>
+                <div><h1 class="texto" ><center>Agendar citas</center></h1></div>
 
-                    <table class="table table-bordered">
+                <form class="" id="formCita">
+                    <table class="table table-bordered" id="tablaCita">
                         <thead class="cabecera">
                             <tr>
-                                <th scope="col">ID</th>
-                                <th scope="col">Nombre</th>
-                                <th scope="col">Apellido</th>
-                                <th scope="col">Edad</th>
-                                <th scope="col">Estatura</th>
-                                <th scope="col">Profesion</th>
-                                <th scope="col">Contextura</th>
-                                <th scope="col">Estado Civil</th>
-                                <th scope="col">Genero</th>
-                                <th scope="col">Correo</th>
-                                <th scope="col">Telefono</th>
-                                
+                                <th scope="col">Fecha y Hora</th>
+                                <th scope="col">Nombre Buscador</th>
+                                <th scope="col">Nombre Postulante</th>
 
                             </tr>
                         </thead>
                         <tbody class="cuerpoTabla" id="cuerpoTabla">
 
-                            <!-- SOLO ES UN EJEMPLO PQ ACA SE AÑADEN LOS DATOS CON LA API O JS -->
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                            </tr>
-
                         </tbody>
                     </table>
+                    <input id="disponibilidad" type="submit" style="display:none;" />
+                    <button type="submit" class="btn btn-primary">Guardar Calificaciones</button>
+                </form>
             </div>
 
+            <script src="cita/action-generar-cita.js"></script>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
-                    © 2024 Universidad Distrital
+                    ? 2024 Universidad Distrital
+
                 </div>
             </footer>
         </div>

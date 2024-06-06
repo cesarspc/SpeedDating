@@ -23,16 +23,39 @@ document.getElementById("formBuscador").addEventListener("submit", async functio
     campos.gustoEstatura = document.getElementById("EstaturaPreferidaBuscador").value;
     campos.gustoIdentidad = document.getElementById("GeneroPreferido").value;
     campos.gustoEdad = document.getElementById("EdadPreferidaBuscador").value;
+    
+    if (campos.edad < 25 || campos.edad > 35){
+        alert("Edad invalida para la inscripcion");
+        return;
+    }
+    
+    if (campos.gustoEdad < 25 || campos.gustoEdad > 35){
+        alert("Gusto edad invalido para la inscripcion");
+        return;
+    }
 
+    if (campos.estatura < 100 || campos.estatura > 250){
+        alert("Estatura invalida para la inscripcion");
+        return;
+    }
+    
+    if (campos.gustoEstatura < 100 || campos.gustoEstatura > 250){
+        alert("Gusto estatura invalido para la inscripcion");
+        return;
+    }
+    
+    
     const peticion = await fetch("http://localhost:8081/api/buscadores", {
         method: "POST",
         headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
         },
-        body: JSON.stringify(campos),
+        body: JSON.stringify(campos)
     });
 
     const respuesta = await peticion.json();
     console.log(respuesta);
+    alert("Registrado correctamente");
+    document.getElementById('formBuscador').reset();
 });

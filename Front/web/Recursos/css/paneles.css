@@ -4,6 +4,20 @@ body, html {
     height: 100%;
     background-color: #efefef;
 }
+#botonForm{
+    color: white;
+    background-color: #bd4c42;
+    border: none;
+}
+#Boton {
+    
+    justify-content: center;
+    display: flex;
+    margin-bottom: 20px;
+}
+#botonForm:hover{
+    background: #F29A80;
+}
 #ficha {
     padding: 20px;
     margin: 0 auto;

@@ -36,10 +36,10 @@ public class PostulanteController {
     @GetMapping("/api/crearPostulantes")
     public void crearPostulantes() {
         /*
-    Ejemplo introducción de datos
+        Ejemplo introducción de datos
          */
         Postulante postulante1 = new Postulante();
-        postulante1.setNombre("Nombre1");
+        postulante1.setNombre("Andrea");
         postulante1.setApellido("Apellido1");
         postulante1.setEdad("25");
         postulante1.setEstatura("1.70");
@@ -50,11 +50,11 @@ public class PostulanteController {
         postulante1.setCorreo("correo1@example.com");
         postulante1.setTelefono("3121234567");
         postulante1.setInteresPrincipal("Interes1");
-        postulante1.setDiponibilidad("Disponible");
-        postulante1.setPagoHecho(false);
+        postulante1.setDisponibilidad("Fines de Semana");
+        postulante1.setPagoHecho(true);
 
         Postulante postulante2 = new Postulante();
-        postulante2.setNombre("Nombre2");
+        postulante2.setNombre("CEsarina");
         postulante2.setApellido("Apellido2");
         postulante2.setEdad("30");
         postulante2.setEstatura("1.80");
@@ -65,11 +65,43 @@ public class PostulanteController {
         postulante2.setCorreo("correo2@example.com");
         postulante2.setTelefono("3121234568");
         postulante2.setInteresPrincipal("Interes2");
-        postulante2.setDiponibilidad("No disponible");
+        postulante2.setDisponibilidad("Fines de Semana");
         postulante2.setPagoHecho(true);
+        
+        Postulante postulante3 = new Postulante();
+        postulante3.setNombre("Daniela");
+        postulante3.setApellido("Apellido2");
+        postulante3.setEdad("30");
+        postulante3.setEstatura("1.80");
+        postulante3.setProfesion("Profesion2");
+        postulante3.setContextura("Contextura2");
+        postulante3.setEstadoCivil("Soltero");
+        postulante3.setIdentidadGenero("IdentidadGenero1");
+        postulante3.setCorreo("correo2@example.com");
+        postulante3.setTelefono("3121234568");
+        postulante3.setInteresPrincipal("Interes2");
+        postulante3.setDisponibilidad("Entre Semana");
+        postulante3.setPagoHecho(true);
+        
+        Postulante postulante4 = new Postulante();
+        postulante4.setNombre("Juanita");
+        postulante4.setApellido("Apellido2");
+        postulante4.setEdad("30");
+        postulante4.setEstatura("1.80");
+        postulante4.setProfesion("Profesion2");
+        postulante4.setContextura("Contextura2");
+        postulante4.setEstadoCivil("Soltero");
+        postulante4.setIdentidadGenero("IdentidadGenero1");
+        postulante4.setCorreo("correo2@example.com");
+        postulante4.setTelefono("3121234568");
+        postulante4.setInteresPrincipal("Interes2");
+        postulante4.setDisponibilidad("Entre Semana");
+        postulante4.setPagoHecho(true);
 
         database.save(postulante1);
         database.save(postulante2);
+        database.save(postulante3);
+        database.save(postulante4);
     }
 
     @CrossOrigin("http://localhost:8080")
@@ -97,7 +129,7 @@ public class PostulanteController {
         if (postulante.getId() != null) {
             return ResponseEntity.badRequest().build();
         }
-
+        
         database.save(postulante);
         return ResponseEntity.ok(postulante);
     }
@@ -108,7 +140,6 @@ public class PostulanteController {
         if (postulante.getId() == null || !database.existsById(postulante.getId())) {
             return ResponseEntity.badRequest().build();
         }
-
         database.save(postulante);
         return ResponseEntity.ok(postulante);
     }

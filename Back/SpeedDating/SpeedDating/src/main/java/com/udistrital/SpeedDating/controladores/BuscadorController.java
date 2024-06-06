@@ -39,7 +39,7 @@ public class BuscadorController {
     Ejemplo introducción de datos
          */
         Buscador buscador1 = new Buscador();
-        buscador1.setNombre("Nombre1");
+        buscador1.setNombre("Cesar");
         buscador1.setApellido("Apellido1");
         buscador1.setEdad("25");
         buscador1.setEstatura("1.70");
@@ -54,10 +54,10 @@ public class BuscadorController {
         buscador1.setGustoEstatura("1.80");
         buscador1.setGustoIdentidad("IdentidadGenero2");
         buscador1.setGustoEdad("30");
-        buscador1.setPagoHecho(false);
+        buscador1.setPagoHecho(true);
 
         Buscador buscador2 = new Buscador();
-        buscador2.setNombre("Nombre2");
+        buscador2.setNombre("Andres");
         buscador2.setApellido("Apellido2");
         buscador2.setEdad("30");
         buscador2.setEstatura("1.80");
