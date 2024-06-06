@@ -126,7 +126,7 @@
                             </div>
                             <div class="col-md-4">
                                 <label for="EdadPreferidaBuscador" class="form-label">Edad:</label>
-                                <input type="text" inputmode="numeric" pattern="\d*" name="EdadPreferidaBuscador" class="form-control" id="EdadPreferidaBuscador" placeholder="Ejemplo: 170" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="EdadPreferidaBuscador" class="form-control" id="EdadPreferidaBuscador" placeholder="Ejemplo: 35" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="GeneroPreferido" class="form-label">Genero:</label>

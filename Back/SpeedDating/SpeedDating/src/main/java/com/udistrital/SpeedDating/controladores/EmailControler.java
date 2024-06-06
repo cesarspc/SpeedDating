@@ -10,6 +10,7 @@ import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -39,6 +40,7 @@ public class EmailControler {
      * @return ResponseEntity con un mensaje de éxito y el estado HTTP correspondiente.
      * @throws MessagingException en caso de que ocurra un error durante el envío del email.
      */
+    @CrossOrigin("http://localhost:8080")
     @PostMapping("/send-email")
     private ResponseEntity<String> sendEmail(@RequestBody EmailDTO email) throws MessagingException {
         emailService.sendMail(email);

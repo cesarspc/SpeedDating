@@ -28,11 +28,19 @@ public class BuscadorController {
 
     BuscadorRepository database;
 
+    /**
+     * Constructor que inyecta el repositorio de Buscador
+     *
+     * @param bd Repositorio de Buscador
+     */
     public BuscadorController(BuscadorRepository bd) {
 
         this.database = bd;
     }
 
+     /**
+     * Crea y guarda dos instancias de Buscador en la base de datos
+     */
     @GetMapping("/api/crearBuscadores")
     public void crearBuscadores() {
         /*
@@ -47,7 +55,7 @@ public class BuscadorController {
         buscador1.setContextura("Contextura1");
         buscador1.setEstadoCivil("Soltero");
         buscador1.setIdentidadGenero("IdentidadGenero1");
-        buscador1.setCorreo("correo1@example.com");
+        buscador1.setCorreo("cesaraupc@gmail.com");
         buscador1.setTelefono("3121234567");
         buscador1.setGustoContextura("Contextura2");
         buscador1.setGustoInteres("Interes1");
@@ -78,12 +86,23 @@ public class BuscadorController {
         database.save(buscador2);
     }
 
+     /**
+     * Obtiene una lista de todos los Buscadores almacenados
+     *
+     * @return Lista de Buscadores
+     */
     @CrossOrigin("http://localhost:8080")
     @GetMapping("/api/buscadores")
     public List<Buscador> obtenerBuscadores() {
         return database.findAll();
     }
 
+    /**
+     * Obtiene un Buscador específico por su ID
+     *
+     * @param id ID del Buscador
+     * @return ResponseEntity con el Buscador encontrado o un error si no se encontró
+     */
     @CrossOrigin("http://localhost:8080")
     @GetMapping("/api/buscadores/{id}")
     public ResponseEntity<Buscador> obtenerBuscadoresById(@PathVariable Long id) {
@@ -97,6 +116,12 @@ public class BuscadorController {
 
     }
 
+    /**
+     * Guarda un nuevo Buscador en la base de datos
+     *
+     * @param buscador Objeto Buscador a guardar
+     * @return ResponseEntity con el Buscador guardado o un error si ya tiene un ID asignado
+     */
     @CrossOrigin("http://localhost:8080")//
     @PostMapping("/api/buscadores")
     public ResponseEntity<Buscador> guardarBuscador(@RequestBody Buscador buscador) {
@@ -108,6 +133,12 @@ public class BuscadorController {
         return ResponseEntity.ok(buscador);
     }
 
+    /**
+     * Actualiza un Buscador existente en la base de datos
+     *
+     * @param buscador Objeto Buscador con los datos actualizados
+     * @return ResponseEntity con el Buscador actualizado o un error si no se encontró el ID
+     */
     @CrossOrigin("http://localhost:8080")
     @PutMapping("/api/buscadores")
     public ResponseEntity<Buscador> actualizarBuscador(@RequestBody Buscador buscador) {
@@ -119,6 +150,13 @@ public class BuscadorController {
         return ResponseEntity.ok(buscador);
     }
 
+    
+    /**
+     * Elimina un Buscador de la base de datos
+     *
+     * @param buscador Objeto Buscador a eliminar
+     * @return ResponseEntity vacío si se eliminó correctamente, o un error si no se encontró el ID
+     */
     @CrossOrigin("http://localhost:8080")
     @DeleteMapping("/api/buscadores")
     public ResponseEntity<Buscador> eliminarBuscador(@RequestBody Buscador buscador) {
