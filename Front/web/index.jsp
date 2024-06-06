@@ -104,11 +104,11 @@
                 
             </div>
             <div id="Boton" class="col-12">
-                <button type="submit" id="botonForm" class="btn btn-primary" name="EnviarDatos">Finalizar</button>
+                <button id="botonForm" class="btn btn-primary" name="EnviarDatos">Finalizar</button>
             </div>
         </div>
 
-        <script src=""></script>
+        <script src="cita/email-citas.js"></script>
 
         <footer class="bg-dark text-center text-white mt-auto">
             <div class="text-center p-3" style="background-color: #F29A80">

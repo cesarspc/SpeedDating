@@ -47,7 +47,7 @@ public class PostulanteController {
         postulante1.setContextura("Contextura1");
         postulante1.setEstadoCivil("Soltero");
         postulante1.setIdentidadGenero("IdentidadGenero1");
-        postulante1.setCorreo("correo1@example.com");
+        postulante1.setCorreo("cesaraupc@gmail.com");
         postulante1.setTelefono("3121234567");
         postulante1.setInteresPrincipal("Interes1");
         postulante1.setDisponibilidad("Fines de Semana");

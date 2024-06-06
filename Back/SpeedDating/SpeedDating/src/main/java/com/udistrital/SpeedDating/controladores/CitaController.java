@@ -38,6 +38,10 @@ public class CitaController {
     public void crearCitas() {
         Cita cita1 = new Cita(LocalDateTime.of(2022, 5, 1, 0, 0), "126", "1312");
         Cita cita2 = new Cita(LocalDateTime.of(2022, 6, 1, 2, 3), "3214", "4214");
+        cita1.setIdBuscador((long)1);
+        cita1.setIdPostulante((long)1);
+        cita2.setIdBuscador((long)1);
+        cita2.setIdPostulante((long)1);
 
         database.save(cita1);
         database.save(cita2);

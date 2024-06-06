@@ -4,6 +4,8 @@
  */
 
 mostrarCitas();
+let idsBuscador = [];
+let idsPostulante = [];
 
 document.getElementById("formCita").addEventListener("submit", async function (event) {
     event.preventDefault();
@@ -28,6 +30,8 @@ async function enviarCitas(cuerpoTabla) {
         campos.nombreCompletoPostulante = document.getElementById(`row${i}col3`).value;
         campos.calificacionBuscador = document.getElementById(`row${i}col4`).value;
         campos.calificacionPostulante = document.getElementById(`row${i}col5`).value;
+        campos.idBuscador = idsBuscador[i];
+        campos.idPostulante = idsPostulante[i];
 
         const peticion = await fetch("http://localhost:8081/api/citas", {
             method: "PUT",
@@ -138,6 +142,8 @@ async function mostrarCitas() {
 
         dataCitas.forEach((cita, indice) => {
             agregarFila(cita, indice);
+            idsBuscador.push(cita.idBuscador);
+            idsPostulante.push(cita.idPostulante);
         });
     } catch (error) {
         mensajeError();
