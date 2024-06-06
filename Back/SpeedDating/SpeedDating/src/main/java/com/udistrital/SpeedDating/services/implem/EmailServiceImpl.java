@@ -14,21 +14,36 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 
 /**
- *
+ * Implementación del servicio de envío de correos electrónicos.
+ * Utiliza JavaMailSender para enviar correos electrónicos
+ * y TemplateEngine para procesar plantillas de correo.
+ * 
  * @author juan-dev
  */
 @Service
-public class EmailServiceImpl implements IEmailService{
+public class EmailServiceImpl implements IEmailService {
     
     private final JavaMailSender javaMailSender;
     
     private final TemplateEngine templateEngine;
 
+    /**
+     * Constructor para inyectar JavaMailSender y TemplateEngine.
+     * 
+     * @param javaMailSender JavaMailSender para enviar correos electrónicos.
+     * @param templateEngine TemplateEngine para procesar plantillas de correo.
+     */
     public EmailServiceImpl(JavaMailSender javaMailSender, TemplateEngine templateEngine) {
         this.javaMailSender = javaMailSender;
         this.templateEngine = templateEngine;
     }
     
+    /**
+     * Método para enviar un correo electrónico.
+     * 
+     * @param email Objeto EmailDTO que contiene la información del correo a enviar.
+     * @throws MessagingException en caso de error durante el envío del correo electrónico.
+     */
     @Override
     public void sendMail(EmailDTO email) throws MessagingException {
         MimeMessage message = javaMailSender.createMimeMessage();
@@ -37,7 +52,5 @@ public class EmailServiceImpl implements IEmailService{
         helper.setSubject(email.getAsunto());
         helper.setText(email.getMensaje());
         javaMailSender.send(message);
-        
     }
-    
 }

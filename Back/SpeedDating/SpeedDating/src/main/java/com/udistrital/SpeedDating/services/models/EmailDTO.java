@@ -5,16 +5,19 @@
 package com.udistrital.SpeedDating.services.models;
 
 /**
- *
+ * Modelo que representa un correo electrónico.
+ * Contiene la información necesaria para enviar un correo electrónico,
+ * incluyendo el destinatario, el asunto y el mensaje.
+ * 
  * @author juan-dev
  */
 public class EmailDTO {
     
-    private String destinatario;
+    private String destinatario; // Dirección de correo del destinatario
     
-    private String asunto;
+    private String asunto; // Asunto del correo
     
-    private String mensaje;
+    private String mensaje; // Cuerpo del mensaje del correo
     
 
     public String getDestinatario() {
