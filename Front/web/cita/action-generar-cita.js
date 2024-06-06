@@ -31,6 +31,8 @@ document.getElementById("formCita").addEventListener("submit", async function (e
 
 let dataPostulante = [];
 let dataBuscador = [];
+let idsBuscador = [];
+let idsPostulante = [];
 
 function validarDisponibilidad(opcion, dateTime) {
     const form = document.getElementById("formCita");
@@ -39,14 +41,14 @@ function validarDisponibilidad(opcion, dateTime) {
     let validacion = true;
     let mensaje = "";
     let day = new Date(dateTime.value).getUTCDay();
-
+    console.log(day);
     switch (opcion) {
         case "Fines de Semana":
-            validacion = !(day === 0 || day === 1);
+            validacion = !(day === 0 || day === 6);
             mensaje = "La disponibilidad del postulante es fines de semana";
             break;
         case "Entre Semana":
-            validacion = day === 0 || day === 1;
+            validacion = day === 0 || day === 6;
             mensaje = "La disponibilidad del postulante es entre semana";
             break;
         default:
@@ -108,6 +110,8 @@ async function obtenerParejas() {
                 dataPostulante[j].pagoHecho
             ) {
                 dataParejas.push([buscador, postulante, dataPostulante[j].disponibilidad]);
+                idsBuscador.push(dataBuscador[i].id);
+                idsPostulante.push(dataPostulante[j].id);
             }
         });
     });
@@ -192,12 +196,15 @@ async function enviarCitas(cuerpoTabla) {
     let filas = cuerpoTabla.getElementsByTagName("tr");
 
     for (let i = 0; i < filas.length; i++) {
+        console.log(idsPostulante);
         let campos = {};
 
         campos.fechaHora = document.getElementById(`Fecha${i}`).value;
         campos.nombreCompletoBuscador = document.getElementById(`NombreB${i}`).value;
         campos.nombreCompletoPostulante = document.getElementById(`NombreP${i}`).value;
-
+        campos.idBuscador = idsBuscador[i];
+        campos.idPostulante = idsPostulante[i];
+        console.log(JSON.stringify(campos));
         const peticion = await fetch("http://localhost:8081/api/citas", {
             method: "POST",
             headers: {
