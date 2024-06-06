@@ -37,8 +37,8 @@
                 </a>
                 <div>
                     <div class="navbar-nav">
-                        <li><a class="nav-link active" aria-current="page" href="index.php">INICIO</a></li>
-                        <li><a class="nav-link" href="nosotros.php" style="color: white">NOSOTROS</a></li>
+                        <li><a class="nav-link active" aria-current="page" href="index.jsp">INICIO</a></li>
+                        
                     </div>
                 </div>
             </div>
@@ -59,7 +59,7 @@
                                     Consulta Buscadores
                                 </button>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" id="fondo1" href="ConsulaBuscador.jsp">Consulta General</a></li>
+                                    <li><a class="dropdown-item" id="fondo1" href="ConsultaBuscador.jsp">Consulta General</a></li>
                                     <li><a class="dropdown-item" id="fondo2" href="CEBuscador.jsp">Gestión Específica</a></li>
                                 </ul>
                             </div>
@@ -97,12 +97,18 @@
                         </div>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item"><a href="GestionCita.jsp">Gestionar Cita</a> </li>
-                            <li class="list-group-item" id="AgendarCita"><button class="btn " id="fondo" type="button" data-bs-toggle="dropdown" aria-expanded="false">Generar Cita</button></li>
+                            <li class="list-group-item"><a href="FormCita.jsp">Agendar Citas</button></li>
                         </ul>
                     </div>
                 </div>
+                
+            </div>
+            <div id="Boton" class="col-12">
+                <button type="submit" id="botonForm" class="btn btn-primary" name="EnviarDatos">Finalizar</button>
             </div>
         </div>
+
+        <script src=""></script>
 
         <footer class="bg-dark text-center text-white mt-auto">
             <div class="text-center p-3" style="background-color: #F29A80">

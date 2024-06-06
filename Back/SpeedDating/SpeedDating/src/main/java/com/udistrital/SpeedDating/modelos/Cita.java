@@ -35,10 +35,10 @@ public class Cita {
     private LocalDateTime fechaHora;
     
     @NonNull
-    private String cedulaBuscador;
+    private String nombreCompletoBuscador;
     
     @NonNull
-    private String cedulaPostulante;
+    private String nombreCompletoPostulante;
     
     private int calificacionBuscador;
     private int calificacionPostulante;

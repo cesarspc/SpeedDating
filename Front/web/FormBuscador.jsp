@@ -30,9 +30,9 @@
                     </a>
                     <div>
                         <div class="navbar-nav">
-                            <li><a class="nav-link active" aria-current="page" href="index.php">INICIO</a></li>
-                            <li><a class="nav-link" href="nosotros.php" style="color: white">NOSOTROS</a></li>
-                        </div>
+                        <li><a class="nav-link active" aria-current="page" href="index.jsp">INICIO</a></li>
+                        
+                    </div>
                     </div>
                 </div>
             </nav>
@@ -57,21 +57,21 @@
                                 <input type="text" name="ApellidoBuscador" class="form-control" id="ApellidoBuscador" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="GeneroBuscador" class="form-label">Género:</label>
+                                <label for="GeneroBuscador" class="form-label">Genero:</label>
                                 <select id="GeneroBuscador" class="form-select" name="GeneroBuscador" required>
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
-                                    <option value="Otro" disabled="">Otro</option>
+                                    <option value="No binario">No binario</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
                                 <label for="EdadBuscador" class="form-label">Edad:</label>
-                                <input type="number" name="EdadBuscador" class="form-control" id="EdadBuscador" placeholder="Ejemplo: 25" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" step="1" name="EdadBuscador" class="form-control" id="EdadBuscador" placeholder="Ejemplo: 25" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="EstaturaBuscador" class="form-label">Estatura:</label>
-                                <input type="number" name="EstaturaBuscador" class="form-control" id="EstaturaBuscador" placeholder="Ejemplo: 180" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" step="1" name="EstaturaBuscador" class="form-control" id="EstaturaBuscador" placeholder="Ejemplo: 180" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="ContexturaBuscador" class="form-label">Contextura Corporal:</label>
@@ -83,7 +83,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label for="ProfesionBuscador" class="form-label">Profesión/Oficio:</label>
+                                <label for="ProfesionBuscador" class="form-label">Profesion/Oficio:</label>
                                 <input type="text" name="ProfesionBuscador" id="ProfesionBuscador" class="form-control" required>
                             </div>
                             <div class="col-md-6">
@@ -101,8 +101,8 @@
                                 <input type="email" name="CorreoBuscador" class="form-control" id="CorreoBuscador" required>
                             </div>
                             <div class="col-md-6">
-                                <label for="NumeroBuscador" class="form-label">Teléfono:</label>
-                                <input type="text" name="NumeroBuscador" id="NumeroBuscador"class="form-control" required>
+                                <label for="NumeroBuscador" class="form-label">Telefono:</label>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="NumeroBuscador" id="NumeroBuscador"class="form-control" required>
                             </div>
 
 
@@ -122,31 +122,30 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="EstaturaPreferidaBuscador" class="form-label">Estatura:</label>
-                                <input type="number" name="EstaturaPreferidaBuscador" class="form-control" id="EstaturaPreferidaBuscador" placeholder="Ejemplo: 180" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="EstaturaPreferidaBuscador" class="form-control" id="EstaturaPreferidaBuscador" placeholder="Ejemplo: 180" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="EdadPreferidaBuscador" class="form-label">Edad:</label>
-                                <input type="number" name="EdadPreferidaBuscador" class="form-control" id="EdadPreferidaBuscador" placeholder="Ejemplo: 170" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="EdadPreferidaBuscador" class="form-control" id="EdadPreferidaBuscador" placeholder="Ejemplo: 170" required>
                             </div>
                             <div class="col-md-4">
-                                <label for="GeneroPreferido" class="form-label">Género:</label>
+                                <label for="GeneroPreferido" class="form-label">Genero:</label>
                                 <select id="GeneroPreferido" class="form-select" name="GeneroPreferido" required>
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
 
-                                    <option value="Otro" disabled="">Otro</option>
+                                    <option value="No binario">No binario</option>
 
                                 </select>
                             </div>
                             <div class="col-md-4">
-                                <label for="GustoInteres" class="form-label">Interés:</label>
+                                <label for="GustoInteres" class="form-label">Interes:</label>
                                 <select id="GustoInteres" class="form-select" name="GustoInteres" required>
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Amigos">Amigos</option>
                                     <option value="Pareja">Pareja</option>
                                     <option value="Intimidad" >Intimidad</option>
-                                    <option value="Folliamigos">Folliamigos</option>
                                 </select>
                                 
                             </div>
@@ -158,7 +157,7 @@
                 </div>
             </div>
             
-            <script src="form-action-buscador.js"></script>
+            <script src="buscador/action-buscador.js"></script>
             
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">

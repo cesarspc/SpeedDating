@@ -30,9 +30,9 @@
                     </a>
                     <div>
                         <div class="navbar-nav">
-                            <li><a class="nav-link active" aria-current="page" href="index.php">INICIO</a></li>
-                            <li><a class="nav-link" href="nosotros.php" style="color: white">NOSOTROS</a></li>
-                        </div>
+                        <li><a class="nav-link active" aria-current="page" href="index.jsp">INICIO</a></li>
+                        
+                    </div>
                     </div>
                 </div>
             </nav>
@@ -44,7 +44,8 @@
                         </div>
                     </div>
                     <div class="d-flex justify-content-center form_container pt-5">
-                        <form class="row g-3 " method="POST" action="//AQUI VA EL ACTION DE DONDE SE DIRIJE LA INFO//">
+                        
+                        <form class="row g-3 " id="formPostulante">
                             <div class="col-md-4 pt-15">
                                 <label for="NombrePostulante" class="form-label">Nombres:</label>
                                 <input type="text" name="NombrePostulante" class="form-control" id="NombrePostulante" required>
@@ -59,16 +60,16 @@
                                     <option selected disabled value="">Seleccione:</option>
                                     <option value="Masculino">Masculino</option>
                                     <option value="Femenino">Femenino</option>
-                                    <option value="disabled" disabled="">Otro</option>
+                                    <option value="No binario">No binario</option>
                                 </select>
                             </div>
                             <div class="col-md-4">
                                 <label for="EdadPostulante" class="form-label">Edad:</label>
-                                <input type="number" name="EdadPostulante" class="form-control" id="EdadPostulante" placeholder="Ejemplo: 25" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" class="form-control" id="EdadPostulante" placeholder="Ejemplo: 25" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="EstaturaPostulante" class="form-label">Estatura:</label>
-                                <input type="number" name="EstaturaPostulante" class="form-control" id="EstaturaPostulante" placeholder="Ejemplo: 180" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="EstaturaPostulante" class="form-control" id="EstaturaPostulante" placeholder="Ejemplo: 180" required>
                             </div>
                             <div class="col-md-4">
                                 <label for="ContexturaPostulante" class="form-label">Contextura Corporal:</label>
@@ -90,7 +91,7 @@
                                     <option value="Soltero">Soltero</option>
                                     <option value="Separado">Separado</option>
                                     <option value="Viudo">Viudo</option>
-                                    <option value="Complicado">Es Complicado</option>
+                                    <option value="Es Complicado">Es Complicado</option>
                                 </select>
                             </div>
                             <div class="col-md-6">
@@ -99,7 +100,7 @@
                             </div>
                             <div class="col-md-6">
                                 <label for="NumeroPostulante" class="form-label">Teléfono:</label>
-                                <input type="text" name="NumeroPostulante" id="NumeroPostulante"class="form-control" required>
+                                <input type="text" inputmode="numeric" pattern="\d*" name="NumeroPostulante" id="NumeroPostulante"class="form-control" required>
                             </div>
 
 
@@ -111,18 +112,17 @@
                                     <option Amigos="first">Amigos</option>
                                     <option value="Pareja">Pareja</option>
                                     <option value="Intimidad" >Intimidad</option>
-                                    <option value="Folliamigos">Folliamigos</option>
                                 </select>
 
                             </div>
 
                             <div class="col-md-6">
                                 <label for="Disponibilidad" class="form-label">Disponibilidad para citas:</label>
-                                <select id="Disponibilidad" class="form-select" id name="Disponibilidad" required>
+                                <select id="Disponibilidad" class="form-select" name="Disponibilidad" required>
                                     <option selected disabled value="">Seleccione:</option>
-                                    <option Amigos="first">Fines de Semana</option>
-                                    <option value="Pareja">Entre Semana</option>
-                                    <option value="Pareja">Flexible</option>
+                                    <option value="Fines de Semana">Fines de Semana</option>
+                                    <option value="Entre Semana">Entre Semana</option>
+                                    <option value="Flexible">Flexible</option>
 
                                 </select>
                             </div>
@@ -143,5 +143,7 @@
                 </div>
             </footer>
         </div>
+
+        <script src="postulante/action-postulante.js"></script>
     </body>
 </html>

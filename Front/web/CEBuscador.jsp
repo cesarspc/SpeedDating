@@ -42,15 +42,15 @@
             </nav>
 
             <div class="container-fluid" id="bonito">
-                <div><center><h1>Consulta Específica Buscador</h1></center></div>
+                <div><center><h1>Consulta Especï¿½fica Buscador</h1></center></div>
                 <div class="d-flex justify-content-center form_container">
-                    <form class="row row-cols-lg-auto g-3 align-items-center" method="POST" action="" onsubmit="return consultar(event)">
+                    <form class="row row-cols-lg-auto g-3 align-items-center" id="formBuscar">
                         <div class="col-12">
                             <div class="input-group">
                                 <div class="input-group-text"><span class="material-symbols-outlined">
                                         person
                                     </span></div>
-                                <input type="text" class="form-control" id="inlineFormInputGroupUsername" placeholder="ID Buscador" name="txtCodigo" required>
+                                <input required="" type="number" class="form-control" id="inputId" placeholder="ID Buscador" name="txtCodigo" value="" >
                             </div>
                         </div>
                         <div class="col-12">
@@ -70,62 +70,51 @@
 
                         <div class="d-flex justify-content-center form_container pt-5">
                             <form class="row g-3" id="formBuscador">
+                                <input id="idBuscador" name="prodId" type="hidden" value=0 />
                                 <div class="col-md-4 pt-15">
                                     <label for="NombreBuscador" class="form-label">Nombres:</label>
-                                    <input type="text" name="NombreBuscador" class="form-control" id="NombreBuscador" required value="">
+                                    <input type="text" name="NombreBuscador" class="form-control" id="NombreBuscador" disabled value="">
                                 </div>
                                 <div class="col-md-4">
                                     <label for="ApellidoBuscador" class="form-label">Apellidos:</label>
-                                    <input type="text" name="ApellidoBuscador" class="form-control" id="ApellidoBuscador" required value="">
+                                    <input type="text" name="ApellidoBuscador" class="form-control" id="ApellidoBuscador" disabled value="">
                                 </div>
 
                                 <div class="col-md-4">
-                                    <label for="GeneroBuscador" class="form-label">Género:</label>
-                                    <select id="GeneroBuscador" class="form-select" name="GeneroBuscador" required>
-                                        <option selected disabled value="">Seleccione:</option>
-                                        <option value="Masculino">Masculino</option>
-                                        <option value="Femenino">Femenino</option>
-                                        <option value="Otro" disabled="">Otro</option>
-                                    </select>
+                                    <label for="GeneroBuscador" class="form-label">Gï¿½nero:</label>
+                                    <input type="text" name="GeneroBuscador" class="form-control" id="GeneroBuscador" disabled value="">
                                 </div>
 
                                 <div class="col-md-6">
-                                    <label for="ProfesionBuscador" class="form-label">Profesión/Oficio:</label>
-                                    <input type="text" name="ProfesionBuscador" id="ProfesionBuscador" class="form-control" required value="">
+                                    <label for="ProfesionBuscador" class="form-label">Profesiï¿½n/Oficio:</label>
+                                    <input type="text" name="ProfesionBuscador" id="ProfesionBuscador" class="form-control" disabled value="">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="CorreoBuscador" class="form-label">Correo:</label>
-                                    <input type="email" name="CorreoBuscador" class="form-control" id="CorreoBuscador" required value="">
+                                    <input type="email" name="CorreoBuscador" class="form-control" id="CorreoBuscador" disabled value="">
                                 </div>
                                 <div class="col-md-6">
-                                    <label for="NumeroBuscador" class="form-label">Teléfono:</label>
-                                    <input type="text" name="NumeroBuscador" id="NumeroBuscador" class="form-control" required value="">
+                                    <label for="NumeroBuscador" class="form-label">Telï¿½fono:</label>
+                                    <input type="text" name="NumeroBuscador" id="NumeroBuscador"class="form-control" disabled value="">
                                 </div>
 
                                 <div class="col-md-6">
                                     <label for="EstadoPagoBuscador" class="form-label">Estado Pago:</label>
                                     <select id="EstadoPagoBuscador" class="form-select" name="EstadoPagoBuscador" required value="">
                                         <option selected disabled value="">Seleccione:</option>
-                                        <option value="Pagado">Pagado</option>
-                                        <option value="Sin pagar">Sin pagar</option>
+                                        <option value=true>Pagado</option>
+                                        <option value=false>Sin pagar</option>
                                     </select>
                                 </div><br>
                                 <div id="Boton" class="col-6">
-                                    <input type="button" value="Actualizar" id="actualizar" class="btn btn-light">
+                                    <button disabled="" type="submit" id="actualizar" class="btn btn-light" >Actualizar</button>
                                 </div> 
                                 <div id="Boton" class="col-6">
-                                    <input type="button" value="Eliminar" id="eliminar" class="btn btn-light" onclick="alerta()">
+                                    <input type="button" value="Eliminar" id="eliminar" class="btn btn-light" " disabled="">
                                 </div> 
-                                <script type="text/javascript">
-                                    function alerta() {
-                                        var opcion = confirm("Esta seguro de que desea eliminar al usuario?");
-                                        if (opcion == true) {
-                                            document.FormActualizarEstudiante.action = '../Controlador/Ctrl_EliminarEstudiante.php';
-                                            document.FormActualizarEstudiante.submit();
-                                        }
-                                    }
-                                </script>
+                                <script src="buscador/action-especifica-buscador.js"></script>
+
                             </form>
                         </div>
                     </div>
@@ -133,20 +122,20 @@
             </div>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
-                    © 2024 Universidad Distrital
+                    ï¿½ 2024 Universidad Distrital
                 </div>
             </footer>
         </div>
         <script>
             function consultar(event) {
                 event.preventDefault();
-                // Simulación de una consulta
+                // Simulaciï¿½n de una consulta
                 var codigo = document.querySelector('input[name="txtCodigo"]').value;
-                if (codigo === "12345") { // Aquí va la lógica de la consulta real
+                if (codigo === "12345") { // Aquï¿½ va la lï¿½gica de la consulta real
                     document.getElementById("Ocultar").style.display = "block";
-                    // Aquí puedes rellenar el formulario con los datos obtenidos
+                    // Aquï¿½ puedes rellenar el formulario con los datos obtenidos
                     document.getElementById("NombreBuscador").value = "Juan";
-                    document.getElementById("ApellidoBuscador").value = "Pérez";
+                    document.getElementById("ApellidoBuscador").value = "Pï¿½rez";
                     document.getElementById("GeneroBuscador").value = "Masculino";
                     document.getElementById("ProfesionBuscador").value = "Ingeniero";
                     document.getElementById("CorreoBuscador").value = "juan.perez@example.com";

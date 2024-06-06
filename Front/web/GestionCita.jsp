@@ -30,9 +30,9 @@
                     </a>
                     <div>
                         <div class="navbar-nav">
-                            <li><a class="nav-link active" aria-current="page" href="index.php">INICIO</a></li>
-                            <li><a class="nav-link" href="nosotros.php" style="color: white">NOSOTROS</a></li>
-                        </div>
+                        <li><a class="nav-link active" aria-current="page" href="index.jsp">INICIO</a></li>
+                        
+                    </div>
                     </div>
                 </div>
             </nav>
@@ -41,7 +41,7 @@
 
                 <div><h1 class="texto" ><center>Gestión de Citas</center></h1></div>
 
-                <form method="post" class="">
+                <form method="post" class="" id="formCita">
                     <table class="table table-bordered">
                         <thead class="cabecera">
                             <tr>
@@ -51,38 +51,23 @@
                                 <th scope="col">Nombre Postulante</th>
                                 <th scope="col">Calificación Cita Buscador</th>
                                 <th scope="col">Calificación Cita Postulante</th>
-
+                                <th scope="col">Resultado</th>
                             </tr>
                         </thead>
                         <tbody class="cuerpoTabla" id="cuerpoTabla">
 
-                            <!-- SOLO ES UN EJEMPLO PQ ACA SE AÑADEN LOS DATOS CON LA API O JS -->
-                            <tr>
-                                <td><input class="form-control" type="text" name="ID" value="01"></td>
-                                <td><input class="form-control" type="datetime-local" name="Fecha" value="xd"></td>
-                                <td><input class="form-control" type="text" name="NombreB" value="Juan"></td>
-                                <td><input class="form-control" type="text" name="NombreP" value="Marta"></td>
-                                <td><select id="CalificacionCita" class="form-select" name="CalificacionCita" required>
-                                        <option selected disabled value="">Seleccione:</option>
-                                        <option value="nada">No interés</option>
-                                        <option value="Amigos">Amigos</option>
-                                        <option value="Pareja" >Pareja</option>
-                                    </select></td>
-                                <td><select id="CalificacionCita" class="form-select" name="CalificacionCita" required>
-                                        <option selected disabled value="">Seleccione:</option>
-                                        <option value="nada">No interés</option>
-                                        <option value="Amigos">Amigos</option>
-                                        <option value="Pareja" >Pareja</option>
-                                    </select></td>
 
-                            </tr>
 
                         </tbody>
                     </table>
-                    <button type="submit" class="btn btn-primary">Guardar Calificaciones</button>
+                    <div id="Boton" class="col-12">
+                        <button type="submit" id="calificacion" class="btn btn-dark" >Guardar Calificaciones</button>
+                    </div>
+                    
                 </form>
+                
             </div>
-
+            <script src="cita/action-gestion-cita.js"></script>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
                     © 2024 Universidad Distrital
@@ -90,5 +75,6 @@
                 </div>
             </footer>
         </div>
+
     </body>
 </html>
