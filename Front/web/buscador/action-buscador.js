@@ -3,8 +3,11 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 
+// Captura cuando se envia el formulario
 document.getElementById("formBuscador").addEventListener("submit", async function (event) {
     event.preventDefault();
+    
+    // Define objeto a enviar
     let campos = {};
 
     campos.nombre = document.getElementById("NombreBuscador").value;
@@ -24,6 +27,7 @@ document.getElementById("formBuscador").addEventListener("submit", async functio
     campos.gustoIdentidad = document.getElementById("GeneroPreferido").value;
     campos.gustoEdad = document.getElementById("EdadPreferidaBuscador").value;
     
+    // Validaciones para el formulario
     if (campos.edad < 25 || campos.edad > 35){
         alert("Edad invalida para la inscripcion");
         return;
@@ -44,7 +48,7 @@ document.getElementById("formBuscador").addEventListener("submit", async functio
         return;
     }
     
-    
+    // Envia los datos recopilados
     const peticion = await fetch("http://localhost:8081/api/buscadores", {
         method: "POST",
         headers: {

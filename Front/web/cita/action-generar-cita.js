@@ -70,6 +70,7 @@ function validarDisponibilidad(opcion, dateTime) {
     }
 }
 
+// Obtiene las parejas que hacen MATCH
 async function obtenerParejas() {
     const peticion = await fetch("http://localhost:8081/api/buscadores", {
         method: "GET",
@@ -119,6 +120,7 @@ async function obtenerParejas() {
     return dataParejas;
 }
 
+// Obtiene un mapeo de nombre y apellidos de los participantes de la cita para evitar duplicados
 async function mapeoCitas() {
     try {
         const peticion3 = await fetch("http://localhost:8081/api/citas", {
@@ -130,7 +132,8 @@ async function mapeoCitas() {
         });
 
         const dataCitas = await peticion3.json();
-
+        
+        // Asigna claves
         const citasMap = {};
 
         dataCitas.forEach((cita) => {
@@ -160,12 +163,14 @@ function compararValores(String1, String2, diferenciaEsperada) {
     return diferencia <= diferenciaEsperada;
 }
 
+// Calcula los gustos de las parejas
 function calcularGustos() {
     const numBuscadores = dataBuscador.length;
     const numPostulantes = dataPostulante.length;
 
     let gustosEnComun = Array.from({ length: numBuscadores }, () => Array(numPostulantes).fill(0));
-
+    
+    // Para cada pareja suma los gustos en comun
     dataBuscador.forEach((buscador, i) => {
         dataPostulante.forEach((postulante, j) => {
             if (buscador.gustoContextura === postulante.contextura) {
