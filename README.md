@@ -8,6 +8,6 @@ The SpeedDating app allows you to manage a dating event. The application display
 3. Set the server.port and allowed.origin (the URL of the web deployment) properties in the application.properties file.
 4. Now you can deploy the API on a Tomcat web server!
 ### email.properties file
-This file must be in src/main/resources/ directory with this information:
+This file must be in src/main/resources/ directory with this information: 
 ``email.username=example@email.com  
 email.password=12345678``  
