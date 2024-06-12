@@ -117,7 +117,7 @@ public class PostulanteController {
      *
      * @return una lista de objetos Postulante
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @GetMapping("/api/postulantes")
     public List<Postulante> obtenerPosutalantes() {
         return database.findAll();
@@ -129,7 +129,7 @@ public class PostulanteController {
      * @param id el ID del postulante a obtener
      * @return un objeto ResponseEntity con el postulante si se encuentra, o un código de error si no se encuentra
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @GetMapping("/api/postulantes/{id}")
     public ResponseEntity<Postulante> obtenerPostulanteById(@PathVariable Long id) {
         Optional<Postulante> optional = database.findById(id);
@@ -148,7 +148,7 @@ public class PostulanteController {
      * @param postulante el objeto Postulante a guardar
      * @return un objeto ResponseEntity con el postulante guardado, o un código de error si ocurre algún problema
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @PostMapping("/api/postulantes")
     public ResponseEntity<Postulante> guardarPostulante(@RequestBody Postulante postulante) {
         if (postulante.getId() != null) {
@@ -165,7 +165,7 @@ public class PostulanteController {
      * @param postulante el objeto Postulante con los datos actualizados
      * @return un objeto ResponseEntity con el postulante actualizado, o un código de error si ocurre algún problema
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @PutMapping("/api/postulantes")
     public ResponseEntity<Postulante> actualizarPostulante(@RequestBody Postulante postulante) {
         if (postulante.getId() == null || !database.existsById(postulante.getId())) {
@@ -181,7 +181,7 @@ public class PostulanteController {
      * @param postulante el objeto Postulante a eliminar
      * @return un objeto ResponseEntity sin contenido si la operación fue exitosa, o un código de error si ocurre algún problema
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @DeleteMapping("/api/postulantes")
     public ResponseEntity<Postulante> eliminarPostulante(@RequestBody Postulante postulante) {
         if (postulante.getId() == null || !database.existsById(postulante.getId())) {
