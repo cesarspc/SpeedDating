@@ -119,7 +119,7 @@
                                 <div id="Boton" class="col-6">
                                     <input type="button" value="Eliminar" id="eliminar" class="btn btn-light" disabled="">
                                 </div> 
-                                <script src="postulante/action-especifica-postulante.js"></script>
+                                <script src="Recursos/scripts/postulante/action-especifica-postulante.js"></script>
                             </form>
                         </div>
                     </div>

@@ -132,7 +132,7 @@ async function mapeoCitas() {
         });
 
         const dataCitas = await peticion3.json();
-        
+
         // Asigna claves
         const citasMap = {};
 
@@ -169,7 +169,7 @@ function calcularGustos() {
     const numPostulantes = dataPostulante.length;
 
     let gustosEnComun = Array.from({ length: numBuscadores }, () => Array(numPostulantes).fill(0));
-    
+
     // Para cada pareja suma los gustos en comun
     dataBuscador.forEach((buscador, i) => {
         dataPostulante.forEach((postulante, j) => {
