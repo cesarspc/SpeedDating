@@ -143,7 +143,7 @@
                 </div>
             </footer>
         </div>
-
-        <script src="postulante/action-postulante.js"></script>
+        <script src="Recursos/scripts/common.js"></script>
+        <script src="Recursos/scripts/postulante/action-postulante.js"></script>
     </body>
 </html>

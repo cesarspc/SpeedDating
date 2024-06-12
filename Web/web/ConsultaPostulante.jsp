@@ -78,7 +78,7 @@
                     </table>
                 </div>
             </div>
-            <script src="postulante/action-general-postulante.js"></script>
+            <script src="Recursos/scripts/postulante/action-general-postulante.js"></script>
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
                     © 2024 Universidad Distrital

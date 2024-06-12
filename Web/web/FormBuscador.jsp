@@ -156,8 +156,8 @@
                     </div>
                 </div>
             </div>
-            
-            <script src="buscador/action-buscador.js"></script>
+            <script src="Recursos/scripts/common.js"></script>
+            <script src="Recursos/scripts/buscador/action-buscador.js"></script>
             
             <footer class="bg-dark text-center text-white mt-auto">
                 <div class="text-center p-3" style="background-color: #F29A80">
