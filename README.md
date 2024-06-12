@@ -16,5 +16,7 @@ The SpeedDating app allows you to manage a dating event. The application display
 ### email.properties file
 This file must be in src/main/resources/ directory with this information:
 
-``email.username=example@email.com  
-email.password=12345678``  
+    ``
+    # EXAMPLE DATA
+    email.username=example@email.com
+    email.password=12345678``  
