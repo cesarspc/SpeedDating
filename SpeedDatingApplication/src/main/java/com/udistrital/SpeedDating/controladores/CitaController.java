@@ -60,7 +60,7 @@ public class CitaController {
      *
      * @return una lista de objetos Cita
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @GetMapping("/api/citas")
     public List<Cita> obtenerCitas() {
         return database.findAll();
@@ -72,7 +72,7 @@ public class CitaController {
      * @param id el ID de la cita a obtener
      * @return un objeto ResponseEntity con la cita si se encuentra, o un código de error si no se encuentra
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @GetMapping("/api/citas/{id}")
     public ResponseEntity<Cita> obtenerCitaById(@PathVariable Long id) {
         Optional<Cita> optional = database.findById(id);
@@ -91,7 +91,7 @@ public class CitaController {
      * @param cita el objeto Cita a guardar
      * @return un objeto ResponseEntity con la cita guardada, o un código de error si ocurre algún problema
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @PostMapping("/api/citas")
     public ResponseEntity<Cita> guardarCita(@RequestBody Cita cita) {
         if (cita.getId() != null) {
@@ -108,7 +108,7 @@ public class CitaController {
      * @param cita el objeto Cita con los resultados actualizados
      * @return un objeto ResponseEntity con la cita actualizada, o un código de error si ocurre algún problema
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @PutMapping("/api/citas")
     public ResponseEntity<Cita> resultadosCita(@RequestBody Cita cita) {
         if (cita.getId() == null || !database.existsById(cita.getId())) {
@@ -148,7 +148,7 @@ public class CitaController {
      * @return un objeto ResponseEntity sin contenido si la operación fue exitosa, o un código de error si ocurre algún problema
      */
 
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @DeleteMapping("/api/citas")
     public ResponseEntity<Cita> eliminarCita(@RequestBody Cita cita) {
         if (cita.getId() == null || !database.existsById(cita.getId())) {

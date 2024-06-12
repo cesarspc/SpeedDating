@@ -40,7 +40,7 @@ public class EmailControler {
      * @return ResponseEntity con un mensaje de éxito y el estado HTTP correspondiente.
      * @throws MessagingException en caso de que ocurra un error durante el envío del email.
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @PostMapping("/send-email")
     private ResponseEntity<String> sendEmail(@RequestBody EmailDTO email) throws MessagingException {
         emailService.sendMail(email);

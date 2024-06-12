@@ -91,7 +91,7 @@ public class BuscadorController {
      *
      * @return Lista de Buscadores
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @GetMapping("/api/buscadores")
     public List<Buscador> obtenerBuscadores() {
         return database.findAll();
@@ -103,7 +103,7 @@ public class BuscadorController {
      * @param id ID del Buscador
      * @return ResponseEntity con el Buscador encontrado o un error si no se encontró
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @GetMapping("/api/buscadores/{id}")
     public ResponseEntity<Buscador> obtenerBuscadoresById(@PathVariable Long id) {
         Optional<Buscador> optional = database.findById(id);
@@ -122,7 +122,7 @@ public class BuscadorController {
      * @param buscador Objeto Buscador a guardar
      * @return ResponseEntity con el Buscador guardado o un error si ya tiene un ID asignado
      */
-    @CrossOrigin("http://localhost:8080")//
+    @CrossOrigin("${allowed.origin}")
     @PostMapping("/api/buscadores")
     public ResponseEntity<Buscador> guardarBuscador(@RequestBody Buscador buscador) {
         if (buscador.getId() != null) {
@@ -139,7 +139,7 @@ public class BuscadorController {
      * @param buscador Objeto Buscador con los datos actualizados
      * @return ResponseEntity con el Buscador actualizado o un error si no se encontró el ID
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @PutMapping("/api/buscadores")
     public ResponseEntity<Buscador> actualizarBuscador(@RequestBody Buscador buscador) {
         if (buscador.getId() == null || !database.existsById(buscador.getId())) {
@@ -157,7 +157,7 @@ public class BuscadorController {
      * @param buscador Objeto Buscador a eliminar
      * @return ResponseEntity vacío si se eliminó correctamente, o un error si no se encontró el ID
      */
-    @CrossOrigin("http://localhost:8080")
+    @CrossOrigin("${allowed.origin}")
     @DeleteMapping("/api/buscadores")
     public ResponseEntity<Buscador> eliminarBuscador(@RequestBody Buscador buscador) {
         if (buscador.getId() == null || !database.existsById(buscador.getId())) {
