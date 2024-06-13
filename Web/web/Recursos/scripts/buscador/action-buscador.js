@@ -45,7 +45,14 @@ form.addEventListener("submit", async function (event) {
     }
 
     // Llama al metodo en common.js
-    sendRequest("buscadores", data, "POST");
+    sendRequest("buscadores", data, "POST")
+        .then((result) => {
+            alert("Datos registrados");
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            alert("Error al registrar datos");
+        });
     
     form.reset();
 });

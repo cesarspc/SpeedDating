@@ -1,59 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
- */
-
 mostrarBuscadores();
 
-// Muestra segun las citas en el repositorio, por filas cada cita
+let cuerpoTabla = document.getElementById("cuerpoTabla");
+let dataBuscadores = [];
+
+// Muestra segun los buscadores en el repositorio, por filas cada buscador
 async function mostrarBuscadores() {
     try {
-        const peticion = await fetch("http://localhost:8081/api/buscadores", {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-        });
-
-        const dataBuscadores = await peticion.json();
+        dataBuscadores = await sendRequest("buscadores", {}, "GET");
 
         if (dataBuscadores.length === 0) {
             mensajeError();
             return;
         }
 
-        dataBuscadores.forEach((cita) => {
-            agregarFila(cita);
+        dataBuscadores.forEach((buscador) => {
+
+            // Uso funcion en common.js
+            addRow(buscador, cuerpoTabla);
         });
     } catch (error) {
+        console.error("Error: " + error);
         mensajeError();
         return;
     }
-}
-
-function agregarFila(data) {
-    let cuerpoTabla = document.getElementById("cuerpoTabla");
-    // Crear una nueva fila
-    let fila = document.createElement("tr");
-    const claves = Object.keys(data);
-
-    // Crear celdas para la nueva fila
-    let celdas = [];
-    for (i = 0; i < 17; i++) {
-        celdas.push(document.createElement("td"));
-    }
-
-    // Agregar a fila
-    for (j = 0; j < 16; j++) {
-        celdas[j].textContent = data[claves[j]];
-        fila.appendChild(celdas[j]);
-    }
-
-    celdas[16].textContent = data[claves[16]] ? "Si" : "No";
-    fila.appendChild(celdas[16]);
-
-    cuerpoTabla.appendChild(fila);
 }
 
 function mensajeError() {

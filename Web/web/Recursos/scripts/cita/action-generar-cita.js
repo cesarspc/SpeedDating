@@ -1,16 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
- */
+const form = document.getElementById("formCita");
+const submit = document.getElementById("disponibilidad");
 
-// Agregar filas
+let dataPostulante = [];
+let dataBuscador = [];
+let idsBuscador = [];
+let idsPostulante = [];
+
+// Manejo de evento de submit
+form.addEventListener("submit", async function (event) {
+    event.preventDefault();
+    const cuerpoTabla = document.getElementById("cuerpoTabla");
+    enviarCitas(cuerpoTabla).then(() => {
+        alert("Registrando");
+        window.location.href = "index.jsp";
+    });
+});
+
+// Agregar filas segun las parejas que haya
 obtenerParejas()
     .then((parejas) => {
         if (parejas.length === 0) {
             mensajeError();
             return;
         }
-
         parejas.forEach((pareja, indice) => {
             agregarFila(pareja[0], pareja[1], pareja[2], indice);
         });
@@ -19,80 +31,13 @@ obtenerParejas()
         mensajeError();
     });
 
-// Manejo de evento de submit
-document.getElementById("formCita").addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    enviarCitas(document.getElementById("cuerpoTabla")).then(() => {
-        alert("Registrando");
-        window.location.href = "index.jsp";
-    });
-});
-
-let dataPostulante = [];
-let dataBuscador = [];
-let idsBuscador = [];
-let idsPostulante = [];
-
-function validarDisponibilidad(opcion, dateTime) {
-    const form = document.getElementById("formCita");
-    const submit = document.getElementById("disponibilidad");
-
-    let validacion = true;
-    let mensaje = "";
-    let day = new Date(dateTime.value).getUTCDay();
-    console.log(day);
-    switch (opcion) {
-        case "Fines de Semana":
-            validacion = !(day === 0 || day === 6);
-            mensaje = "La disponibilidad del postulante es fines de semana";
-            break;
-        case "Entre Semana":
-            validacion = day === 0 || day === 6;
-            mensaje = "La disponibilidad del postulante es entre semana";
-            break;
-        default:
-            validacion = false;
-            mensaje = false;
-            break;
-    }
-
-    dateTime.setCustomValidity("");
-
-    // Dependiendo la opcion valida
-    if (validacion) {
-        dateTime.setCustomValidity(mensaje);
-    } else {
-        dateTime.setCustomValidity("");
-    }
-    if (!form.checkValidity()) {
-        submit.click();
-    }
-}
-
 // Obtiene las parejas que hacen MATCH
 async function obtenerParejas() {
-    const peticion = await fetch("http://localhost:8081/api/buscadores", {
-        method: "GET",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        },
-    });
+    dataBuscador = await sendRequest("buscadores", {}, "GET");
 
-    dataBuscador = await peticion.json();
+    dataPostulante = await sendRequest("postulantes", {}, "GET");
 
-    const peticion2 = await fetch("http://localhost:8081/api/postulantes", {
-        method: "GET",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-        },
-    });
-
-    dataPostulante = await peticion2.json();
-
-    const matrizGustos = await calcularGustos();
+    const matrizGustos = calcularGustos();
 
     let dataParejas = [];
 
@@ -118,49 +63,6 @@ async function obtenerParejas() {
     });
 
     return dataParejas;
-}
-
-// Obtiene un mapeo de nombre y apellidos de los participantes de la cita para evitar duplicados
-async function mapeoCitas() {
-    try {
-        const peticion3 = await fetch("http://localhost:8081/api/citas", {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-        });
-
-        const dataCitas = await peticion3.json();
-
-        // Asigna claves
-        const citasMap = {};
-
-        dataCitas.forEach((cita) => {
-            const key = `${cita.nombreCompletoBuscador}-${cita.nombreCompletoPostulante}`;
-            citasMap[key] = true;
-        });
-        return citasMap;
-    } catch (error) {
-        console.error("Error al obtener citas: ", error);
-        return {};
-    }
-}
-
-function esCitaDuplicada(citasExistentes, buscador, postulante) {
-    const key = `${buscador}-${postulante}`;
-
-    // Evalua si no es null o undefined
-    return !!citasExistentes[key];
-}
-
-function compararValores(String1, String2, diferenciaEsperada) {
-    const num1 = parseInt(String1.match(/\d+/)[0]);
-    const num2 = parseInt(String2.match(/\d+/)[0]);
-
-    const diferencia = Math.abs(num1 - num2);
-
-    return diferencia <= diferenciaEsperada;
 }
 
 // Calcula los gustos de las parejas
@@ -197,32 +99,101 @@ function calcularGustos() {
     return gustosEnComun;
 }
 
+// Para dos String que contienen valores numericos retorna si son cercanos en la diferencia dada
+function compararValores(String1, String2, diferenciaEsperada) {
+
+    // Obtiene solo los valores numericos de los parametros
+    const num1 = parseInt(String1.match(/\d+/)[0]);
+    const num2 = parseInt(String2.match(/\d+/)[0]);
+
+    const diferencia = Math.abs(num1 - num2);
+
+    return diferencia <= diferenciaEsperada;
+}
+
+// Obtiene un mapeo de nombre y apellidos de los participantes de la cita para evitar duplicados
+async function mapeoCitas() {
+    try {
+        const dataCitas = await sendRequest("citas", {}, "GET");
+
+        // Asigna claves
+        const citasMap = {};
+
+        dataCitas.forEach((cita) => {
+            const key = `${cita.nombreCompletoBuscador}-${cita.nombreCompletoPostulante}`;
+            citasMap[key] = true;
+        });
+        return citasMap;
+    } catch (error) {
+        console.error("Error al obtener citas: ", error);
+        return {};
+    }
+}
+
+function esCitaDuplicada(citasExistentes, buscador, postulante) {
+    const key = `${buscador}-${postulante}`;
+
+    // Evalua si no es null o undefined
+    return !!citasExistentes[key];
+}
+
+// Funcion para validar que la cita se agende en disponibilidad deseada
+function validarDisponibilidad(opcion, dateTime) {
+    let validacion = true;
+    let mensaje = "";
+    let day = new Date(dateTime.value).getUTCDay();
+
+    switch (opcion) {
+        case "Fines de Semana":
+            validacion = !(day === 0 || day === 6);
+            mensaje = "La disponibilidad del postulante es fines de semana";
+            break;
+        case "Entre Semana":
+            validacion = day === 0 || day === 6;
+            mensaje = "La disponibilidad del postulante es entre semana";
+            break;
+        default:
+            validacion = false;
+            mensaje = "";
+            break;
+    }
+
+    dateTime.setCustomValidity("");
+
+    // Dependiendo la opcion valida
+    if (validacion) {
+        dateTime.setCustomValidity(mensaje);
+    } else {
+        dateTime.setCustomValidity("");
+    }
+    if (!form.checkValidity()) {
+        submit.click();
+    }
+}
+
 async function enviarCitas(cuerpoTabla) {
     let filas = cuerpoTabla.getElementsByTagName("tr");
 
     for (let i = 0; i < filas.length; i++) {
-        console.log(idsPostulante);
+        let fechaHora = document.getElementById(`Fecha${i}`).value;
+        let nomBuscador = document.getElementById(`NombreB${i}`).value;
+        let nomPostulante = document.getElementById(`NombreP${i}`).value;
+
         let campos = {};
 
-        campos.fechaHora = document.getElementById(`Fecha${i}`).value;
-        campos.nombreCompletoBuscador = document.getElementById(`NombreB${i}`).value;
-        campos.nombreCompletoPostulante = document.getElementById(`NombreP${i}`).value;
+        campos.fechaHora = fechaHora;
+        campos.nombreCompletoBuscador = nomBuscador;
+        campos.nombreCompletoPostulante = nomPostulante;
         campos.idBuscador = idsBuscador[i];
         campos.idPostulante = idsPostulante[i];
+
         console.log(JSON.stringify(campos));
-        const peticion = await fetch("http://localhost:8081/api/citas", {
-            method: "POST",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(campos),
-        })
+
+        sendRequest("citas", campos, "POST")
             .then((response) => {
-                respuesta = response.json;
-                console.log(respuesta);
+                console.log("Se envio una cita");
             })
-            .catch(() => alert("Error al registrar cita"));
+            .catch((err) => console.error("Error enviando cita: " + err));
     }
     document.getElementById("formCita").reset();
 }

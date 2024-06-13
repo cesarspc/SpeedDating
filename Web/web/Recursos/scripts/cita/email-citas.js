@@ -7,6 +7,7 @@ resultados = [];
 
 document.getElementById("botonForm").addEventListener("click", async function (event) {
     event.preventDefault();
+    alert("Enviando correos");
     enviarCorreos();
 });
 
