@@ -25,7 +25,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 
 @RestController
-public class EmailControler {
+public class EmailController {
 
     // Inyección del servicio de correo electrónico
     @Autowired
@@ -41,8 +41,8 @@ public class EmailControler {
      * @throws MessagingException en caso de que ocurra un error durante el envío del email.
      */
     @CrossOrigin("${allowed.origin}")
-    @PostMapping("/send-email")
-    private ResponseEntity<String> sendEmail(@RequestBody EmailDTO email) throws MessagingException {
+    @PostMapping("api/send-email")
+    public ResponseEntity<String> sendEmail(@RequestBody EmailDTO email) throws MessagingException {
         emailService.sendMail(email);
         return new ResponseEntity<>("Correo enviado exitosamente", HttpStatus.OK);
     }
