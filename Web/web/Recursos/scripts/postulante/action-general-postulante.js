@@ -5,18 +5,12 @@
 
 mostrarPostulantes();
 
+let cuerpoTabla = document.getElementById("cuerpoTabla");
+
 // Muestra en la tabla los postulantes obtenidos
 async function mostrarPostulantes() {
     try {
-        const peticion = await fetch("http://localhost:8081/api/postulantes", {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-        });
-
-        const dataPostulantes = await peticion.json();
+        const dataPostulantes = await sendRequest("postulantes", {}, "GET");
 
         if (dataPostulantes.length === 0) {
             mensajeError();
@@ -24,37 +18,14 @@ async function mostrarPostulantes() {
         }
         
         // Para cada postulante encontrado agrega fila
-        dataPostulantes.forEach((cita) => {
-            agregarFila(cita);
+        dataPostulantes.forEach((postulante) => {
+            addRow(postulante, cuerpoTabla);
         });
     } catch (error) {
         mensajeError();
+        console.error(error);
         return;
     }
-}
-
-function agregarFila(data) {
-    let cuerpoTabla = document.getElementById("cuerpoTabla");
-    // Crear una nueva fila
-    let fila = document.createElement("tr");
-    const claves = Object.keys(data);
-
-    // Crear celdas para la nueva fila
-    let celdas = [];
-    for (i = 0; i < 14; i++) {
-        celdas.push(document.createElement("td"));
-    }
-
-    // Agregar a fila
-    for (j = 0; j < 13; j++) {
-        celdas[j].textContent = data[claves[j]];
-        fila.appendChild(celdas[j]);
-    }
-
-    celdas[13].textContent = data[claves[13]] ? "Si" : "No";
-    fila.appendChild(celdas[13]);
-
-    cuerpoTabla.appendChild(fila);
 }
 
 function mensajeError() {

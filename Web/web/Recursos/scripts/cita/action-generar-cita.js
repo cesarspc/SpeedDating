@@ -24,7 +24,7 @@ obtenerParejas()
             return;
         }
         parejas.forEach((pareja, indice) => {
-            agregarFila(pareja[0], pareja[1], pareja[2], indice);
+            addRow(pareja[0], pareja[1], pareja[2], indice);
         });
     })
     .catch(() => {
@@ -199,7 +199,7 @@ async function enviarCitas(cuerpoTabla) {
 }
 
 // Agrega fila al body de la tabla con nombres de pareja
-function agregarFila(nombreBuscador, nombrePostulante, disponibilidad, indice) {
+function addRow(nombreBuscador, nombrePostulante, disponibilidad, indice) {
     let cuerpoTabla = document.getElementById("cuerpoTabla");
     // Crear una nueva fila
     let fila = document.createElement("tr");

@@ -108,6 +108,7 @@
             </div>
         </div>
 
+        <script src="Recursos/scripts/common.js"></script>
         <script src="Recursos/scripts/cita/email-citas.js"></script>
 
         <footer class="bg-dark text-center text-white mt-auto">

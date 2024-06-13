@@ -3,98 +3,70 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/JavaScript.js to edit this template
  */
 let dataPostulantes = {};
+const formPrincipal = document.getElementById("formPostulante");
+const formBuscar = document.getElementById("formBuscar");
+const botonEliminar = document.getElementById("eliminar");
+const botonActualizar = document.getElementById("actualizar");
 
 //Obtiene cuando se envia formulario de actualizar
-document.getElementById("formPostulante").addEventListener("submit", async function (event) {
+formPrincipal.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     dataPostulantes.pagoHecho = document.getElementById("EstadoPagoPostulante").value;
 
-    try {
-        const peticion = await fetch("http://localhost:8081/api/postulantes", {
-            method: "PUT",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(dataPostulantes),
-        }).then(() => {
+    await sendRequest("postulantes", dataPostulantes, "PUT")
+        .then(() => {
             alert("Registro actualizado");
             limpiarForm();
+        })
+        .catch((err) => {
+            limpiarForm();
+            console.error(err);
         });
-    } catch (error) {
-        console.error(error);
-        return;
-    }
 });
 
 // Obtiene cuando se busca un id
-document.getElementById("formBuscar").addEventListener("submit", async function (event) {
+formBuscar.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    try {
-        fetch(`http://localhost:8081/api/postulantes/${document.getElementById("inputId").value}`, {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
+    sendRequest(`postulantes/${document.getElementById("inputId").value}`, {}, "GET")
+        .then((data) => {
+            dataPostulantes = data;
+
+            botonActualizar.disabled = false;
+            botonEliminar.disabled = false;
+
+            document.getElementById("NombrePostulante").value = dataPostulantes.nombre;
+            document.getElementById("ApellidoPostulante").value = dataPostulantes.apellido;
+            document.getElementById("GeneroPostulante").value = dataPostulantes.identidadGenero;
+            document.getElementById("ProfesionPostulante").value = dataPostulantes.profesion;
+            document.getElementById("CorreoPostulante").value = dataPostulantes.correo;
+            document.getElementById("NumeroPostulante").value = dataPostulantes.telefono;
+            document.getElementById("EstadoPagoPostulante").value = dataPostulantes.pagoHecho;
         })
-            .then((response) => {
-                if (response.status === 400) {
-                    limpiarForm();
-                    alert("No hubo coincidencias");
-                }
-                return response.json();
-            })
-            .then((data) => {
-                dataPostulantes = data;
-
-                document.getElementById("actualizar").disabled = false;
-                document.getElementById("eliminar").disabled = false;
-
-                document.getElementById("NombrePostulante").value = dataPostulantes.nombre;
-                document.getElementById("ApellidoPostulante").value = dataPostulantes.apellido;
-                document.getElementById("GeneroPostulante").value = dataPostulantes.identidadGenero;
-                document.getElementById("ProfesionPostulante").value = dataPostulantes.profesion;
-                document.getElementById("CorreoPostulante").value = dataPostulantes.correo;
-                document.getElementById("NumeroPostulante").value = dataPostulantes.telefono;
-                document.getElementById("EstadoPagoPostulante").value = dataPostulantes.pagoHecho;
-            })
-            .catch((error) => {
-                console.error("Error:", error);
-            });
-    } catch (error) {
-        console.error(error);
-        limpiarForm();
-        return;
-    }
+        .catch((error) => {
+            alert("No hubo coincidencias");
+            limpiarForm();
+            console.error("Error:", error);
+        });
 });
 
 // Obtiene evento de presionar boton eliminar
-document.getElementById("eliminar").addEventListener("click", async function () {
-    try {
-        
-        //Uso de metodo de DELETE
-        const peticion = await fetch("http://localhost:8081/api/postulantes", {
-            method: "DELETE",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(dataPostulantes),
-        }).then(() => {
+botonEliminar.addEventListener("click", async function () {
+    //Uso de metodo de DELETE
+    sendRequest("postulantes", dataPostulantes, "DELETE")
+        .then(() => {
             alert("Registro eliminado");
             limpiarForm();
+        })
+        .catch((err) => {
+            alert("Error al eliminar");
+            console.error(err);
         });
-    } catch (error) {
-        console.error(error);
-        return;
-    }
 });
 
 function limpiarForm() {
     document.getElementById("actualizar").disabled = true;
-    document.getElementById("eliminar").disabled = true;
-    document.getElementById("formPostulante").reset();
+    botonEliminar.disabled = true;
+    formPrincipal.reset();
 }

@@ -6,53 +6,41 @@
 mostrarCitas();
 let idsBuscador = [];
 let idsPostulante = [];
+const form = document.getElementById("formCita");
+const cuerpoTabla = document.getElementById("cuerpoTabla");
+
+async function mostrarCitas() {
+    try {
+        const dataCitas = await sendRequest("citas", {}, "GET");
+
+        if (dataCitas.length === 0) {
+            mensajeError();
+            return;
+        }
+
+        dataCitas.forEach((cita, indice) => {
+            addRow(cita, indice);
+            idsBuscador.push(cita.idBuscador);
+            idsPostulante.push(cita.idPostulante);
+        });
+    } catch (error) {
+        console.error("Error: " + error);
+        mensajeError();
+        return;
+    }
+}
 
 // Maneja evento de actualizar cita
-document.getElementById("formCita").addEventListener("submit", async function (event) {
+form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    enviarCitas(document.getElementById("cuerpoTabla")).then(() => {
+    enviarCitas().then(() => {
         alert("Registrando");
         window.location.href = "index.jsp";
     });
 });
 
-// Envia por POST citas
-async function enviarCitas(cuerpoTabla) {
-    let filas = cuerpoTabla.getElementsByTagName("tr");
-
-    console.log(filas.length);
-
-    for (let i = 0; i < filas.length; i++) {
-        let campos = {};
-
-        campos.id = document.getElementById(`row${i}col0`).value;
-        campos.fechaHora = document.getElementById(`row${i}col1`).value;
-        campos.nombreCompletoBuscador = document.getElementById(`row${i}col2`).value;
-        campos.nombreCompletoPostulante = document.getElementById(`row${i}col3`).value;
-        campos.calificacionBuscador = document.getElementById(`row${i}col4`).value;
-        campos.calificacionPostulante = document.getElementById(`row${i}col5`).value;
-        campos.idBuscador = idsBuscador[i];
-        campos.idPostulante = idsPostulante[i];
-
-        const peticion = await fetch("http://localhost:8081/api/citas", {
-            method: "PUT",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(campos),
-        })
-            .then((response) => {
-                respuesta = response.json;
-                console.log(respuesta);
-            })
-            .catch(() => alert("Error al registrar cita"));
-    }
-}
-
-function agregarFila(data, indice) {
-    let cuerpoTabla = document.getElementById("cuerpoTabla");
+function addRow(data, indice) {
     // Crear una nueva fila
     let fila = document.createElement("tr");
     const claves = Object.keys(data);
@@ -125,38 +113,30 @@ function agregarFila(data, indice) {
     cuerpoTabla.appendChild(fila);
 }
 
-async function mostrarCitas() {
-    try {
-        const peticion = await fetch("http://localhost:8081/api/citas", {
-            method: "GET",
-            headers: {
-                Accept: "application/json",
-                "Content-Type": "application/json",
-            },
-        });
+// Actualiza por PUT citas
+async function enviarCitas() {
+    let filas = cuerpoTabla.getElementsByTagName("tr");
 
-        const dataCitas = await peticion.json();
+    for (let i = 0; i < filas.length; i++) {
+        let campos = {};
 
-        if (dataCitas.length === 0) {
-            mensajeError();
-            return;
-        }
+        campos.id = document.getElementById(`row${i}col0`).value;
+        campos.fechaHora = document.getElementById(`row${i}col1`).value;
+        campos.nombreCompletoBuscador = document.getElementById(`row${i}col2`).value;
+        campos.nombreCompletoPostulante = document.getElementById(`row${i}col3`).value;
+        campos.calificacionBuscador = document.getElementById(`row${i}col4`).value;
+        campos.calificacionPostulante = document.getElementById(`row${i}col5`).value;
+        campos.idBuscador = idsBuscador[i];
+        campos.idPostulante = idsPostulante[i];
 
-        dataCitas.forEach((cita, indice) => {
-            agregarFila(cita, indice);
-            idsBuscador.push(cita.idBuscador);
-            idsPostulante.push(cita.idPostulante);
-        });
-    } catch (error) {
-        mensajeError();
-        return;
+        await sendRequest("citas", campos, "PUT")
+            .then((response) => console.log(response))
+            .catch((err) => console.error("Error al registrar cita" + err));
     }
 }
 
 function mensajeError() {
     const div = document.getElementById("bonito");
-
-    const form = document.getElementById("formCita");
 
     if (form) {
         form.remove();
