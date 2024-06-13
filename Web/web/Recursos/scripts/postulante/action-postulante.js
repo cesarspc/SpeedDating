@@ -29,7 +29,14 @@ form.addEventListener("submit", async function (event) {
         return;
     }
 
-    sendRequest("postulantes", data, "POST");
+    sendRequest("postulantes", data, "POST")
+        .then((result) => {
+            alert("Datos registrados");
+        })
+        .catch((error) => {
+            console.error("Error:", error);
+            alert("Error al registrar datos");
+        });
 
     form.reset();
 });

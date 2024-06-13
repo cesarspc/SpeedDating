@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class SpeedDatingApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpeedDatingApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpeedDatingApplication.class, args);
+    }
 
 }
