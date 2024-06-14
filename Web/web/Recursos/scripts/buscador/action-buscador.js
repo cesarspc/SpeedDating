@@ -25,22 +25,22 @@ form.addEventListener("submit", async function (event) {
 
     // Validaciones para el formulario
     if (data.edad < 25 || data.edad > 35) {
-        alert("Edad invalida para la inscripcion");
+        alert("Edad invalida para la inscripcion. Debe ser de 25 a 35.");
         return;
     }
 
     if (data.gustoEdad < 25 || data.gustoEdad > 35) {
-        alert("Gusto edad invalido para la inscripcion");
+        alert("Gusto edad invalido para la inscripcion. Debe ser de 25 a 35.");
         return;
     }
 
     if (data.estatura < 100 || data.estatura > 250) {
-        alert("Estatura invalida para la inscripcion");
+        alert("Estatura invalida para la inscripcion.");
         return;
     }
 
     if (data.gustoEstatura < 100 || data.gustoEstatura > 250) {
-        alert("Gusto estatura invalido para la inscripcion");
+        alert("Gusto estatura invalido para la inscripcion.");
         return;
     }
 
