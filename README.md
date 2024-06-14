@@ -1,6 +1,8 @@
 # SpeedDating
-The SpeedDating app allows you to manage a dating event. The application displays a CRUD of participants and dates. The date only can be scheduled if the applicant have at least 3 characteristics of the searcher's liking and both have also paid the registration fee. You can then enter the participant's notes of the dating for finally, with the finish button send the results email for each participant if there was a match. In this project we used:
+The SpeedDating app allows you to manage a dating event. The application displays a CRUD of participants and dates. The date only can be scheduled if the applicant have at least 3 characteristics of the searcher's liking and both have also paid the registration fee. You can then enter the participant's notes of the dating for finally, with the send emails button, send the results email for each participant if there was a match. In this project we used:
 - Spring Boot
+- Lombok
+- H2 Database
 - Bootstrap in Web Page styles
 ## Install
 ### Steps to use the SpeedDating manager
