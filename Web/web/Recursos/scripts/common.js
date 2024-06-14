@@ -13,6 +13,7 @@ async function sendRequest(repository, data, method) {
     }
 
     try {
+        // API ENDPOINT
         const response = await fetch(`http://localhost:8081/api/${repository}`, options);
         const data_1 = await response.json();
         return data_1;
