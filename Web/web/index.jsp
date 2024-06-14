@@ -60,7 +60,7 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" id="fondo1" href="ConsultaBuscador.jsp">Consulta General</a></li>
-                                    <li><a class="dropdown-item" id="fondo2" href="CEBuscador.jsp">Gestión Específica</a></li>
+                                    <li><a class="dropdown-item" id="fondo2" href="CEBuscador.jsp">Adicionar pago</a></li>
                                 </ul>
                             </div>
                             <li class="list-group-item"><a href="FormBuscador.jsp">Agregar Buscador</a></li>
@@ -81,7 +81,7 @@
                                 </button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" id="fondo1" href="ConsultaPostulante.jsp">Consulta General</a></li>
-                                    <li><a class="dropdown-item" id="fondo2" href="CEPostulante.jsp">Gestión Especifica</a></li>
+                                    <li><a class="dropdown-item" id="fondo2" href="CEPostulante.jsp">Adicionar pago</a></li>
                                 </ul>
                             </div>
                             <li class="list-group-item"><a href="FormPostulante.jsp">Agregar Postulante</a></li>
@@ -96,7 +96,7 @@
                             <p class="card-text">A partir de las siguientes opciones seleccione la que acción que desea realizar</p>
                         </div>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item"><a href="GestionCita.jsp">Gestionar Cita</a> </li>
+                            <li class="list-group-item"><a href="GestionCita.jsp">Calificar Citas</a> </li>
                             <li class="list-group-item"><a href="FormCita.jsp">Agendar Citas</button></li>
                         </ul>
                     </div>
@@ -104,7 +104,7 @@
                 
             </div>
             <div id="Boton" class="col-12">
-                <button id="botonForm" class="btn btn-primary" name="EnviarDatos">Finalizar</button>
+                <button id="botonForm" class="btn btn-primary" name="EnviarDatos">Enviar Correos</button>
             </div>
         </div>
 

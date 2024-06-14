@@ -5,9 +5,9 @@
 datacitas = [];
 resultados = [];
 
-const botonFinalizar = document.getElementById("botonForm");
+const botonEnviarCorreos = document.getElementById("botonForm");
 
-botonFinalizar.addEventListener("click", async function (event) {
+botonEnviarCorreos.addEventListener("click", async function (event) {
     event.preventDefault();
     alert("Enviando correos");
     enviarCorreos();
@@ -30,12 +30,12 @@ async function enviarCorreos() {
             switch (dataResultado[2]) {
                 // PAREJA
                 case 1:
-                    mensaje = `Estamos felices de que hayas encontrado el amor en Speed Dating, a continuación te damos los datos de tu ser amado!! Nombre: ${dataResultado[i].nombre}, Apellido: ${dataResultado[i].apellido}, Celular: ${dataResultado[i].telefono}, Correo: ${dataResultado[i].correo}`;
+                    mensaje = `Estamos felices de que hayas encontrado el amor en Speed Dating, a continuación te damos los datos de tu ser amado:\nNombre: ${dataResultado[i].nombre}\nApellido: ${dataResultado[i].apellido}\nCelular: ${dataResultado[i].telefono}\nCorreo: ${dataResultado[i].correo}`;
                     break;
 
                 // AMISTAD
                 case 2:
-                    mensaje = `Estamos felices de que hayas encontrado una amistad en Speed Dating, a continuación te damos sus datos de contacto!! Nombre: ${dataResultado[i].nombre}, Apellido: ${dataResultado[i].apellido}, Celular: ${dataResultado[i].telefono}, Correo: ${dataResultado[i].correo}`;
+                    mensaje = `Estamos felices de que hayas encontrado una amistad en Speed Dating, a continuación te damos sus datos de contacto:\nNombre: ${dataResultado[i].nombre}\nApellido: ${dataResultado[i].apellido}\nCelular: ${dataResultado[i].telefono}\nCorreo: ${dataResultado[i].correo}`;
                     break;
 
                 default:
@@ -64,6 +64,7 @@ function postCorreo(destinatario, asunto, mensaje) {
         .catch(() => console.log("Error al enviar correo"));
 }
 
+// Metodo que comprueba que las citas esten calificadas
 function comprobarCitas() {
     const nCitas = dataCitas.length;
     let calificadas = 0;
@@ -104,5 +105,5 @@ async function obtenerResultados() {
 }
 
 function mensajeError() {
-    alert("No se pudo finalizar. Revise gestión de citas");
+    alert("No se pudo enviar los correos. Revise calificación de citas");
 }
