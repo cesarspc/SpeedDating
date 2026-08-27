@@ -4,16 +4,26 @@
  */
 package com.udistrital.SpeedDating.services.models;
 
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+
 /**
  *
  * @author juan-dev
  */
 public class EmailDTO {
     
+    @NotBlank(message = "destinatario es obligatorio")
+    @Email(message = "destinatario debe tener un formato valido")
     private String destinatario;
     
+    @NotBlank(message = "asunto es obligatorio")
+    @Size(max = 150, message = "asunto no puede superar 150 caracteres")
     private String asunto;
     
+    @NotBlank(message = "mensaje es obligatorio")
+    @Size(max = 5000, message = "mensaje no puede superar 5000 caracteres")
     private String mensaje;
     
 

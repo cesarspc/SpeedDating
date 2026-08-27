@@ -1,10 +1,26 @@
-form = document.getElementById("formBuscador");
+const form = document.getElementById("formBuscador");
+
+function validarRango(id, minimo, maximo, mensaje) {
+    const campo = document.getElementById(id);
+    const valor = Number(campo.value);
+    campo.setCustomValidity(Number.isInteger(valor) && valor >= minimo && valor <= maximo ? "" : mensaje);
+}
 
 // Captura cuando se envia el formulario
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
 
-    data = {
+    validarRango("EdadBuscador", 25, 35, "La edad debe estar entre 25 y 35.");
+    validarRango("EdadPreferidaBuscador", 25, 35, "La edad preferida debe estar entre 25 y 35.");
+    validarRango("EstaturaBuscador", 100, 250, "La estatura debe estar entre 100 y 250 cm.");
+    validarRango("EstaturaPreferidaBuscador", 100, 250, "La estatura preferida debe estar entre 100 y 250 cm.");
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    const data = {
         nombre: document.getElementById("NombreBuscador").value,
         apellido: document.getElementById("ApellidoBuscador").value,
         edad: document.getElementById("EdadBuscador").value,
@@ -44,15 +60,12 @@ form.addEventListener("submit", async function (event) {
         return;
     }
 
-    // Llama al metodo en common.js
-    sendRequest("buscadores", data, "POST")
-        .then((result) => {
-            alert("Datos registrados");
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-            alert("Error al registrar datos");
-        });
-    
-    form.reset();
+    try {
+        await sendRequest("buscadores", data, "POST");
+        alert("Datos registrados");
+        form.reset();
+    } catch (error) {
+        console.error("Error al registrar buscador:", error);
+        alert(error.message || "No fue posible registrar los datos.");
+    }
 });

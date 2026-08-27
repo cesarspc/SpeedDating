@@ -23,13 +23,13 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
  */
 
 @Configuration
-@PropertySource("classpath:email.properties")
+@PropertySource(value = "classpath:email.properties", ignoreResourceNotFound = true)
 public class EmailConfig {
 
-    @Value("${email.username}")
+    @Value("${email.username:${EMAIL_USERNAME:}}")
     private String email;
 
-    @Value("${email.password}")
+    @Value("${email.password:${EMAIL_PASSWORD:}}")
     private String password;
 
     /**

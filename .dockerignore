@@ -1,0 +1,8 @@
+.git
+.idea
+Web
+**/target
+**/build
+**/nbproject/private
+**/email.properties
+*.zip

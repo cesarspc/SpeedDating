@@ -1,8 +1,22 @@
-form = document.getElementById("formPostulante");
+const form = document.getElementById("formPostulante");
+
+function validarRango(id, minimo, maximo, mensaje) {
+    const campo = document.getElementById(id);
+    const valor = Number(campo.value);
+    campo.setCustomValidity(Number.isInteger(valor) && valor >= minimo && valor <= maximo ? "" : mensaje);
+}
 
 // Maneja evento de agregar postulante
 form.addEventListener("submit", async function (event) {
     event.preventDefault();
+
+    validarRango("EdadPostulante", 25, 35, "La edad debe estar entre 25 y 35.");
+    validarRango("EstaturaPostulante", 100, 250, "La estatura debe estar entre 100 y 250 cm.");
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
 
     let data = {
         nombre: document.getElementById("NombrePostulante").value,
@@ -29,14 +43,12 @@ form.addEventListener("submit", async function (event) {
         return;
     }
 
-    sendRequest("postulantes", data, "POST")
-        .then((result) => {
-            alert("Datos registrados");
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-            alert("Error al registrar datos");
-        });
-
-    form.reset();
+    try {
+        await sendRequest("postulantes", data, "POST");
+        alert("Datos registrados");
+        form.reset();
+    } catch (error) {
+        console.error("Error al registrar postulante:", error);
+        alert(error.message || "No fue posible registrar los datos.");
+    }
 });

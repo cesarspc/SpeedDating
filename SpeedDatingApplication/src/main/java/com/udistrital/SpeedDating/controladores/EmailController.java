@@ -6,6 +6,7 @@ package com.udistrital.SpeedDating.controladores;
 
 import com.udistrital.SpeedDating.services.IEmailService;
 import com.udistrital.SpeedDating.services.models.EmailDTO;
+import jakarta.validation.Valid;
 import jakarta.mail.MessagingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -42,7 +43,7 @@ public class EmailController {
      */
     @CrossOrigin("${allowed.origin}")
     @PostMapping("api/send-email")
-    public ResponseEntity<String> sendEmail(@RequestBody EmailDTO email) throws MessagingException {
+    public ResponseEntity<String> sendEmail(@Valid @RequestBody EmailDTO email) throws MessagingException {
         emailService.sendMail(email);
         return new ResponseEntity<>("Correo enviado exitosamente", HttpStatus.OK);
     }

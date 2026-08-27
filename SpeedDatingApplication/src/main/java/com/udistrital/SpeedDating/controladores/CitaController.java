@@ -6,6 +6,7 @@ package com.udistrital.SpeedDating.controladores;
 
 import com.udistrital.SpeedDating.modelos.Cita;
 import com.udistrital.SpeedDating.repositorios.CitaRepository;
+import jakarta.validation.Valid;
 import java.time.DateTimeException;
 import java.time.LocalDateTime;
 import java.time.Month;
@@ -42,10 +43,18 @@ public class CitaController {
      /**
      * Crea y guarda dos citas de ejemplo en la base de datos.
      */
-    @GetMapping("/api/crearCitas")
+    @CrossOrigin("${allowed.origin}")
+    @PostMapping("/api/crearCitas")
     public void crearCitas() {
-        Cita cita1 = new Cita(LocalDateTime.of(2022, 5, 1, 0, 0), "126", "1312");
-        Cita cita2 = new Cita(LocalDateTime.of(2022, 6, 1, 2, 3), "3214", "4214");
+        Cita cita1 = new Cita();
+        cita1.setFechaHora(LocalDateTime.of(2030, 5, 1, 18, 0));
+        cita1.setNombreCompletoBuscador("Alex Demo");
+        cita1.setNombreCompletoPostulante("Taylor Demo");
+
+        Cita cita2 = new Cita();
+        cita2.setFechaHora(LocalDateTime.of(2030, 6, 1, 18, 0));
+        cita2.setNombreCompletoBuscador("Sam Demo");
+        cita2.setNombreCompletoPostulante("Jordan Demo");
         cita1.setIdBuscador((long)1);
         cita1.setIdPostulante((long)1);
         cita2.setIdBuscador((long)1);
@@ -93,7 +102,7 @@ public class CitaController {
      */
     @CrossOrigin("${allowed.origin}")
     @PostMapping("/api/citas")
-    public ResponseEntity<Cita> guardarCita(@RequestBody Cita cita) {
+    public ResponseEntity<Cita> guardarCita(@Valid @RequestBody Cita cita) {
         if (cita.getId() != null) {
             return ResponseEntity.badRequest().build();
         }
@@ -110,7 +119,7 @@ public class CitaController {
      */
     @CrossOrigin("${allowed.origin}")
     @PutMapping("/api/citas")
-    public ResponseEntity<Cita> resultadosCita(@RequestBody Cita cita) {
+    public ResponseEntity<Cita> resultadosCita(@Valid @RequestBody Cita cita) {
         if (cita.getId() == null || !database.existsById(cita.getId())) {
             return ResponseEntity.badRequest().build();
         }

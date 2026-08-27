@@ -15,9 +15,18 @@ async function sendRequest(repository, data, method) {
     try {
         // API ENDPOINT
         const response = await fetch(`http://localhost:8081/api/${repository}`, options);
-        const data_1 = await response.json();
-        return data_1;
-    } catch (err) { }
+        const contentType = response.headers.get("content-type") || "";
+        const responseData = contentType.includes("application/json") ? await response.json() : null;
+
+        if (!response.ok) {
+            const validationErrors = responseData?.errors ? Object.values(responseData.errors).join("\n") : "";
+            throw new Error(validationErrors || responseData?.message || `La API respondió ${response.status}.`);
+        }
+
+        return responseData;
+    } catch (err) {
+        throw err;
+    }
 }
 
 

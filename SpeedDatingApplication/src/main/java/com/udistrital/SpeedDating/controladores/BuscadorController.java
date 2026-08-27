@@ -6,6 +6,7 @@ package com.udistrital.SpeedDating.controladores;
 
 import com.udistrital.SpeedDating.modelos.Buscador;
 import com.udistrital.SpeedDating.repositorios.BuscadorRepository;
+import jakarta.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,44 +42,45 @@ public class BuscadorController {
      /**
      * Crea y guarda dos instancias de Buscador en la base de datos
      */
-    @GetMapping("/api/crearBuscadores")
+    @CrossOrigin("${allowed.origin}")
+    @PostMapping("/api/crearBuscadores")
     public void crearBuscadores() {
         /*
     Ejemplo introducción de datos
          */
         Buscador buscador1 = new Buscador();
-        buscador1.setNombre("Cesar");
-        buscador1.setApellido("Apellido1");
+        buscador1.setNombre("Alex");
+        buscador1.setApellido("Demo");
         buscador1.setEdad("25");
-        buscador1.setEstatura("1.70");
-        buscador1.setProfesion("Profesion1");
-        buscador1.setContextura("Contextura1");
+        buscador1.setEstatura("170");
+        buscador1.setProfesion("Disenador");
+        buscador1.setContextura("Media");
         buscador1.setEstadoCivil("Soltero");
-        buscador1.setIdentidadGenero("IdentidadGenero1");
-        buscador1.setCorreo("cesaraupc@gmail.com");
-        buscador1.setTelefono("3121234567");
-        buscador1.setGustoContextura("Contextura2");
-        buscador1.setGustoInteres("Interes1");
-        buscador1.setGustoEstatura("1.80");
-        buscador1.setGustoIdentidad("IdentidadGenero2");
+        buscador1.setIdentidadGenero("No binario");
+        buscador1.setCorreo("alex.demo@example.com");
+        buscador1.setTelefono("0000000001");
+        buscador1.setGustoContextura("Delgada");
+        buscador1.setGustoInteres("Musica");
+        buscador1.setGustoEstatura("180");
+        buscador1.setGustoIdentidad("Mujer");
         buscador1.setGustoEdad("30");
         buscador1.setPagoHecho(true);
 
         Buscador buscador2 = new Buscador();
-        buscador2.setNombre("Andres");
-        buscador2.setApellido("Apellido2");
+        buscador2.setNombre("Sam");
+        buscador2.setApellido("Demo");
         buscador2.setEdad("30");
-        buscador2.setEstatura("1.80");
-        buscador2.setProfesion("Profesion2");
-        buscador2.setContextura("Contextura2");
+        buscador2.setEstatura("180");
+        buscador2.setProfesion("Ingeniero");
+        buscador2.setContextura("Atletica");
         buscador2.setEstadoCivil("Soltero");
-        buscador2.setIdentidadGenero("IdentidadGenero1");
-        buscador2.setCorreo("correo2@example.com");
-        buscador2.setTelefono("3121234568");
-        buscador2.setGustoContextura("Contextura1");
-        buscador2.setGustoInteres("Interes2");
-        buscador2.setGustoEstatura("1.70");
-        buscador2.setGustoIdentidad("IdentidadGenero2");
+        buscador2.setIdentidadGenero("Hombre");
+        buscador2.setCorreo("sam.demo@example.com");
+        buscador2.setTelefono("0000000002");
+        buscador2.setGustoContextura("Media");
+        buscador2.setGustoInteres("Viajes");
+        buscador2.setGustoEstatura("170");
+        buscador2.setGustoIdentidad("No binario");
         buscador2.setGustoEdad("25");
         buscador2.setPagoHecho(true);
 
@@ -124,7 +126,7 @@ public class BuscadorController {
      */
     @CrossOrigin("${allowed.origin}")
     @PostMapping("/api/buscadores")
-    public ResponseEntity<Buscador> guardarBuscador(@RequestBody Buscador buscador) {
+    public ResponseEntity<Buscador> guardarBuscador(@Valid @RequestBody Buscador buscador) {
         if (buscador.getId() != null) {
             return ResponseEntity.badRequest().build();
         }
@@ -141,7 +143,7 @@ public class BuscadorController {
      */
     @CrossOrigin("${allowed.origin}")
     @PutMapping("/api/buscadores")
-    public ResponseEntity<Buscador> actualizarBuscador(@RequestBody Buscador buscador) {
+    public ResponseEntity<Buscador> actualizarBuscador(@Valid @RequestBody Buscador buscador) {
         if (buscador.getId() == null || !database.existsById(buscador.getId())) {
             return ResponseEntity.badRequest().build();
         }

@@ -8,66 +8,77 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import lombok.AllArgsConstructor;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
-import lombok.NonNull;
-import lombok.RequiredArgsConstructor;
 /**
  *
  * @author cesar
  */
 @Data
 @Entity
-@RequiredArgsConstructor
 public class Buscador {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    @NonNull
+    @NotBlank(message = "nombre es obligatorio")
+    @Size(max = 60, message = "nombre no puede superar 60 caracteres")
     private String nombre;
     
-    @NonNull
+    @NotBlank(message = "apellido es obligatorio")
+    @Size(max = 60, message = "apellido no puede superar 60 caracteres")
     private String apellido;
     
-    @NonNull
+    @Pattern(regexp = "^(2[5-9]|3[0-5])$", message = "edad debe estar entre 25 y 35")
     private String edad;
     
-    @NonNull
+    @Pattern(regexp = "^(1\\d{2}|2[0-4]\\d|250)$", message = "estatura debe ser un entero entre 100 y 250 cm")
     private String estatura;
     
-    @NonNull
+    @NotBlank(message = "profesion es obligatoria")
+    @Size(max = 100, message = "profesion no puede superar 100 caracteres")
     private String profesion;
     
-    @NonNull
+    @NotBlank(message = "contextura es obligatoria")
+    @Size(max = 40, message = "contextura no puede superar 40 caracteres")
     private String contextura;
     
-    @NonNull
+    @NotBlank(message = "estadoCivil es obligatorio")
+    @Size(max = 40, message = "estadoCivil no puede superar 40 caracteres")
     private String estadoCivil;
     
-    @NonNull
+    @NotBlank(message = "identidadGenero es obligatoria")
+    @Size(max = 60, message = "identidadGenero no puede superar 60 caracteres")
     private String identidadGenero;
     
-    @NonNull
+    @NotBlank(message = "correo es obligatorio")
+    @Email(message = "correo debe tener un formato valido")
+    @Size(max = 254, message = "correo no puede superar 254 caracteres")
     private String correo;
     
-    @NonNull
+    @Pattern(regexp = "^\\+?[0-9() -]{7,20}$", message = "telefono debe tener entre 7 y 20 caracteres validos")
     private String telefono;
 
-    @NonNull
+    @NotBlank(message = "gustoContextura es obligatorio")
+    @Size(max = 40, message = "gustoContextura no puede superar 40 caracteres")
     private String gustoContextura;
     
-    @NonNull
+    @NotBlank(message = "gustoInteres es obligatorio")
+    @Size(max = 60, message = "gustoInteres no puede superar 60 caracteres")
     private String gustoInteres;
     
-    @NonNull
+    @Pattern(regexp = "^(1\\d{2}|2[0-4]\\d|250)$", message = "gustoEstatura debe ser un entero entre 100 y 250 cm")
     private String gustoEstatura;
     
-    @NonNull
+    @NotBlank(message = "gustoIdentidad es obligatorio")
+    @Size(max = 60, message = "gustoIdentidad no puede superar 60 caracteres")
     private String gustoIdentidad;
     
-    @NonNull
+    @Pattern(regexp = "^(2[5-9]|3[0-5])$", message = "gustoEdad debe estar entre 25 y 35")
     private String gustoEdad;
 
     private boolean pagoHecho;
